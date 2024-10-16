@@ -41,7 +41,7 @@ export class Course {
     length: 255,
     nullable: false,
   })
-  content_url: string;
+  image_url: string;
 
   @Column({
     type: 'varchar',

@@ -23,7 +23,7 @@ export class CreateCourseDto {
 
   @IsString()
   @IsNotEmpty()
-  content_url: string;
+  image_url: string;
 
   @IsEnum(difficulty)
   @IsNotEmpty()

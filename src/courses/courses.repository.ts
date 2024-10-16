@@ -45,7 +45,7 @@ export class CoursesRepository {
             title: element.title,
             type: element.type,
             description: element.description,
-            content_url: element.content_url,
+            image_url: element.image_url,
             difficulty: this.mapDifficulty(element.difficulty),
             duration: element.duration,
             instructor: element.instructor,
