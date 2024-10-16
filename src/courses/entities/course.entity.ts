@@ -8,6 +8,7 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { difficulty } from '../enum/difficulty.enum';
 
 @Entity({ name: 'courses' })
 export class Course {
@@ -42,6 +43,30 @@ export class Course {
   })
   content_url: string;
 
+  @Column({
+    type: 'varchar',
+    length: 255,
+    nullable: false,
+  })
+  difficulty: difficulty;
+
+  @Column({
+    type: 'integer',
+    nullable: false,
+  })
+  duration: number;
+
+  @Column({
+    type: 'varchar',
+    length: 50,
+    nullable: false,
+  })
+  instructor: string;
+
+  @Column({
+    type: 'boolean',
+    default: false,
+  })
   is_free: boolean;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })

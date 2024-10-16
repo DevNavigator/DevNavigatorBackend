@@ -40,6 +40,9 @@ export class User {
   @Column({ type: 'varchar', nullable: false })
   address: string;
 
+  @Column({ type: 'varchar', nullable: false })
+  city: string;
+
   @Column({
     type: 'enum',
     enum: UserType,

@@ -1,10 +1,17 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { Logger } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const logger = new Logger('App');
   const app = await NestFactory.create(AppModule);
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true, // Solo permite propiedades en el DTO
+      forbidNonWhitelisted: true, // Prohíbe propiedades no permitidas
+      transform: true, // Transforma automáticamente los tipos
+    }),
+  );
   logger.log('server listening on port 3000');
   await app.listen(3000);
 }

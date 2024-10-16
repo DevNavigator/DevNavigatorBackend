@@ -1,26 +1,61 @@
-import { Injectable } from '@nestjs/common';
-import { CreateAuthDto } from './dto/create-auth.dto';
-import { UpdateAuthDto } from './dto/update-auth.dto';
+import { BadRequestException, Injectable } from '@nestjs/common';
+import { CreateUserDto } from './dto/create-user.dto';
+import { UserRepository } from 'src/user/user.repository';
+import * as bcrypt from 'bcrypt';
+import { LoginUserDto } from './dto/login-user.dto';
+import { UserType } from 'src/user/enum/UserType.enum';
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthService {
-  create(createAuthDto: CreateAuthDto) {
-    return 'This action adds a new auth';
-  }
+  constructor(
+    private readonly userRepository: UserRepository,
+    private readonly jwtService: JwtService,
+  ) {}
 
-  findAll() {
-    return `This action returns all auth`;
-  }
+  async signIn(
+    loginUser: LoginUserDto,
+  ): Promise<{ success: string; token: string }> {
+    const { email, password } = loginUser;
 
-  findOne(id: number) {
-    return `This action returns a #${id} auth`;
-  }
+    const user = await this.userRepository.findOneByEmail(email);
+    if (!user)
+      throw new BadRequestException('Usuario y/o contraseña incorrecta.');
 
-  update(id: number, updateAuthDto: UpdateAuthDto) {
-    return `This action updates a #${id} auth`;
+    const result = await bcrypt.compare(password, user.password);
+    if (!result)
+      throw new BadRequestException('Usuario y/o contraseña incorrecta.');
+    const typeUser: UserType = user.typeUser;
+    const userPayload = {
+      id: user.id,
+      email: user.email,
+      types: typeUser,
+    };
+    const token = this.jwtService.sign(userPayload);
+    return { success: 'User logged in successfully', token };
   }
+  async signUp(createUser: CreateUserDto) {
+    const foundUser = await this.userRepository.findOneByEmail(
+      createUser.email,
+    );
+    if (foundUser)
+      throw new BadRequestException(
+        'Ya existe una cuenta registrada con su email.',
+      );
 
-  remove(id: number) {
-    return `This action removes a #${id} auth`;
+    if (createUser.password !== createUser.confirmPassword) {
+      throw new BadRequestException('Las contraseñas deben coincidir.');
+    }
+
+    const passwordHashed = await bcrypt.hash(createUser.password, 10);
+
+    if (!passwordHashed) throw new BadRequestException('Error interno.');
+
+    await this.userRepository.createUser({
+      ...createUser,
+      password: passwordHashed,
+    });
+    const { password, confirmPassword, ...userWithoutPassword } = createUser;
+    return userWithoutPassword;
   }
 }

@@ -1,26 +1,39 @@
 import { Injectable } from '@nestjs/common';
+import { CoursesRepository } from './courses.repository';
 import { CreateCourseDto } from './dto/create-course.dto';
 import { UpdateCourseDto } from './dto/update-course.dto';
+import { Course } from './entities/course.entity';
 
 @Injectable()
 export class CoursesService {
-  create(createCourseDto: CreateCourseDto) {
-    return 'This action adds a new course';
+  constructor(private readonly coursesRepository: CoursesRepository) {}
+
+  async create(createCourseDto: CreateCourseDto): Promise<Course> {
+    // Utiliza el repositorio para crear un nuevo curso
+    return await this.coursesRepository.create(createCourseDto);
   }
 
-  findAll() {
-    return `This action returns all courses`;
+  async addCourses(): Promise<string> {
+    return this.coursesRepository.addCourses();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} course`;
+  async findAll(): Promise<Course[]> {
+    // Utiliza el repositorio para obtener todos los cursos
+    return await this.coursesRepository.findAll();
   }
 
-  update(id: number, updateCourseDto: UpdateCourseDto) {
-    return `This action updates a #${id} course`;
+  async findOne(id: string): Promise<Course> {
+    // Utiliza el repositorio para encontrar un curso por su ID
+    return await this.coursesRepository.findOne(id);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} course`;
+  async update(id: string, updateCourseDto: UpdateCourseDto): Promise<Course> {
+    // Utiliza el repositorio para actualizar un curso
+    return await this.coursesRepository.update(id, updateCourseDto);
+  }
+
+  async remove(id: string): Promise<void> {
+    // Utiliza el repositorio para eliminar un curso
+    return await this.coursesRepository.remove(id);
   }
 }

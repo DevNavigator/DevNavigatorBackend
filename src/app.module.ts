@@ -9,6 +9,7 @@ import { CoursesModule } from './courses/courses.module';
 import { SubscriptionsModule } from './subscriptions/subscriptions.module';
 import { ExercisesModule } from './exercises/exercises.module';
 import { AuthModule } from './auth/auth.module';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
@@ -20,6 +21,11 @@ import { AuthModule } from './auth/auth.module';
       inject: [ConfigService],
       useFactory: (configService: ConfigService) =>
         configService.get('typeorm'),
+    }),
+    JwtModule.register({
+      global: true,
+      signOptions: { expiresIn: '3h' },
+      secret: process.env.JWT_SECRET,
     }),
     UserModule,
     CoursesModule,
