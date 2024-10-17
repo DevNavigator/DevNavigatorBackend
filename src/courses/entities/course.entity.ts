@@ -86,9 +86,4 @@ export class Course {
 
   @ManyToMany(() => Exercise, (exercise) => exercise.id, { cascade: true })
   Exercise: Exercise[];
-
-  @ManyToOne(() => Subscription, (subscription) => subscription.id, {
-    cascade: true,
-  })
-  Subscription: Subscription[];
 }
