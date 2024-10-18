@@ -1,8 +1,8 @@
-import { Course } from 'src/courses/entities/course.entity';
 import { User } from 'src/user/entities/user.entity';
 import {
   Column,
   Entity,
+  JoinColumn,
   OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
@@ -13,11 +13,9 @@ export class Subscription {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @OneToOne(() => User, (user) => user.id, { cascade: true })
-  Users: User[];
-
-  @OneToMany(() => Course, (course) => course.id, { cascade: true })
-  Course: Course[];
+  @OneToOne(() => User, (user) => user.Subscription)
+  @JoinColumn()
+  User: User;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   start_sub: Date;

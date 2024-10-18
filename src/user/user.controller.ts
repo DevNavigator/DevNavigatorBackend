@@ -1,13 +1,13 @@
 import {
   Controller,
   Get,
-  Post,
   Body,
   Patch,
   Param,
-  Delete,
   ParseUUIDPipe,
   UseGuards,
+  Query,
+  HttpCode,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -23,11 +23,13 @@ export class UserController {
 
   @TypeUser(UserType.Admin, UserType.SuperAdmin)
   @UseGuards(AuthGuard, TypeGuard)
+  @HttpCode(200)
   @Get()
-  findAll() {
-    return this.userService.findAll();
+  findAll(@Query('limit') limit = 5, @Query('page') page = 1) {
+    return this.userService.findAll(Number(limit), Number(page));
   }
-
+  @HttpCode(200)
+  @UseGuards(AuthGuard)
   @Get(':id')
   findOne(@Param('id', ParseUUIDPipe) id: string) {
     return this.userService.findOne(id);

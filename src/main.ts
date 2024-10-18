@@ -5,6 +5,7 @@ import { Logger, ValidationPipe } from '@nestjs/common';
 async function bootstrap() {
   const logger = new Logger('App');
   const app = await NestFactory.create(AppModule);
+  app.enableCors();
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true, // Solo permite propiedades en el DTO
@@ -12,6 +13,7 @@ async function bootstrap() {
       transform: true, // Transforma automáticamente los tipos
     }),
   );
+
   logger.log('server listening on port 3000');
   await app.listen(3000);
 }
