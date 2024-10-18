@@ -1,4 +1,5 @@
 import { Course } from 'src/courses/entities/course.entity';
+import { difficulty } from 'src/courses/enum/difficulty.enum';
 import {
   Column,
   Entity,
@@ -52,7 +53,10 @@ export class Exercise {
 
   @Column({
     type: 'boolean',
-    default: false,
+    default: true,
   })
   status_exercises: boolean;
+
+  @Column({ type: 'enum', enum: difficulty, nullable: false })
+  difficulty: difficulty;
 }

@@ -44,8 +44,8 @@ export class Course {
   image_url: string;
 
   @Column({
-    type: 'varchar',
-    length: 255,
+    type: 'enum',
+    enum: difficulty,
     nullable: false,
   })
   difficulty: difficulty;
@@ -77,7 +77,7 @@ export class Course {
 
   @Column({
     type: 'boolean',
-    default: false,
+    default: true,
   })
   status_courses: boolean;
 
