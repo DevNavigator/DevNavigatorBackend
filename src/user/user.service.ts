@@ -14,8 +14,14 @@ import { UpdateBySuperAdmin } from './dto/update-bySuperadmin-dto';
 export class UserService {
   constructor(private userRepository: UserRepository) {}
 
-  findAll() {
-    return this.userRepository.findAll();
+  async findAll(
+    limit: number,
+    page: number,
+  ): Promise<Omit<User, 'password'>[]> {
+    const start = (page - 1) * limit;
+    const end = start + limit;
+    const users = await this.userRepository.findAll();
+    return users.slice(start, end);
   }
 
   async findOne(id: string): Promise<User> {

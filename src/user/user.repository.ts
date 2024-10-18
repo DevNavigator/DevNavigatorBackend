@@ -11,9 +11,11 @@ export class UserRepository {
     @InjectRepository(User) private readonly userRepository: Repository<User>,
   ) {}
 
-  async findAll(): Promise<User[]> {
+  async findAll(): Promise<Omit<User, 'password'>[]> {
     const users = await this.userRepository.find();
-    return users;
+    return users.map(
+      ({ password, ...userWithoutPassword }) => userWithoutPassword,
+    );
   }
 
   async findOne(id: string): Promise<User> {
