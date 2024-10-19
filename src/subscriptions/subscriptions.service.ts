@@ -26,8 +26,12 @@ export class SubscriptionsService {
     );
   }
 
-  async findAll(): Promise<Subscription[]> {
-    return await this.subscriptionRepository.findAll();
+  async findAll(limit: number, page: number): Promise<Subscription[]> {
+    const start = (page - 1) * limit;
+    const end = start + limit;
+    const subscriptions = await this.subscriptionRepository.findAll();
+
+    return subscriptions.slice(start, end);
   }
 
   async findOne(id: string): Promise<Subscription> {
@@ -54,7 +58,7 @@ export class SubscriptionsService {
     return await this.subscriptionRepository.update(subscription);
   }
 
-  async remove(id: string): Promise<void> {
+  async remove(id: string): Promise<string> {
     return await this.subscriptionRepository.removeSubscription(id);
   }
 

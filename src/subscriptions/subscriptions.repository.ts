@@ -26,7 +26,7 @@ export class SubscriptionRepository {
     );
 
     if (!user) {
-      throw new ConflictException('User not found.');
+      throw new NotFoundException('User not found.');
     }
 
     const subscriptionExists = await this.subscriptionRepository.findOne({
@@ -64,12 +64,14 @@ export class SubscriptionRepository {
     return await this.subscriptionRepository.save(subscription);
   }
 
-  async removeSubscription(id: string): Promise<void> {
+  async removeSubscription(id: string): Promise<string> {
     const subscription = await this.findOne(id);
-    if (subscription) {
-      subscription.status_sub = false;
-      await this.subscriptionRepository.save(subscription);
+    if (!subscription) {
+      throw new NotFoundException(`Subscription with ID ${id} not found`);
     }
+    subscription.status_sub = false;
+    await this.subscriptionRepository.save(subscription);
+    return id;
   }
 
   async findByUserId(userId: string): Promise<Subscription[]> {

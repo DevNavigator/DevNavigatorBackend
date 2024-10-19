@@ -12,7 +12,9 @@ import { CoursesService } from './courses.service';
 import { CreateCourseDto } from './dto/create-course.dto';
 import { UpdateCourseDto } from './dto/update-course.dto';
 import { Course } from './entities/course.entity';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('courses')
 @Controller('courses')
 export class CoursesController {
   constructor(private readonly coursesService: CoursesService) {}
@@ -27,6 +29,7 @@ export class CoursesController {
   async addCourses() {
     return this.coursesService.addCourses();
   }
+
   @Get()
   async findAll(): Promise<Course[]> {
     return this.coursesService.findAll();

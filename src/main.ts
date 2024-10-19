@@ -1,9 +1,10 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Logger, ValidationPipe } from '@nestjs/common';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { Console } from 'console';
 
 async function bootstrap() {
-  const logger = new Logger('App');
   const app = await NestFactory.create(AppModule);
   app.enableCors();
   app.useGlobalPipes(
@@ -13,8 +14,21 @@ async function bootstrap() {
       transform: true, // Transforma automáticamente los tipos
     }),
   );
+  const swaggerConfig = new DocumentBuilder()
+    .setTitle('<API> DevNavigator')
+    .setDescription(
+      'Backend para una aplicación que proporciona una hoja de ruta clara y estructurada para el aprendizaje en desarrollo web.',
+    )
+    .setVersion('1.0')
+    .addBearerAuth()
+    .build();
 
-  logger.log('server listening on port 3000');
-  await app.listen(3000);
+  const document = SwaggerModule.createDocument(app, swaggerConfig);
+  SwaggerModule.setup('api', app, document);
+
+  const PORT = process.env.PORT;
+  await app.listen(PORT);
+  console.log('Server listening in port', PORT);
 }
+
 bootstrap();
