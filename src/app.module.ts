@@ -10,6 +10,11 @@ import { SubscriptionsModule } from './subscriptions/subscriptions.module';
 import { ExercisesModule } from './exercises/exercises.module';
 import { AuthModule } from './auth/auth.module';
 import { JwtModule } from '@nestjs/jwt';
+import { FileUploadModule } from './file-upload/file-upload.module';
+import { ScheduleModule } from '@nestjs/schedule';
+import { EmailModule } from './email/email.module';
+import { NotificationsService } from './notifications/notifications.service';
+import { NotificationsModule } from './notifications/notifications.module';
 
 @Module({
   imports: [
@@ -27,13 +32,17 @@ import { JwtModule } from '@nestjs/jwt';
       signOptions: { expiresIn: '3h' },
       secret: process.env.JWT_SECRET,
     }),
+    EmailModule,
+    ScheduleModule.forRoot(),
     UserModule,
     CoursesModule,
     SubscriptionsModule,
     ExercisesModule,
     AuthModule,
+    FileUploadModule,
+    NotificationsModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, NotificationsService],
 })
 export class AppModule {}

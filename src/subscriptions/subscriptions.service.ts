@@ -7,11 +7,14 @@ import { CreateSubscriptionDto } from './dto/create-subscription.dto';
 import { UpdateSubscriptionDto } from './dto/update-subscription.dto';
 import { SubscriptionRepository } from './subscriptions.repository';
 import { Subscription } from './entities/subscription.entity';
+import { EmailService } from 'src/email/email.service';
+import { userSubscriber } from 'src/email/templates/userSubscribe.template';
 
 @Injectable()
 export class SubscriptionsService {
   constructor(
     private readonly subscriptionRepository: SubscriptionRepository,
+    private readonly emailService: EmailService,
   ) {}
 
   async create(
@@ -21,13 +24,25 @@ export class SubscriptionsService {
     // Cambiar el estado a activo
     createSubscriptionDto.status_sub = true;
     createSubscriptionDto.userId = userId;
-    return await this.subscriptionRepository.createSubscription(
+    const subs = await this.subscriptionRepository.createSubscription(
       createSubscriptionDto,
     );
+    const userSubscribe = userSubscriber(subs.User.name);
+
+    await this.emailService.sendEmailSubscriber(
+      subs.User.email,
+      '¡Felicitaciones ahora eres un subscriptor de DevNavigator!',
+      userSubscribe,
+    );
+    return subs;
   }
 
-  async findAll(): Promise<Subscription[]> {
-    return await this.subscriptionRepository.findAll();
+  async findAll(limit: number, page: number): Promise<Subscription[]> {
+    const start = (page - 1) * limit;
+    const end = start + limit;
+    const subscriptions = await this.subscriptionRepository.findAll();
+
+    return subscriptions.slice(start, end);
   }
 
   async findOne(id: string): Promise<Subscription> {
@@ -54,7 +69,7 @@ export class SubscriptionsService {
     return await this.subscriptionRepository.update(subscription);
   }
 
-  async remove(id: string): Promise<void> {
+  async remove(id: string): Promise<string> {
     return await this.subscriptionRepository.removeSubscription(id);
   }
 

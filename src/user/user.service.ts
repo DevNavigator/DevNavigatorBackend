@@ -9,10 +9,15 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { UserRepository } from './user.repository';
 import { User } from './entities/user.entity';
 import { UpdateBySuperAdmin } from './dto/update-bySuperadmin-dto';
+import { EmailService } from 'src/email/email.service';
+import { usersUpdate } from 'src/email/templates/userUpdate.template';
 
 @Injectable()
 export class UserService {
-  constructor(private userRepository: UserRepository) {}
+  constructor(
+    private userRepository: UserRepository,
+    private readonly emailService: EmailService,
+  ) {}
 
   async findAll(
     limit: number,
@@ -52,8 +57,14 @@ export class UserService {
 
     const { currentPassword, confirmPassword, ...resUser } = updateUserDto;
     await this.userRepository.update(id, resUser);
-
-    return await this.findOne(id);
+    const userUpdateCurrently = await this.findOne(id);
+    const userUpdate = usersUpdate(user.name, userUpdateCurrently.updated_at);
+    await this.emailService.sendEmailSubscriber(
+      user.email,
+      `¡IMPORTANTE!, ${user.name} tus datos y/o contraseña han sido actualizado en DevNavigator`,
+      userUpdate,
+    );
+    return userUpdateCurrently;
   }
 
   async updateAdmin(id: string, updateUser: UpdateBySuperAdmin) {

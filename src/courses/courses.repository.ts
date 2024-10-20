@@ -1,4 +1,8 @@
-import { Injectable, ConflictException } from '@nestjs/common';
+import {
+  Injectable,
+  ConflictException,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Course } from './entities/course.entity';
@@ -89,6 +93,12 @@ export class CoursesRepository {
   }
 
   async update(id: string, updateCourseDto: UpdateCourseDto): Promise<Course> {
+    const course = await this.courseRepository.findOneBy({ id });
+    if (!course) {
+      throw new NotFoundException(
+        'No puedes actualizar un curso que no existe.',
+      );
+    }
     await this.courseRepository.update(id, updateCourseDto);
     return this.findOne(id);
   }

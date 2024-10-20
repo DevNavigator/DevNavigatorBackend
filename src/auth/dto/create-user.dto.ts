@@ -3,6 +3,7 @@ import {
   IsDate,
   IsEmail,
   IsNotEmpty,
+  IsOptional,
   IsString,
   IsStrongPassword,
   Length,
@@ -16,11 +17,6 @@ export class CreateUserDto {
   @IsString()
   @Length(3, 50)
   name: string;
-
-  @IsNotEmpty()
-  @IsString()
-  @Length(3, 50)
-  lastname: string;
 
   @IsNotEmpty()
   @IsEmail()
@@ -46,21 +42,13 @@ export class CreateUserDto {
   })
   phone: string;
 
-  @IsNotEmpty()
+  @IsOptional() // Pedirlo al front.
   @Transform(({ value }) => new Date(value))
   @IsDate()
   birthdate: Date;
 
   @IsNotEmpty()
   @IsString()
-  country: string;
-
-  @IsNotEmpty()
-  @IsString()
   @MinLength(5)
   address: string;
-
-  @IsNotEmpty()
-  @IsString()
-  city: string;
 }
