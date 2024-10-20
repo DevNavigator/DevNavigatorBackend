@@ -35,9 +35,9 @@ export const userSubscriber = (userName) => {
       </head>
       <body>
         <div class='container'>
-          <h1>¡Bienvenido, ${userName}!</h1>
+          <h1>¡Felicitaciones!, ${userName}!</h1>
           <p>
-            ¡Felicitaciones! Ahora eres un suscriptor de <strong>DevNavigator</strong>.
+            Ahora eres un suscriptor de <strong>DevNavigator</strong>.
           </p>
           <p>
             Gracias por unirte a nuestra comunidad. Estamos emocionados de que estés aquí y listos para comenzar tu viaje de aprendizaje.

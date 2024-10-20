@@ -54,8 +54,8 @@ export class User {
   })
   phone: string;
 
-  @Column({ type: 'date', nullable: false })
-  birthdate: Date;
+  /*   @Column({ type: 'date', nullable: false })
+  birthdate: Date; */
 
   @Column({ type: 'varchar', nullable: false })
   @ApiProperty({
@@ -65,6 +65,13 @@ export class User {
   })
   address: string;
 
+  @Column({ type: 'varchar', default: 'https://res.cloudinary.com/dckxhsgw0/image/upload/v1729402649/qznf5erppvbzjovhynbd.png' })
+  @ApiProperty({
+    description:
+      'Imagen de perfil del usuario.'
+  })
+  imgProfile?: string;
+  
   @Column({
     type: 'enum',
     enum: UserType,

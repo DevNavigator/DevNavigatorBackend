@@ -60,7 +60,13 @@ export class UpdateUserDto {
     example: '2634123456',
   })
   phone: string;
-
+  @IsOptional()
+  @IsString()
+  @ApiProperty({
+    description:
+      'Imagen de perfil del usuario.'
+  })
+  imgProfile?: string;
   @IsOptional()
   @IsString()
   @MinLength(5)
