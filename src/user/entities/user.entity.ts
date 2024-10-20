@@ -65,6 +65,13 @@ export class User {
   })
   address: string;
 
+  @Column({ type: 'varchar', default: 'https://res.cloudinary.com/dckxhsgw0/image/upload/v1729402649/qznf5erppvbzjovhynbd.png' })
+  @ApiProperty({
+    description:
+      'Imagen de perfil del usuario.'
+  })
+  imgProfile?: string;
+  
   @Column({
     type: 'enum',
     enum: UserType,

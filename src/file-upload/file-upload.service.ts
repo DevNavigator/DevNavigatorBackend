@@ -1,21 +1,23 @@
 import { Injectable } from '@nestjs/common';
 import { FileUploadRepository } from './file-upload.repository';
-import { InjectRepository } from '@nestjs/typeorm';
-import { User } from 'src/user/entities/user.entity';
-import { Course } from 'src/courses/entities/course.entity';
-import { Repository } from 'typeorm';
+import { UserRepository } from 'src/user/user.repository';
 
 @Injectable()
 export class FileUploadService {
     constructor(
         private readonly fileUploadRepository: FileUploadRepository,
-        @InjectRepository(User)
-        private readonly userReposiroty: Repository<User>,
-        @InjectRepository(Course)
-        private readonly courseRepository: Repository<Course>
+        private readonly userRepository: UserRepository
     ) {}
 
     async uploadUserImage(userId: string, file: Express.Multer.File){
-        const user = await this.userReposiroty.findOneBy({id: userId});
+        const user = await this.userRepository.findOne(userId);
+        if(!user) throw new Error('User not found');
+        const uploadImg = await this.fileUploadRepository.uploadImage(file);
+        await this.userRepository.update(userId, {
+            imgProfile: uploadImg.secure_url
+        });
+        const userUpdated = await this.userRepository.findOne(userId);
+        const { password, ...userWithoutPassword } = userUpdated
+        return userWithoutPassword;
     }
 }
