@@ -5,12 +5,15 @@ import * as bcrypt from 'bcrypt';
 import { LoginUserDto } from './dto/login-user.dto';
 import { UserType } from 'src/user/enum/UserType.enum';
 import { JwtService } from '@nestjs/jwt';
+import { EmailService } from 'src/email/email.service';
+import { welcome } from 'src/email/templates/welcome.template';
 
 @Injectable()
 export class AuthService {
   constructor(
     private readonly userRepository: UserRepository,
     private readonly jwtService: JwtService,
+    private readonly emailService: EmailService,
   ) {}
 
   async signIn(
@@ -57,6 +60,14 @@ export class AuthService {
       password: passwordHashed,
     });
     const { password, confirmPassword, ...userWithoutPassword } = createUser;
+    const welcomeUser = welcome(createUser.name);
+
+    await this.emailService.sendEmailRegister(
+      createUser.email,
+      '¡Bienvenido a nuestra plataforma de cursos de programación!',
+      welcomeUser,
+    );
+
     return userWithoutPassword;
   }
 }

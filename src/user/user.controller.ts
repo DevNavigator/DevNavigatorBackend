@@ -73,7 +73,7 @@ export class UserController {
   })
   @ApiResponse({ status: 400, description: 'Contraseña actual incorrecta.' })
   @ApiResponse({ status: 400, description: 'Error interno.' })
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   @Patch('/userupdate/:id')
   update(
     @Param('id', ParseUUIDPipe) id: string,
