@@ -10,6 +10,7 @@ import { SubscriptionsModule } from './subscriptions/subscriptions.module';
 import { ExercisesModule } from './exercises/exercises.module';
 import { AuthModule } from './auth/auth.module';
 import { JwtModule } from '@nestjs/jwt';
+import { FileUploadModule } from './file-upload/file-upload.module';
 
 @Module({
   imports: [
@@ -32,6 +33,7 @@ import { JwtModule } from '@nestjs/jwt';
     SubscriptionsModule,
     ExercisesModule,
     AuthModule,
+    FileUploadModule,
   ],
   controllers: [AppController],
   providers: [AppService],
