@@ -54,8 +54,8 @@ export class User {
   })
   phone: string;
 
-  @Column({ type: 'date', nullable: false })
-  birthdate: Date;
+  /*   @Column({ type: 'date', nullable: false })
+  birthdate: Date; */
 
   @Column({ type: 'varchar', nullable: false })
   @ApiProperty({
