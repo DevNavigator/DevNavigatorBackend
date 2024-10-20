@@ -38,10 +38,9 @@ export class Course {
 
   @Column({
     type: 'varchar',
-    length: 255,
-    nullable: false,
+    default: 'https://res.cloudinary.com/dckxhsgw0/image/upload/v1729407008/xoaei3fnegkbngnbkshi.jpg'
   })
-  image_url: string;
+  image_url?: string;
 
   @Column({
     type: 'enum',

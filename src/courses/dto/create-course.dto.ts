@@ -22,8 +22,8 @@ export class CreateCourseDto {
   description: string;
 
   @IsString()
-  @IsNotEmpty()
-  image_url: string;
+  @IsOptional()
+  image_url?: string;
 
   @IsEnum(difficulty)
   @IsNotEmpty()
