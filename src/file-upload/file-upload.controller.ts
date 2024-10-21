@@ -1,33 +1,44 @@
-import {
-  Controller,
-  FileTypeValidator,
-  MaxFileSizeValidator,
-  Param,
-  ParseFilePipe,
-  Post,
-  UploadedFile,
-  UseInterceptors,
-} from '@nestjs/common';
+import { Controller, FileTypeValidator, HttpCode, MaxFileSizeValidator, Param, ParseFilePipe, ParseUUIDPipe, Post, UploadedFile, UseGuards, UseInterceptors } from '@nestjs/common';
 import { FileUploadService } from './file-upload.service';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiBody, ApiConsumes, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { AuthGuard } from 'src/auth/guards/AuthGuard';
+import { TypeGuard } from 'src/auth/guards/TypeGuard';
+import { TypeUser } from 'src/decorator/type.decorator';
+import { UserType } from 'src/user/enum/UserType.enum';
 
-@ApiTags('file-upload')
+@ApiTags('File Upload')
 @Controller('files')
 export class FileUploadController {
   constructor(private readonly fileUploadService: FileUploadService) {}
 
   @ApiOperation({
-    summary: 'Cambiar imagen de perfil del usuario.',
+    summary: 'Subir imagen de perfil de usuario.',
     description:
-      'Este endpoint permite cambiar la imagen de perfil del usuario. Esta imagen debe tener un tamaño máximo de 500kb y un formato de tipo jpg, jpeg o png.',
+      'Este endpoint permite actualizar la imagen de perfil de un usuario, la imagen se guardará en la base de datos y en Cloudinary.',
   })
-  @ApiResponse({ status: 200, description: 'Devuelve el usuario actualizado.' })
-  @ApiResponse({ status: 404, description: 'User not found' })
+  @ApiResponse({ status: 200, description: 'Devuelve los datos del usuario actualizado sin la contraseña.' })
+  @ApiResponse({ status: 404, description: 'El usuario no existe.' })
+  @ApiConsumes('multipart/form-data')
+  @ApiBody({
+    description: 'Imagen a subir',
+    required: true,
+    schema: {
+      type: 'object',
+      properties: {
+        file: {
+          type: 'string',
+          format: 'binary',
+        },
+      },
+    }
+  })
+  @UseGuards(AuthGuard)
+  @HttpCode(200)
+  @ApiBearerAuth()
   @Post('imgprofile/:id')
   @UseInterceptors(FileInterceptor('file'))
-  async uploadImgProfile(
-    @Param('id') id: string,
+  async uploadImgProfile(@Param('id', ParseUUIDPipe) id: string, 
     @UploadedFile(
       new ParseFilePipe({
         validators: [
@@ -45,16 +56,33 @@ export class FileUploadController {
   }
 
   @ApiOperation({
-    summary: 'Cambiar imagen del curso.',
+    summary: 'Subir imagen de curso.',
     description:
-      'Este endpoint permite cambiar la imagen del curso. Esta imagen debe tener un tamaño máximo de 2mb y un formato de tipo jpg, jpeg o png.',
+      'Este endpoint permite actualizar la imagen de un curso, la imagen se guardará en la base de datos y en Cloudinary.',
   })
-  @ApiResponse({ status: 201, description: 'Devuelve el curso actualizado.' })
-  @ApiResponse({ status: 404, description: 'Course not found' })
+  @ApiResponse({ status: 200, description: 'Devuelve los datos del curso actualizado.' })
+  @ApiResponse({ status: 404, description: 'El curso no existe.' })
+  @ApiConsumes('multipart/form-data')
+  @ApiBody({
+    description: 'Imagen a subir',
+    required: true,
+    schema: {
+      type: 'object',
+      properties: {
+        file: {
+          type: 'string',
+          format: 'binary',
+        },
+      },
+    }
+  })
+  @TypeUser(UserType.Admin, UserType.SuperAdmin)
+  @UseGuards(AuthGuard, TypeGuard)
+  @ApiBearerAuth()
+  @HttpCode(200)
   @Post('imgcourse/:id')
   @UseInterceptors(FileInterceptor('file'))
-  async uploadImgCourse(
-    @Param('id') id: string,
+  async uploadImgCourse(@Param('id', ParseUUIDPipe) id: string, 
     @UploadedFile(
       new ParseFilePipe({
         validators: [

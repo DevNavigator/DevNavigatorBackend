@@ -11,6 +11,7 @@ export class FileUploadService {
     private readonly courseRepository: CoursesRepository,
   ) {}
 
+<<<<<<< HEAD
   async uploadUserImage(userId: string, file: Express.Multer.File) {
     const user = await this.userRepository.findOne(userId);
     if (!user) throw new Error('User not found');
@@ -32,4 +33,27 @@ export class FileUploadService {
     });
     return courseUpdated;
   }
+=======
+    async uploadUserImage(userId: string, file: Express.Multer.File){
+        const user = await this.userRepository.findOne(userId);
+        if(!user) throw new NotFoundException('User not found');
+        const uploadImg = await this.fileUploadRepository.uploadImage(file);
+        await this.userRepository.update(userId, {
+            imgProfile: uploadImg.secure_url
+        });
+        const userUpdated = await this.userRepository.findOne(userId);
+        const { password, ...userWithoutPassword } = userUpdated
+        return userWithoutPassword;
+    }
+
+    async uploadCourseImage(courseId: string, file: Express.Multer.File){
+        const course = await this.courseRepository.findOne(courseId);
+        if(!course) throw new NotFoundException('Course not found');
+        const uploadImg = await this.fileUploadRepository.uploadImage(file);
+        const courseUpdated = await this.courseRepository.update(courseId, {
+            image_url: uploadImg.secure_url
+        })
+        return courseUpdated;
+    }
+>>>>>>> 1a31c7e (Documentación file-upload)
 }
