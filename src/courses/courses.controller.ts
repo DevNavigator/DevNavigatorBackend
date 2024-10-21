@@ -7,12 +7,24 @@ import {
   Param,
   Patch,
   Post,
+  UseGuards,
 } from '@nestjs/common';
 import { CoursesService } from './courses.service';
 import { CreateCourseDto } from './dto/create-course.dto';
 import { UpdateCourseDto } from './dto/update-course.dto';
 import { Course } from './entities/course.entity';
-import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiBody,
+  ApiOperation,
+  ApiResponse,
+  ApiTags,
+} from '@nestjs/swagger';
+import { TypeUser } from 'src/decorator/type.decorator';
+import { UserType } from 'src/user/enum/UserType.enum';
+import { AuthGuard } from 'src/auth/guards/AuthGuard';
+import { TypeGuard } from 'src/auth/guards/TypeGuard';
+
 @ApiTags('courses')
 @Controller('courses')
 export class CoursesController {
@@ -93,6 +105,9 @@ export class CoursesController {
     status: 404,
     description: 'No puedes actualizar un curso que no existe.',
   })
+  @ApiBearerAuth()
+  @TypeUser(UserType.Admin, UserType.SuperAdmin)
+  @UseGuards(AuthGuard, TypeGuard)
   @Patch(':id')
   async update(
     @Param('id') id: string,
@@ -114,6 +129,9 @@ export class CoursesController {
     status: 404,
     description: 'No puedes actualizar un curso que no existe.',
   })
+  @ApiBearerAuth()
+  @TypeUser(UserType.Admin, UserType.SuperAdmin)
+  @UseGuards(AuthGuard, TypeGuard)
   @Patch(':id')
   async remove(
     @Param('id') id: string,

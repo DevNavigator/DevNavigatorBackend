@@ -16,7 +16,13 @@ import { TypeGuard } from 'src/auth/guards/TypeGuard';
 import { UserType } from './enum/UserType.enum';
 import { TypeUser } from 'src/decorator/type.decorator';
 import { UpdateBySuperAdmin } from './dto/update-bySuperadmin-dto';
-import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiBody,
+  ApiOperation,
+  ApiResponse,
+  ApiTags,
+} from '@nestjs/swagger';
 import { User } from './entities/user.entity';
 
 @ApiTags('user')
@@ -37,6 +43,7 @@ export class UserController {
   })
   @TypeUser(UserType.Admin, UserType.SuperAdmin)
   @UseGuards(AuthGuard, TypeGuard)
+  @ApiBearerAuth()
   @HttpCode(200)
   @Get()
   findAll(@Query('limit') limit = 5, @Query('page') page = 1) {
@@ -54,6 +61,7 @@ export class UserController {
     description: 'Usuario encontrado.',
   })
   @ApiResponse({ status: 404, description: 'El usuario no existe.' })
+  @ApiBearerAuth()
   @HttpCode(200)
   @UseGuards(AuthGuard)
   @Get(':id')
@@ -78,6 +86,7 @@ export class UserController {
   })
   @ApiResponse({ status: 400, description: 'Contraseña actual incorrecta.' })
   @ApiResponse({ status: 400, description: 'Error interno.' })
+  @ApiBearerAuth()
   @UseGuards(AuthGuard)
   @Patch('/userupdate/:id')
   update(
@@ -105,6 +114,7 @@ export class UserController {
   })
   @ApiResponse({ status: 404, description: 'El usuario no existe.' })
   @ApiResponse({ status: 400, description: 'Error interno.' })
+  @ApiBearerAuth()
   @TypeUser(UserType.SuperAdmin)
   @UseGuards(AuthGuard, TypeGuard)
   @Patch('/adminupdate/:id')
