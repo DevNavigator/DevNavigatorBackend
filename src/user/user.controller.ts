@@ -17,6 +17,7 @@ import { UserType } from './enum/UserType.enum';
 import { TypeUser } from 'src/decorator/type.decorator';
 import { UpdateBySuperAdmin } from './dto/update-bySuperadmin-dto';
 import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { User } from './entities/user.entity';
 
 @ApiTags('user')
 @Controller('user')
@@ -29,7 +30,11 @@ export class UserController {
     description:
       'Este endpoint permite obtener la lista de usuario registrados. Puedes agregar Querys de page y limit para paginar los resultados. Necesitas rol de administrador o superAdministrador para ejecutarlo.',
   })
-  @ApiResponse({ status: 200, description: 'Lista de usuarios' })
+  @ApiResponse({
+    status: 200,
+    description: 'Lista de usuarios',
+    type: () => [User],
+  })
   @TypeUser(UserType.Admin, UserType.SuperAdmin)
   @UseGuards(AuthGuard, TypeGuard)
   @HttpCode(200)

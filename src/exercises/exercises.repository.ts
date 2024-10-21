@@ -40,5 +40,6 @@ export class ExerciseRepository {
     if (result.affected === 0) {
       throw new NotFoundException('No se encontro el ejercicio para eliminar');
     }
+    return id;
   }
 }
