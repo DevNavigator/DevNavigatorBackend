@@ -43,8 +43,8 @@ export class CreateCourseDto {
     example: 'http://devnavigator/image/12389172',
   })
   @IsString()
-  @IsNotEmpty()
-  image_url: string;
+  @IsOptional()
+  image_url?: string;
 
   @ApiProperty({
     description:

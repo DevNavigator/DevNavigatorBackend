@@ -47,7 +47,7 @@ export const usersUpdate = (userName, userUpdateAt) => {
             Fecha de la última actualización: <strong>${userUpdateAt}</strong>.
           </p>
           <p>
-            Si fuiste tú quien autorizó este cambio, te recomendamos hace caso omiso a este correo.
+            Si fuiste tú quien autorizó este cambio, te recomendamos hacer caso omiso a este correo.
           </p>
           <p>
             Si tienes alguna pregunta o necesitas asistencia, no dudes en contactarnos. Estamos aquí para apoyarte en cada paso de tu camino.

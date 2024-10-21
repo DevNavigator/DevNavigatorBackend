@@ -1,13 +1,6 @@
 import { Exercise } from 'src/exercises/entities/exercise.entity';
-import { Subscription } from 'src/subscriptions/entities/subscription.entity';
 import { User } from 'src/user/entities/user.entity';
-import {
-  Column,
-  Entity,
-  ManyToMany,
-  ManyToOne,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
+import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { difficulty } from '../enum/difficulty.enum';
 import { ApiProperty } from '@nestjs/swagger';
 
@@ -59,15 +52,15 @@ export class Course {
 
   @Column({
     type: 'varchar',
-    length: 255,
-    nullable: false,
+    default:
+      'https://res.cloudinary.com/dckxhsgw0/image/upload/v1729407008/xoaei3fnegkbngnbkshi.jpg',
   })
   @ApiProperty({
     description:
       'Imagen del curso. Es de tipo varchar, tiene una longitud maxima de 255 caracteres y no puede ser nulo.',
     example: 'http://devnavigator.com/image/98179857',
   })
-  image_url: string;
+  image_url?: string;
 
   @Column({
     type: 'enum',

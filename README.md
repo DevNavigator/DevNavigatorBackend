@@ -1,73 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+  <img src="DevNavigator_Backend.png" alt="Logo de DevNavigator Backend">
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<h1>DevNavigator Backend 💻🖥️💙</h1>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+<h2>Descripción del Proyecto 🤓</h2>
+<p>
+  El backend de DevNavigator se encarga de gestionar la lógica del servidor, la base de datos y la autenticación de usuarios. Está diseñado para ser escalable y eficiente, proporcionando una API robusta para la interacción con el frontend.
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+<h2>Instalaciones Necesarias 🛠️</h2>
+<ul>
+  <li><strong>Node.js</strong>: <code>https://nodejs.org/</code></li>
+  <li><strong>PostgreSQL</strong>: <code>https://www.postgresql.org/</code></li>
+  <li><strong>NestJS CLI</strong>: <code>npm install -g @nestjs/cli</code></li>
+  <li><strong>Dependencias del proyecto:</strong></li>
+  <ul>
+    <li><code>npm install @nestjs/common @nestjs/core @nestjs/platform-express @nestjs/config @nestjs/jwt @nestjs/typeorm @nestjs/swagger @nestjs/schedule @nestjs/mapped-types</code></li>
+    <li><code>npm install bcrypt class-transformer class-validator cloudinary dotenv nodemailer pg reflect-metadata rxjs typeorm</code></li>
+  </ul>
+</ul>
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+<h2>Configuración del Proyecto ⚙️</h2>
+<ol>
+  <li>Clona el repositorio: <code>git clone https://github.com/DevNavigator/DevNavigatorBackend.git</code></li>
+  <li>Instala las dependencias: <code>npm install</code></li>
+  <li>Crea un archivo <code>.env</code> y configura tus variables de entorno.</li>
+  <li>Inicia el servidor: <code>npm run start</code></li>
+</ol>
 
-## Installation
+<h2>Funcionalidades del Backend 👾</h2>
+<ul>
+  <li>Autenticación de usuarios mediante JWT</li>
+  <li>Gestión de usuarios y roles</li>
+  <li>Almacenamiento de datos en PostgreSQL</li>
+  <li>Documentación de la API con Swagger</li>
+  <li>Notificaciones en tiempo real</li>
+</ul>
 
-```bash
-$ npm install
-```
+<h2>Integrantes del Equipo Backend de este proyecto 👥</h2>
+<table>
+  <tr>
+    <th>Integrante</th>
+    <th>Rol</th>
+  </tr>
+    <tr>
+    <td><strong>Rivera López, Jorge Eduardo</strong></td>
+    <td>Backend</td>
+  </tr>
+  <tr>
+    <td><strong>Di Donna Ramirez, John Alexander</strong></td>
+    <td>BackEnd</td>
+  </tr>
+  <tr>
+    <td><strong>Martinez, Mauricio</strong></td>
+    <td>Backend</td>
+  </tr>
+</table>
 
-## Running the app
+<h2>Documentación del Proyecto 📚</h2>
+<p>
+  Este proyecto utiliza varias herramientas y bibliotecas para mejorar su funcionalidad. A continuación se detallan las implementaciones clave:
+</p>
 
-```bash
-# development
-$ npm run start
+<h3>Swagger 📄</h3>
+<p>
+  Swagger se utiliza para documentar la API de manera interactiva. Para acceder a la documentación, inicia el servidor y visita <code>http://localhost:3001/api</code>. Swagger proporciona una interfaz gráfica que te permite probar los endpoints de la API directamente.
+</p>
 
-# watch mode
-$ npm run start:dev
+<h3>Nodemailer ✉️</h3>
+<p>
+  Nodemailer se utiliza para enviar correos electrónicos. La configuración se realiza a través de variables de entorno en el archivo <code>.env</code>. Puedes personalizar los correos electrónicos enviados a los usuarios, como la verificación de cuentas y notificaciones.
+</p>
 
-# production mode
-$ npm run start:prod
-```
+<h3>Cron Jobs ⏰</h3>
+<p>
+  Los Cron Jobs se configuran utilizando el módulo <code>@nestjs/schedule</code>. Permiten ejecutar tareas programadas, como el envío de recordatorios o la limpieza de datos. La configuración se realiza en el módulo correspondiente, donde puedes definir la frecuencia y la tarea a ejecutar.
+</p>
 
-## Test
+<h3>Cloudinary ☁️</h3>
+<p>
+  Cloudinary se utiliza para la gestión y almacenamiento de imágenes. La configuración se realiza a través de las variables de entorno en el archivo <code>.env</code>. Puedes subir imágenes y obtener URLs para usarlas en la aplicación. Asegúrate de tener las credenciales correctas en tu archivo de configuración.
+</p>
 
-```bash
-# unit tests
-$ npm run test
+<p>
+  Para más información, consulta la documentación completa en el repositorio.
+</p>
 
-# e2e tests
-$ npm run test:e2e
+<div class='footer'>
+    <p>&copy; 2024 DevNavigator. Todos los derechos reservados.</p>
+</div>
 
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+</body>
+</html>
