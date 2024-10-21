@@ -56,7 +56,7 @@ export class SubscriptionsController {
   })
   @ApiResponse({ status: 200, description: 'Lista de suscripciones' })
   @ApiBearerAuth()
-  @TypeUser(UserType.Admin, UserType.SuperAdmin)
+  @TypeUser(UserType.SuperAdmin)
   @UseGuards(AuthGuard, TypeGuard)
   @Get()
   findAll(@Query() limit = 5, @Query() page = 1) {

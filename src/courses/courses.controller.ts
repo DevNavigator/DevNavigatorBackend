@@ -44,6 +44,9 @@ export class CoursesController {
     status: 409,
     description: 'El curso con el título "example" ya existe.',
   })
+  @ApiBearerAuth()
+  @TypeUser(UserType.Admin, UserType.SuperAdmin)
+  @UseGuards(AuthGuard, TypeGuard)
   @Post()
   async create(@Body() createCourseDto: CreateCourseDto): Promise<Course> {
     return this.coursesService.create(createCourseDto);
