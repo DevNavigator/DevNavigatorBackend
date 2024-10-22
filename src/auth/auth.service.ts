@@ -18,7 +18,7 @@ export class AuthService {
 
   async signIn(
     loginUser: LoginUserDto,
-  ): Promise<{ success: string; token: string }> {
+  ): Promise<{ username: string; success: boolean; token: string }> {
     const { email, password } = loginUser;
 
     const user = await this.userRepository.findOneByEmail(email);
@@ -35,7 +35,11 @@ export class AuthService {
       types: typeUser,
     };
     const token = this.jwtService.sign(userPayload);
-    return { success: 'User logged in successfully', token };
+    return {
+      username: user.name,
+      success: true,
+      token,
+    };
   }
 
   async signUp(createUser: CreateUserDto) {
