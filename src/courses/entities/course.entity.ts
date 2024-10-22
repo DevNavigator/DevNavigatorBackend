@@ -53,7 +53,7 @@ export class Course {
   @Column({
     type: 'varchar',
     default:
-      'https://res.cloudinary.com/dckxhsgw0/image/upload/v1729407008/xoaei3fnegkbngnbkshi.jpg',
+      'https://res.cloudinary.com/dckxhsgw0/image/upload/v1729623569/lpsekc5dxicsi0mhtmqr.png',
   })
   @ApiProperty({
     description:
