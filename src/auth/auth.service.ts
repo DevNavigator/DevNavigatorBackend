@@ -7,6 +7,7 @@ import { UserType } from 'src/user/enum/UserType.enum';
 import { JwtService } from '@nestjs/jwt';
 import { EmailService } from 'src/email/email.service';
 import { welcome } from 'src/email/templates/welcome.template';
+import { User } from 'src/user/entities/user.entity';
 
 @Injectable()
 export class AuthService {
@@ -18,7 +19,7 @@ export class AuthService {
 
   async signIn(
     loginUser: LoginUserDto,
-  ): Promise<{ username: string; success: boolean; token: string }> {
+  ): Promise<{ user: User; success: boolean; token: string }> {
     const { email, password } = loginUser;
 
     const user = await this.userRepository.findOneByEmail(email);
@@ -36,7 +37,7 @@ export class AuthService {
     };
     const token = this.jwtService.sign(userPayload);
     return {
-      username: user.name,
+      user: user,
       success: true,
       token,
     };

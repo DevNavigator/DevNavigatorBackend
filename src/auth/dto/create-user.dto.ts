@@ -3,6 +3,7 @@ import { Transform } from 'class-transformer';
 import {
   IsDate,
   IsEmail,
+  IsEnum,
   IsNotEmpty,
   IsOptional,
   IsString,
@@ -12,6 +13,7 @@ import {
   MaxLength,
   MinLength,
 } from 'class-validator';
+import { UserType } from 'src/user/enum/UserType.enum';
 
 export class CreateUserDto {
   @ApiProperty({
@@ -87,4 +89,14 @@ export class CreateUserDto {
   @IsString()
   @MinLength(5)
   address: string;
+
+  @ApiProperty({
+    description:
+      'Tipo de usuario a crear. Debe ser uno de los siguientes: user, userSuscribe, admin, superAdmin.',
+    enum: UserType,
+    default: UserType.User,
+  })
+  @IsOptional()
+  @IsEnum(UserType)
+  TypeUser: UserType;
 }
