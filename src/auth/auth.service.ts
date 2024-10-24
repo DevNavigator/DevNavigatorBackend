@@ -1,12 +1,13 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UserRepository } from 'src/user/user.repository';
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from 'bcryptjs';
 import { LoginUserDto } from './dto/login-user.dto';
 import { UserType } from 'src/user/enum/UserType.enum';
 import { JwtService } from '@nestjs/jwt';
 import { EmailService } from 'src/email/email.service';
 import { welcome } from 'src/email/templates/welcome.template';
+import { User } from 'src/user/entities/user.entity';
 
 @Injectable()
 export class AuthService {
@@ -18,7 +19,7 @@ export class AuthService {
 
   async signIn(
     loginUser: LoginUserDto,
-  ): Promise<{ success: string; token: string }> {
+  ): Promise<{ user: User; success: boolean; token: string }> {
     const { email, password } = loginUser;
 
     const user = await this.userRepository.findOneByEmail(email);
@@ -35,7 +36,11 @@ export class AuthService {
       types: typeUser,
     };
     const token = this.jwtService.sign(userPayload);
-    return { success: 'User logged in successfully', token };
+    return {
+      user: user,
+      success: true,
+      token,
+    };
   }
 
   async signUp(createUser: CreateUserDto) {

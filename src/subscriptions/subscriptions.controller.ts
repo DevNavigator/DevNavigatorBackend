@@ -12,7 +12,12 @@ import {
 import { SubscriptionsService } from './subscriptions.service';
 import { CreateSubscriptionDto } from './dto/create-subscription.dto';
 import { UpdateSubscriptionDto } from './dto/update-subscription.dto';
-import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiOperation,
+  ApiResponse,
+  ApiTags,
+} from '@nestjs/swagger';
 import { AuthGuard } from 'src/auth/guards/AuthGuard';
 import { TypeGuard } from 'src/auth/guards/TypeGuard';
 import { UserType } from 'src/user/enum/UserType.enum';
@@ -34,6 +39,7 @@ export class SubscriptionsController {
   })
   @ApiResponse({ status: 404, description: 'User not found.' })
   @ApiResponse({ status: 409, description: 'User already subscribed.' })
+  @ApiBearerAuth()
   @UseGuards(AuthGuard)
   @Post(':userId')
   async create(
@@ -49,7 +55,8 @@ export class SubscriptionsController {
       'Este endpoint permite obtener la lista de suscripciones con sus respectivos usuarios. Para ejecutarlo se necesita tener un token valido y esta restringido para usuarios administradores. ',
   })
   @ApiResponse({ status: 200, description: 'Lista de suscripciones' })
-  @TypeUser(UserType.Admin, UserType.SuperAdmin)
+  @ApiBearerAuth()
+  @TypeUser(UserType.SuperAdmin)
   @UseGuards(AuthGuard, TypeGuard)
   @Get()
   findAll(@Query() limit = 5, @Query() page = 1) {
@@ -66,6 +73,7 @@ export class SubscriptionsController {
     description: 'Devuelve la suscripcion con su usuario.',
   })
   @ApiResponse({ status: 404, description: 'Subscription with ID not found' })
+  @ApiBearerAuth()
   @UseGuards(AuthGuard)
   @Get(':id')
   findOne(@Param('id') id: string) {
@@ -82,6 +90,7 @@ export class SubscriptionsController {
     description: 'Devuelve la suscripcion actualizada.',
   })
   @ApiResponse({ status: 404, description: `Subscription with ID not found.` })
+  @ApiBearerAuth()
   @UseGuards(AuthGuard)
   @Patch(':id')
   update(
@@ -101,6 +110,8 @@ export class SubscriptionsController {
     status: 404,
     description: `Subscription with ID not found`,
   })
+  @ApiBearerAuth()
+  @UseGuards(AuthGuard)
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.subscriptionsService.remove(id);

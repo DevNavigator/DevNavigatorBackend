@@ -3,7 +3,7 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from 'bcryptjs';
 
 import { UpdateUserDto } from './dto/update-user.dto';
 import { UserRepository } from './user.repository';
@@ -60,7 +60,7 @@ export class UserService {
     const userUpdateCurrently = await this.findOne(id);
     const userUpdate = usersUpdate(user.name, userUpdateCurrently.updated_at);
     await this.emailService.sendEmailSubscriber(
-      user.email,
+      userUpdateCurrently.email,
       `¡IMPORTANTE!, ${user.name} tus datos y/o contraseña han sido actualizado en DevNavigator`,
       userUpdate,
     );

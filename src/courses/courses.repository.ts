@@ -2,6 +2,7 @@ import {
   Injectable,
   ConflictException,
   NotFoundException,
+  BadRequestException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -43,23 +44,26 @@ export class CoursesRepository {
         const existingCourse = await this.courseRepository.findOne({
           where: { title: element.title },
         });
-
-        if (!existingCourse) {
-          const course = this.courseRepository.create({
-            title: element.title,
-            type: element.type,
-            description: element.description,
-            image_url: element.image_url,
-            difficulty: this.mapDifficulty(element.difficulty),
-            duration: element.duration,
-            instructor: element.instructor,
-            is_free: element.is_free,
-            status_courses: element.status_courses,
-          });
-
-          await this.courseRepository.save(course);
-          addedCoursesCount++; // Incrementar el contador
+        if (existingCourse) {
+          throw new BadRequestException(
+            'Ya existe un curso con el mismo titulo.',
+          );
         }
+
+        const course = this.courseRepository.create({
+          title: element.title,
+          type: element.type,
+          description: element.description,
+          image_url: element.image_url,
+          difficulty: this.mapDifficulty(element.difficulty),
+          duration: element.duration,
+          instructor: element.instructor,
+          is_free: element.is_free,
+          status_courses: element.status_courses,
+        });
+
+        await this.courseRepository.save(course);
+        addedCoursesCount++; // Incrementar el contador
       }),
     );
 

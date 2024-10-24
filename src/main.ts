@@ -5,6 +5,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { Console } from 'console';
 
 async function bootstrap() {
+  const logger = new Logger();
   const app = await NestFactory.create(AppModule);
   app.enableCors();
   app.useGlobalPipes(
@@ -28,7 +29,11 @@ async function bootstrap() {
 
   const PORT = process.env.PORT;
   await app.listen(PORT);
-  console.log('Server listening in port', PORT);
+  logger.log(
+    `Server listening in port ${PORT}`,
+    'Base de datos DevNavigator OK',
+    'DevNavigator',
+  );
 }
 
 bootstrap();
