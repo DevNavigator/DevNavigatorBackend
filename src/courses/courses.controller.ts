@@ -7,6 +7,7 @@ import {
   Param,
   Patch,
   Post,
+  Query,
   UseGuards,
 } from '@nestjs/common';
 import { CoursesService } from './courses.service';
@@ -79,8 +80,11 @@ export class CoursesController {
   })
   @ApiResponse({ status: 200, description: 'Una lista con los cursos.' })
   @Get()
-  async findAll(): Promise<Course[]> {
-    return this.coursesService.findAll();
+  async findAll(
+    @Query('limit') limit = 5,
+    @Query('page') page = 1,
+  ): Promise<Course[]> {
+    return this.coursesService.findAll(Number(page), Number(limit));
   }
 
   @ApiOperation({

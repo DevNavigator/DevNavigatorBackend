@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsBoolean, IsNotEmpty, IsUUID } from 'class-validator';
+import { IsBoolean, IsNotEmpty, IsOptional, IsUUID } from 'class-validator';
 
 export class CreateSubscriptionDto {
   @IsNotEmpty()
@@ -11,6 +11,7 @@ export class CreateSubscriptionDto {
   })
   userId: string;
 
+  @IsOptional()
   @IsBoolean()
   @ApiProperty({
     description:

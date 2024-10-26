@@ -51,6 +51,23 @@ export class Course {
   description: string;
 
   @Column({
+    type: 'simple-json', // Usa simple-json para almacenar un array de objetos.
+    nullable: true, // Puede ser opcional.
+  })
+  @ApiProperty({
+    description:
+      'Contenido del curso, que incluye un título y una URL. Se almacena como un array de objetos JSON.',
+    example: [
+      {
+        title: 'Introducción a JavaScript',
+        url: 'http://contenido-del-curso.com',
+      },
+    ],
+    isArray: true,
+  })
+  content: { title: string; url: string }[];
+
+  @Column({
     type: 'varchar',
     default:
       'https://res.cloudinary.com/dckxhsgw0/image/upload/v1729623569/lpsekc5dxicsi0mhtmqr.png',

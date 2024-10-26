@@ -15,6 +15,8 @@ import { ScheduleModule } from '@nestjs/schedule';
 import { EmailModule } from './email/email.module';
 import { NotificationsService } from './notifications/notifications.service';
 import { NotificationsModule } from './notifications/notifications.module';
+import { CoursesService } from './courses/courses.service';
+import { log } from 'console';
 
 @Module({
   imports: [
@@ -43,6 +45,11 @@ import { NotificationsModule } from './notifications/notifications.module';
     NotificationsModule,
   ],
   controllers: [AppController],
-  providers: [AppService, NotificationsService],
+  providers: [AppService, NotificationsService, CoursesService],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private readonly coursesService: CoursesService) {}
+  async onModuleInit() {
+    await this.coursesService.addCourses();
+  }
+}

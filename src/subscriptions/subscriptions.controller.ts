@@ -42,11 +42,8 @@ export class SubscriptionsController {
   @ApiBearerAuth()
   @UseGuards(AuthGuard)
   @Post(':userId')
-  async create(
-    @Param('userId') userId: string,
-    @Body() createSubscriptionDto: CreateSubscriptionDto,
-  ) {
-    return this.subscriptionsService.create(userId, createSubscriptionDto);
+  async create(@Body() createSubscriptionDto: CreateSubscriptionDto) {
+    return this.subscriptionsService.create(createSubscriptionDto);
   }
 
   @ApiOperation({

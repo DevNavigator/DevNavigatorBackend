@@ -12,7 +12,7 @@ import { Course } from 'src/courses/entities/course.entity';
 import { Subscription } from 'src/subscriptions/entities/subscription.entity';
 import { ApiProperty } from '@nestjs/swagger';
 
-@Entity({ name: 'User' })
+@Entity({ name: 'user' })
 export class User {
   @PrimaryGeneratedColumn('uuid')
   @ApiProperty({

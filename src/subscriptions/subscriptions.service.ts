@@ -18,12 +18,10 @@ export class SubscriptionsService {
   ) {}
 
   async create(
-    userId: string,
     createSubscriptionDto: CreateSubscriptionDto,
   ): Promise<Subscription> {
     // Cambiar el estado a activo
     createSubscriptionDto.status_sub = true;
-    createSubscriptionDto.userId = userId;
     const subs = await this.subscriptionRepository.createSubscription(
       createSubscriptionDto,
     );
