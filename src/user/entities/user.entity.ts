@@ -12,7 +12,7 @@ import { Course } from 'src/courses/entities/course.entity';
 import { Subscription } from 'src/subscriptions/entities/subscription.entity';
 import { ApiProperty } from '@nestjs/swagger';
 
-@Entity({ name: 'user' })
+@Entity({ name: 'User' })
 export class User {
   @PrimaryGeneratedColumn('uuid')
   @ApiProperty({
@@ -131,9 +131,10 @@ export class User {
   @OneToOne(() => Subscription, (subscription) => subscription.id, {
     cascade: true,
   })
+  @JoinColumn()
   @ApiProperty({
     type: Subscription,
     description: 'Suscripción asociada al usuario.',
   })
-  Subscription: Subscription[];
+  Subscription: Subscription;
 }

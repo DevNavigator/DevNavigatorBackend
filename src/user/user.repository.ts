@@ -19,12 +19,18 @@ export class UserRepository {
   }
 
   async findOne(id: string): Promise<User> {
-    const user = await this.userRepository.findOneBy({ id });
+    const user = await this.userRepository.findOne({
+      where: { id },
+      relations: ['Subscription'],
+    });
     return user;
   }
 
   async findOneByEmail(email: string): Promise<User | null> {
-    const user = await this.userRepository.findOne({ where: { email } });
+    const user = await this.userRepository.findOne({
+      where: { email },
+      relations: ['Subscription'],
+    });
     return user;
   }
 
