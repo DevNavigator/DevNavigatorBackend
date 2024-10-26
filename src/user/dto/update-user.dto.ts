@@ -7,6 +7,7 @@ import {
   Matches,
   MaxLength,
   MinLength,
+  IsBoolean,
 } from 'class-validator';
 
 export class UpdateUserDto {
@@ -98,4 +99,13 @@ export class UpdateUserDto {
     example: 'url_de_imagen.jpg',
   })
   imgProfile?: string;
+
+  @IsOptional()
+  @IsBoolean()
+  @ApiProperty({
+    description:
+      'Cambiar tipo de usuario (Darlo/darse de baja). Este campo es opcional.',
+    example: 'false',
+  })
+  statusUser?: boolean;
 }

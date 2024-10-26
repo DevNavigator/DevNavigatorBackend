@@ -1,6 +1,7 @@
 import {
+  IsBoolean,
+  isBoolean,
   IsEnum,
-  IsNotEmpty,
   IsOptional,
   IsString,
   IsStrongPassword,
@@ -21,6 +22,7 @@ export class UpdateBySuperAdmin {
   })
   name?: string;
 
+  @IsOptional()
   @IsStrongPassword({
     minLowercase: 1,
     minUppercase: 1,
@@ -76,4 +78,12 @@ export class UpdateBySuperAdmin {
     enumName: 'UserType',
   })
   typeUser?: UserType;
+
+  @IsOptional()
+  @IsBoolean()
+  @ApiProperty({
+    description: 'Estado del usuario (activo/inactivo).',
+    example: true,
+  })
+  statusUser?: boolean;
 }

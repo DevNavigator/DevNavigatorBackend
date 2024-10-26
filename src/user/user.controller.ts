@@ -8,6 +8,7 @@ import {
   UseGuards,
   Query,
   HttpCode,
+  Request,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -92,8 +93,9 @@ export class UserController {
   update(
     @Param('id', ParseUUIDPipe) id: string,
     @Body() updateUserDto: UpdateUserDto,
+    @Request() req,
   ) {
-    return this.userService.update(id, updateUserDto);
+    return this.userService.update(id, updateUserDto, req.user.id);
   }
 
   //updateToAdmin
@@ -121,7 +123,8 @@ export class UserController {
   updateToAdmin(
     @Param('id', ParseUUIDPipe) id: string,
     @Body() updateByAdmin: UpdateBySuperAdmin,
+    @Request() req,
   ) {
-    return this.userService.updateAdmin(id, updateByAdmin);
+    return this.userService.updateAdmin(id, updateByAdmin, req.user.id);
   }
 }
