@@ -41,102 +41,36 @@ export class UserService {
     return user;
   }
 
-  async update(id: string, updateUserDto: UpdateUserDto, requesterId: string) {
+  async updateUserInfo(
+    id: string,
+    updateUserDto: UpdateUserDto,
+    requesterId: string,
+  ) {
     const user = await this.findOne(id);
     const requester = await this.findOne(requesterId);
 
-    // Verificar si el solicitante es un usuario normal o suscrito
-    if ([UserType.User, UserType.UserSubscribe].includes(requester.typeUser)) {
-      // No pueden modificar a admins o superadmins
-      if ([UserType.Admin, UserType.SuperAdmin].includes(user.typeUser)) {
+    // Verificar permisos
+    if ([UserType.User, UserType.UserSubscribe].includes(requester.userType)) {
+      if ([UserType.Admin, UserType.SuperAdmin].includes(user.userType)) {
         throw new ForbiddenException(
           'No tienes permisos para modificar este usuario.',
         );
       }
-
-      // Permitir que los usuarios normales se den de baja a sí mismos
-      if (requesterId === id && updateUserDto.statusUser === false) {
-        await this.userRepository.update(id, { statusUser: false });
-        return {
-          message: 'Tu cuenta ha sido desactivada.',
-          user: await this.findOne(id),
-        };
-      }
     }
 
-    // Verificar si el solicitante es admin
-    if (requester.typeUser === UserType.Admin) {
-      // No pueden modificar a superadmins
-      if (user.typeUser === UserType.SuperAdmin) {
-        throw new ForbiddenException('No puedes modificar a un superAdmin.');
-      }
-
-      // Permitir que el admin dé de baja o active a usuarios normales
-      if ([UserType.User, UserType.UserSubscribe].includes(user.typeUser)) {
-        if (updateUserDto.statusUser !== undefined) {
-          await this.userRepository.update(id, {
-            statusUser: updateUserDto.statusUser,
-          });
-          const action = updateUserDto.statusUser ? 'activado' : 'desactivado';
-          return {
-            message: `El usuario ha sido ${action}.`,
-            user: await this.findOne(id),
-          };
-        }
-      }
-
-      // El admin no puede darse de baja a sí mismo
-      if (requesterId === id) {
-        throw new ForbiddenException('No puedes darte de baja a ti mismo.');
-      }
-    }
-
-    // Verificar si el solicitante es superadmin
-    if (requester.typeUser === UserType.SuperAdmin) {
-      // El superadmin puede dar de baja o activar a cualquier usuario
-      if (updateUserDto.statusUser !== undefined) {
-        // El superadmin no puede darse de baja a sí mismo
-        if (requesterId === id && updateUserDto.statusUser === false) {
-          throw new ForbiddenException('No puedes darte de baja a ti mismo.');
-        }
-        await this.userRepository.update(id, {
-          statusUser: updateUserDto.statusUser,
-        });
-        const action = updateUserDto.statusUser ? 'activado' : 'desactivado';
-        return {
-          message: `El usuario ha sido ${action}.`,
-          user: await this.findOne(id),
-        };
-      }
-
-      // El superadmin no puede darse de baja a sí mismo
-      if (requesterId === id) {
-        throw new ForbiddenException('No puedes darte de baja a ti mismo.');
-      }
-    }
-
-    // Manejo de la actualización de contraseña
-    if (updateUserDto.password) {
-      const isPasswordValid = await bcrypt.compare(
-        updateUserDto.currentPassword,
-        user.password,
-      );
-
-      if (!isPasswordValid) {
-        throw new BadRequestException('Contraseña actual incorrecta.');
-      }
-      const passwordHashed = await bcrypt.hash(updateUserDto.password, 10);
-      if (!passwordHashed) throw new BadRequestException('Error interno.');
-      updateUserDto.password = passwordHashed;
-    }
-
+    // Actualizar la información del usuario
     const { currentPassword, confirmPassword, ...resUser } = updateUserDto;
     await this.userRepository.update(id, resUser);
+
+    // Enviar notificación por correo
     const userUpdateCurrently = await this.findOne(id);
-    const userUpdate = usersUpdate(user.name, userUpdateCurrently.updated_at);
+    const userUpdate = usersUpdate(
+      userUpdateCurrently.name,
+      userUpdateCurrently.updated_at,
+    );
     await this.emailService.sendEmailSubscriber(
       userUpdateCurrently.email,
-      `¡IMPORTANTE!, ${user.name} tus datos y/o contraseña han sido actualizados en DevNavigator`,
+      `¡IMPORTANTE!, ${userUpdateCurrently.name} tus datos han sido actualizados en DevNavigator`,
       userUpdate,
     );
 
@@ -146,16 +80,65 @@ export class UserService {
     };
   }
 
+  async changeUserStatus(id: string, status: boolean, requesterId: string) {
+    const requester = await this.findOne(requesterId);
+
+    // Verificar permisos
+    if (
+      requester.userType === UserType.Admin ||
+      requester.userType === UserType.SuperAdmin
+    ) {
+      await this.userRepository.update(id, { statusUser: status });
+      return {
+        message: `El usuario ha sido ${status ? 'activado' : 'desactivado'}.`,
+        user: await this.findOne(id),
+      };
+    }
+
+    throw new ForbiddenException(
+      'No tienes permisos para cambiar el estado del usuario.',
+    );
+  }
+
+  async updateUserType(
+    id: string,
+    updateUserDto: UpdateUserDto,
+    requesterId: string,
+  ) {
+    const requester = await this.findOne(requesterId);
+
+    if (requester.userType !== UserType.SuperAdmin) {
+      throw new ForbiddenException(
+        'No tienes permisos para realizar esta acción.',
+      );
+    }
+
+    const { userType } = updateUserDto;
+
+    if (userType === undefined) {
+      throw new BadRequestException(
+        'El tipo de usuario no se ha proporcionado.',
+      );
+    }
+
+    await this.userRepository.update(id, { userType });
+
+    return {
+      message: 'El tipo de usuario ha sido actualizado.',
+      user: await this.findOne(id),
+    };
+  }
+
   async updateAdmin(
     id: string,
-    updateUser: Partial<UpdateBySuperAdmin>, // Cambiamos a Partial para permitir campos opcionales
+    updateUser: Partial<UpdateBySuperAdmin>,
     requesterId: string,
   ) {
     const requester = await this.findOne(requesterId);
     const userToUpdate = await this.findOne(id);
 
     // Verificar si el solicitante es SuperAdmin
-    if (requester.typeUser !== UserType.SuperAdmin) {
+    if (requester.userType !== UserType.SuperAdmin) {
       throw new ForbiddenException(
         'No tienes permisos para realizar esta acción.',
       );
@@ -173,12 +156,12 @@ export class UserService {
       updateData.statusUser = updateUser.statusUser;
     }
 
-    // Actualizar el typeUser si se proporciona y es válido
-    if (updateUser.typeUser) {
-      if (!Object.values(UserType).includes(updateUser.typeUser)) {
+    // Actualizar el userType si se proporciona y es válido
+    if (updateUser.userType) {
+      if (!Object.values(UserType).includes(updateUser.userType)) {
         throw new BadRequestException('Tipo de usuario no válido.');
       }
-      updateData.typeUser = updateUser.typeUser;
+      updateData.userType = updateUser.userType;
     }
 
     // Manejo de la actualización de contraseña
@@ -193,5 +176,42 @@ export class UserService {
 
     // Retornar el usuario actualizado
     return await this.findOne(id);
+  }
+
+  async changePassword(
+    id: string,
+    updateUserDto: UpdateUserDto,
+    requesterId: string,
+  ) {
+    const user = await this.findOne(id);
+
+    // Verifica que se proporcione la contraseña actual y la nueva
+    if (!updateUserDto.currentPassword || !updateUserDto.password) {
+      throw new BadRequestException(
+        'Se requiere la contraseña actual y la nueva contraseña.',
+      );
+    }
+
+    // Verifica la contraseña actual
+    const isMatch = await bcrypt.compare(
+      updateUserDto.currentPassword,
+      user.password,
+    );
+    if (!isMatch) {
+      throw new BadRequestException('La contraseña actual es incorrecta.');
+    }
+
+    // Hashea la nueva contraseña
+    const hashedPassword = await bcrypt.hash(updateUserDto.password, 10);
+    if (!hashedPassword) {
+      throw new BadRequestException('Error al hashear la nueva contraseña.');
+    }
+
+    // Actualiza el usuario con la nueva contraseña
+    await this.userRepository.update(id, { password: hashedPassword });
+
+    return {
+      message: 'Contraseña cambiada exitosamente.',
+    };
   }
 }

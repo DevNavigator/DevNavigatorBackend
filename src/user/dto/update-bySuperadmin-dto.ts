@@ -77,7 +77,7 @@ export class UpdateBySuperAdmin {
     example: UserType.Admin,
     enumName: 'UserType',
   })
-  typeUser?: UserType;
+  userType?: UserType;
 
   @IsOptional()
   @IsBoolean()

@@ -29,11 +29,11 @@ export class AuthService {
     const result = await bcrypt.compare(password, user.password);
     if (!result)
       throw new BadRequestException('Usuario y/o contraseña incorrecta.');
-    const typeUser: UserType = user.typeUser;
+    const userType: UserType = user.userType;
     const userPayload = {
       id: user.id,
       email: user.email,
-      types: typeUser,
+      types: userType,
     };
     const token = this.jwtService.sign(userPayload);
     return {

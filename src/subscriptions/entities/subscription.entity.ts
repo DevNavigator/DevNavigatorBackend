@@ -13,7 +13,7 @@ export class Subscription {
   @PrimaryGeneratedColumn('uuid')
   @ApiProperty({
     description:
-      'ID de la suscripcion. Este valor es autogenerado por la base de datos.',
+      'ID de la suscripción. Este valor es autogenerado por la base de datos.',
     example: '6e145d99-22c6-468f-abc5-7d7b8f3ad576',
   })
   id: string;
@@ -21,15 +21,15 @@ export class Subscription {
   @OneToOne(() => User, (user) => user.Subscription)
   @JoinColumn()
   @ApiProperty({
-    description: 'Usuario vinculado a la suscripcion.',
-    example: User,
+    description: 'Usuario vinculado a la suscripción.',
+    type: () => User,
   })
   User: User;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   @ApiProperty({
     type: String,
-    description: 'Fecha y hora de la creacion de la suscripcion.',
+    description: 'Fecha y hora de la creación de la suscripción.',
     example: '2024-01-01T00:00:00.000Z',
   })
   start_sub: Date;
@@ -37,7 +37,7 @@ export class Subscription {
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   @ApiProperty({
     type: String,
-    description: 'Fecha y hora de la finalizacion de la suscripcion.',
+    description: 'Fecha y hora de la finalización de la suscripción.',
     example: '2024-01-01T00:00:00.000Z',
   })
   end_sub: Date;
@@ -47,8 +47,7 @@ export class Subscription {
     default: false,
   })
   @ApiProperty({
-    description:
-      'Indica si la suscripcion está activa o dada de baja (soft delete).',
+    description: 'Indica si la suscripción está activa o dada de baja.',
     example: true,
   })
   status_sub: boolean;

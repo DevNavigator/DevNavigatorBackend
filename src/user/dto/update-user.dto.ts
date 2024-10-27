@@ -8,7 +8,9 @@ import {
   MaxLength,
   MinLength,
   IsBoolean,
+  IsEnum,
 } from 'class-validator';
+import { UserType } from '../enum/UserType.enum';
 
 export class UpdateUserDto {
   @IsOptional()
@@ -108,4 +110,13 @@ export class UpdateUserDto {
     example: 'false',
   })
   statusUser?: boolean;
+
+  @IsOptional()
+  @IsEnum(UserType)
+  @ApiProperty({
+    description:
+      'Cambiar tipo de usuario (Darlo/darse de baja). Este campo es opcional.',
+    example: 'ADMIN',
+  })
+  userType?: UserType;
 }

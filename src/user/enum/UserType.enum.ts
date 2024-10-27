@@ -1,6 +1,6 @@
 export enum UserType {
-  User = 'user',
-  UserSubscribe = 'userSubscribe',
-  Admin = 'admin',
-  SuperAdmin = 'superAdmin',
+  User = 'USER',
+  UserSubscribe = 'USER_SUBSCRIBE',
+  Admin = 'ADMIN',
+  SuperAdmin = 'SUPER_ADMIN',
 }
