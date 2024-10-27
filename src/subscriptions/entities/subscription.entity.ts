@@ -23,6 +23,7 @@ export class Subscription {
     description: 'Usuario vinculado a la suscripción.',
     type: () => User,
   })
+  @JoinColumn()
   User: User;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })

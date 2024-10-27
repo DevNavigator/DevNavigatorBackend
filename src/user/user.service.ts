@@ -82,22 +82,11 @@ export class UserService {
 
   async changeUserStatus(id: string, status: boolean, requesterId: string) {
     const requester = await this.findOne(requesterId);
-
-    // Verificar permisos
-    if (
-      requester.userType === UserType.Admin ||
-      requester.userType === UserType.SuperAdmin
-    ) {
-      await this.userRepository.update(id, { statusUser: status });
-      return {
-        message: `El usuario ha sido ${status ? 'activado' : 'desactivado'}.`,
-        user: await this.findOne(id),
-      };
-    }
-
-    throw new ForbiddenException(
-      'No tienes permisos para cambiar el estado del usuario.',
-    );
+    await this.userRepository.update(id, { statusUser: status });
+    return {
+      message: `El usuario ha sido ${status ? 'activado' : 'desactivado'}.`,
+      user: await this.findOne(id),
+    };
   }
 
   async updateUserType(

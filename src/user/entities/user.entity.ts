@@ -1,6 +1,7 @@
 import {
   Column,
   Entity,
+  JoinColumn,
   JoinTable,
   ManyToMany,
   OneToOne,
@@ -121,7 +122,6 @@ export class User {
   @OneToOne(() => Subscription, (subscription) => subscription.User, {
     cascade: true,
   })
-  @JoinColumn()
   @ApiProperty({
     type: Subscription,
     description: 'Suscripción asociada al usuario.',
