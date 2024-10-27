@@ -19,7 +19,6 @@ export class Subscription {
   id: string;
 
   @OneToOne(() => User, (user) => user.Subscription)
-  @JoinColumn()
   @ApiProperty({
     description: 'Usuario vinculado a la suscripción.',
     type: () => User,
