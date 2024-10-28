@@ -1,5 +1,12 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsBoolean, IsNotEmpty, IsOptional, IsUUID } from 'class-validator';
+import {
+  IsBoolean,
+  IsEnum,
+  IsNotEmpty,
+  IsOptional,
+  IsUUID,
+} from 'class-validator';
+import { SubsType } from 'src/SuscriptionType/enum/SubsType.enum';
 
 export class CreateSubscriptionDto {
   @IsNotEmpty()
@@ -19,4 +26,11 @@ export class CreateSubscriptionDto {
     example: true,
   })
   status_sub?: boolean;
+
+  @ApiProperty({
+    description: 'Tipo de suscripción.',
+    enum: SubsType,
+  })
+  @IsEnum(SubsType)
+  typeSubscription: SubsType;
 }

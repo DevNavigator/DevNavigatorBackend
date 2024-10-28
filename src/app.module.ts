@@ -17,6 +17,9 @@ import { NotificationsService } from './notifications/notifications.service';
 import { NotificationsModule } from './notifications/notifications.module';
 import { CoursesService } from './courses/courses.service';
 import { log } from 'console';
+import { SubscriptionTypeModule } from './SuscriptionType/subscriptionType.module';
+import { SubscriptionTypeService } from './SuscriptionType/subscriptionType.service';
+import { SubscriptionTypeRepository } from './SuscriptionType/subscriptionType.repository';
 
 @Module({
   imports: [
@@ -43,13 +46,23 @@ import { log } from 'console';
     AuthModule,
     FileUploadModule,
     NotificationsModule,
+    SubscriptionTypeModule,
   ],
   controllers: [AppController],
-  providers: [AppService, NotificationsService, CoursesService],
+  providers: [
+    AppService,
+    NotificationsService,
+    CoursesService,
+    SubscriptionTypeService,
+  ],
 })
 export class AppModule {
-  constructor(private readonly coursesService: CoursesService) {}
+  constructor(
+    private readonly coursesService: CoursesService,
+    private readonly subscriptionType: SubscriptionTypeService,
+  ) {}
   async onModuleInit() {
     await this.coursesService.addCourses();
+    await this.subscriptionType.seeder();
   }
 }

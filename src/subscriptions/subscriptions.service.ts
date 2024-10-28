@@ -9,6 +9,7 @@ import { SubscriptionRepository } from './subscriptions.repository';
 import { Subscription } from './entities/subscription.entity';
 import { EmailService } from 'src/email/email.service';
 import { userSubscriber } from 'src/email/templates/userSubscribe.template';
+import { SubsType } from 'src/SuscriptionType/enum/SubsType.enum';
 
 @Injectable()
 export class SubscriptionsService {

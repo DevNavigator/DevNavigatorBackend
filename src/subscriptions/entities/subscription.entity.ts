@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { SubscriptionType } from 'src/SuscriptionType/entities/subscriptionType.entity';
 import { User } from 'src/user/entities/user.entity';
 import {
   Column,
@@ -51,4 +52,12 @@ export class Subscription {
     example: true,
   })
   status_sub: boolean;
+
+  @OneToOne(() => SubscriptionType, { cascade: true })
+  @JoinColumn()
+  @ApiProperty({
+    description: 'Tipos de suscripciónes asociadas.',
+    type: SubscriptionType,
+  })
+  subscriptionType: SubscriptionType; // Relación con la nueva entidad
 }
