@@ -21,7 +21,7 @@ export class UserRepository {
   async findOne(id: string): Promise<User> {
     const user = await this.userRepository.findOne({
       where: { id },
-      relations: ['Subscription'],
+      relations: ['Subscription', 'Courses'],
     });
     return user;
   }
