@@ -148,7 +148,7 @@ export class CoursesController {
     return this.coursesService.update(id, updateCourseDto);
   }
 
-  @UseGuards(AuthGuard)
+  /* @UseGuards(AuthGuard) */
   @Post('link-user')
   async linkUsertoCourse(@Body() registration: RegistrationDto) {
     return this.coursesService.linkUserToCourse(registration);
