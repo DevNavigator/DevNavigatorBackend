@@ -1,0 +1,720 @@
+[
+  {
+    "title": "Curso de Java",
+    "type": "Backend",
+    "description": "Este curso de Java Avanzado está diseñado para aquellos que ya tienen una base en programación Java y desean profundizar en temas más avanzados. A través de este curso, aprenderás a trabajar con conceptos avanzados como programación concurrente, Streams y API funcionales, gestión de errores, y técnicas de optimización y patrones de diseño. Con un enfoque en aplicaciones reales y técnicas avanzadas de Java, este curso te ayudará a convertirte en un desarrollador Java altamente competente.",
+    "difficulty": "dificil",
+    "requirements": "Requiere conocimientos previos.",
+    "format": "100% online",
+    "includes_exercises": true,
+    "objetives": "El objetivo de este curso es proporcionar a los estudiantes una comprensión avanzada de Java, equipándolos con las habilidades necesarias para desarrollar aplicaciones robustas y eficientes. Los estudiantes aprenderán a utilizar técnicas de programación avanzada, realizarán operaciones complejas en Java y optimizarán su código para maximizar el rendimiento de las aplicaciones.",
+    "learn": "Al completar este curso, los estudiantes habrán adquirido un conocimiento profundo de Java avanzado. Podrán manejar excepciones y errores de manera eficaz, comprendiendo cómo afectan el flujo de un programa y aplicando soluciones robustas para su control. Además, dominarán la programación funcional y la manipulación de Streams, aprendiendo a realizar operaciones complejas de manera óptima y efectiva. Con una comprensión completa del manejo de hilos y la concurrencia en Java, los estudiantes estarán capacitados para desarrollar aplicaciones que optimicen el rendimiento a través del uso adecuado de recursos del sistema. También adquirirán la habilidad de aplicar patrones de diseño reconocidos, como Singleton, Factory y Observer, que permiten crear código más modular, flexible y mantenible. Por último, los estudiantes estarán preparados para implementar aplicaciones complejas en Java, con un enfoque en la optimización de la memoria y el rendimiento, siguiendo buenas prácticas y estándares avanzados de programación.",
+    "content": [
+      {
+        "title": "1-Curso Java Avanzado - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=3BMrpuzDWes"
+      },
+      {
+        "title": "1.2-Curso Java Avanzado - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=tRD4sa_HEys"
+      },
+      {
+        "title": "2-Curso Java Avanzado - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=Y_8PYS6W1Ng"
+      },
+      {
+        "title": "3-Curso Java Avanzado - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=Uf3MLQIIcgI"
+      },
+      {
+        "title": "4-Curso Java Avanzado - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=9j05x-jBl_M"
+      },
+      {
+        "title": "5-Curso Java Avanzado - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=njO-G5Syf0I"
+      },
+      {
+        "title": "6-Curso Java Avanzado - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=pN1jioJCmjg"
+      },
+      {
+        "title": "7-Curso Java Avanzado - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=gtDbqWDualM"
+      },
+      {
+        "title": "8-Curso Java Avanzado - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=JKRSOm7Cijk"
+      },
+      {
+        "title": "9-Curso Java Avanzado - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=UmeL7e9SJdc"
+      },
+      {
+        "title": "10-Curso Java Avanzado - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=iyNEnFzUqJ4"
+      }
+    ],
+    "questions": [
+      {
+        "question": "¿Qué es la programación concurrente en Java?",
+        "options": [
+          "Es la ejecución de múltiples programas de Java al mismo tiempo",
+          "Es el uso de múltiples hilos para ejecutar tareas en paralelo",
+          "Es una técnica para mejorar la seguridad en Java",
+          "Es una manera de optimizar la gestión de memoria"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Cuál es el propósito de un Stream en Java?",
+        "options": [
+          "Para procesar datos de manera secuencial y funcional",
+          "Para crear conexiones de red",
+          "Para gestionar excepciones en el código",
+          "Para ejecutar múltiples hilos de manera simultánea"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué ventaja ofrece la programación funcional en Java?",
+        "options": [
+          "Facilita el uso de clases abstractas",
+          "Reduce la memoria utilizada por las variables locales",
+          "Elimina la necesidad de crear métodos en las clases",
+          "Permite escribir código con menos errores al evitar el estado mutable"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "¿Cuál de los siguientes es un patrón de diseño comúnmente usado en Java?",
+        "options": ["Observer", "ArrayList", "Lambda", "IntStream"],
+        "correct": 0
+      },
+      {
+        "question": "¿Cuál es la función de la interfaz Callable en Java?",
+        "options": [
+          "Crear una clase que maneje múltiples hilos",
+          "Permitir que un hilo devuelva un valor o lance una excepción",
+          "Gestionar la ejecución de hilos en segundo plano",
+          "Simplificar el uso de Streams en Java"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Para qué se utiliza la palabra clave 'synchronized' en Java?",
+        "options": [
+          "Para detener la ejecución de un hilo",
+          "Para restringir el acceso concurrente a un bloque de código o método",
+          "Para crear un Stream a partir de una colección",
+          "Para optimizar el rendimiento de una aplicación"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Qué es el patrón Singleton en Java?",
+        "options": [
+          "Un patrón que permite crear múltiples instancias de una clase",
+          "Un patrón que asegura que una clase solo tenga una instancia",
+          "Un patrón de diseño para manejar hilos concurrentes",
+          "Un patrón que facilita la creación de excepciones personalizadas"
+        ],
+        "correct": 1
+      }
+    ],
+    "image_url": "https://logos-world.net/wp-content/uploads/2022/07/Java-Logo.jpg",
+    "duration": 7,
+    "instructor": "Luis Martínez",
+    "is_free": false,
+    "status_courses": true
+  },
+  {
+    "title": "Curso de PHP",
+    "type": "Backend",
+    "description": "Este curso completo de PHP está diseñado para llevarte desde los conceptos básicos hasta técnicas avanzadas en el desarrollo backend. A lo largo del curso, aprenderás a utilizar PHP para construir aplicaciones web dinámicas y robustas. Exploraremos la estructura del lenguaje, el uso de variables, control de flujo, funciones, programación orientada a objetos, manejo de errores y más. Además, se incluye un cuestionario práctico en cada clase para ayudarte a afianzar tus conocimientos y desarrollar confianza en la escritura de código eficiente y escalable en PHP.",
+    "difficulty": "intermedio",
+    "requirements": "No requiere conocimientos previos",
+    "format": "100% online",
+    "includes_exercises": true,
+    "objetives": "Al finalizar este curso, serás capaz de comprender y aplicar los fundamentos y conceptos avanzados de PHP en el desarrollo de aplicaciones web backend. Aprenderás a crear código claro y efectivo en PHP, utilizando buenas prácticas y organizando tus proyectos de manera profesional. Podrás trabajar con estructuras de control, manejar datos a través de arrays, funciones y clases, y utilizar PHP para gestionar datos en bases de datos y ejecutar operaciones del lado del servidor. Este curso te prepara para continuar profundizando en el desarrollo web o integrarte a proyectos de desarrollo de aplicaciones web con PHP.",
+    "learn": "En este curso, aprenderás desde los fundamentos de PHP hasta los conceptos avanzados, permitiéndote construir aplicaciones web dinámicas. Empezaremos con una introducción al lenguaje PHP y sus usos en el desarrollo web. Verás cómo utilizar variables y constantes para almacenar y manipular datos. Aprenderás a aplicar operadores y estructuras de control para el flujo de la aplicación y a utilizar arrays para trabajar con conjuntos de datos. Profundizaremos en funciones, programación orientada a objetos y el manejo de errores y excepciones, esenciales para el desarrollo profesional. A lo largo del curso, trabajarás en ejercicios prácticos que te permitirán aplicar los conceptos aprendidos y resolver problemas reales de programación. Al terminar, estarás preparado para iniciar proyectos completos de backend con PHP o incorporarte a equipos de desarrollo web utilizando PHP en el stack tecnológico.",
+    "content": [
+      {
+        "title": "1-Introducción al curso en PHP - DevNavigator.",
+        "url": "https://www.youtube.com/embed/qUei-wOdbnw"
+      },
+      {
+        "title": "2-Tipos de Variables y Constantes en PHP - DevNavigator.",
+        "url": "https://www.youtube.com/embed/cV_dFN9UFao"
+      },
+      {
+        "title": "3-Operadores en PHP - DevNavigator.",
+        "url": "https://www.youtube.com/embed/jQ2ph0eP4D4"
+      },
+      {
+        "title": "4.1-Estructuras de control en PHP - DevNavigator.",
+        "url": "https://www.youtube.com/embed/y3UpXb2liI0"
+      },
+      {
+        "title": "4.2-Estructuras de control en PHP - DevNavigator.",
+        "url": "https://www.youtube.com/embed/nVm5MbmUlnA"
+      },
+      {
+        "title": "5-Arrays en PHP - DevNavigator.",
+        "url": "https://www.youtube.com/embed/QAm2A3ALB1o"
+      },
+      {
+        "title": "6-Funciones en PHP - DevNavigator.",
+        "url": "https://www.youtube.com/embed/Gc6hDHsSdSI"
+      },
+      {
+        "title": "7-Funciones, clases y objetos en PHP - DevNavigator.",
+        "url": "https://www.youtube.com/embed/oZep0vGtCxY"
+      },
+      {
+        "title": "8-Funciones, clases y objetos en PHP - DevNavigator.",
+        "url": "https://www.youtube.com/embed/mbE1gJH_HW4"
+      },
+      {
+        "title": "9-Errores y excepciones en PHP - DevNavigator.",
+        "url": "https://www.youtube.com/embed/lqsVVH5Jb3o"
+      }
+    ],
+    "questions": [
+      {
+        "question": "¿Qué es PHP?",
+        "options": [
+          "Un sistema operativo",
+          "Un editor de texto",
+          "Un lenguaje de programación",
+          "Una base de datos"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "¿Qué se puede hacer con PHP?",
+        "options": [
+          "Desarrollar aplicaciones web",
+          "Crear videojuegos",
+          "Diseñar gráficos",
+          "Ninguna de las anteriores"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Cómo se ejecuta un script PHP?",
+        "options": [
+          "En el navegador",
+          "En el servidor",
+          "En la base de datos",
+          "Ninguna de las anteriores"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Qué es un framework?",
+        "options": [
+          "Conjunto de herramientas",
+          "Un lenguaje de programación",
+          "Un tipo de base de datos",
+          "Ninguna de las anteriores"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿PHP es un lenguaje compilado o interpretado?",
+        "options": ["Compilado", "Interpretado", "Ambos", "Ninguno"],
+        "correct": 1
+      }
+    ],
+    "image_url": "https://banner2.cleanpng.com/20180904/xhu/kisspng-logo-image-computer-icons-php-portable-network-gra-william-davies-meng-mongodb-1713944344684.webp",
+    "duration": 7,
+    "instructor": "Luis Martínez",
+    "is_free": false,
+    "status_courses": true
+  },
+  {
+    "title": "Introducción a la programación",
+    "type": "Introducción",
+    "description": "Este curso de introducción a la programación está diseñado para personas que desean comenzar su viaje en el mundo de la tecnología. Aquí aprenderás los conceptos básicos de la programación y desarrollarás habilidades fundamentales que te permitirán entender cómo funcionan los programas y aplicaciones que utilizamos a diario. A través de una serie de lecciones prácticas y teóricas, descubrirás el pensamiento lógico detrás de la programación, cómo estructurar un código y cómo resolver problemas de manera efectiva. Este curso es perfecto para quienes no tienen experiencia previa, y te proporcionará una sólida base para avanzar a niveles más complejos.",
+    "difficulty": "facil",
+    "image": "",
+    "requirements": "No se requieren conocimientos previos.",
+    "format": "100% online",
+    "includes_exercises": true,
+    "objetives": "Este curso tiene como objetivo enseñar los fundamentos de la programación desde cero. A través de ejemplos y ejercicios prácticos, aprenderás a pensar de manera lógica y estructurada, lo cual es esencial para la resolución de problemas en programación. Al finalizar el curso, serás capaz de escribir código simple y comprender cómo se estructuran los programas, lo que te permitirá continuar tu camino en el aprendizaje de lenguajes de programación más avanzados. También aprenderás buenas prácticas de programación, que te ayudarán a desarrollar proyectos de manera ordenada y eficiente.",
+    "learn": "En este curso aprenderás los conceptos básicos de la programación, que incluyen variables, operadores, estructuras de control y la lógica detrás de la toma de decisiones en el código. Empezarás a comprender cómo estructurar un programa y cuáles son las mejores prácticas para escribir código claro y eficiente. Además, verás cómo identificar y corregir errores comunes y desarrollarás habilidades de pensamiento lógico para resolver problemas paso a paso. Este curso te proporcionará una base sólida para abordar proyectos de programación de mayor complejidad y avanzar en tu carrera de programación o en otras áreas de la tecnología.",
+    "content": [
+      {
+        "title": "1-Historia de la programación - DevNavigator.",
+        "url": "https://www.youtube.com/watch?v=P_7QAaWgvF8"
+      },
+      {
+        "title": "2-Tipos de lenguajes de programación - DevNavigator.",
+        "url": "https://www.youtube.com/watch?v=c0Ij2ILdeW4"
+      },
+      {
+        "title": "3-Aplicaciones cliente servidor - DevNavigator.",
+        "url": "https://www.youtube.com/watch?v=VPaXejWc_Ak"
+      },
+      {
+        "title": "4-Memoria y variables - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=1dxcz8CY_c8"
+      },
+      {
+        "title": "5-Repaso memoria y tipos de datos de texto - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=KPum7L7sANk"
+      },
+      {
+        "title": "6-Tipos de datos numéricos - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=cHQSUauC69s"
+      },
+      {
+        "title": "7-Tipos de datos booleanos y repaso tipos de datos simples - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=v6iMDj5c-A4"
+      },
+      {
+        "title": "8-Tipos de datos complejos arrays - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=dcBKs2XEFo0"
+      },
+      {
+        "title": "9-Tipos de datos tuplas y arrays asociativos - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=RAc1mnhcHsY"
+      },
+      {
+        "title": "10-Tipos de datos complejos objetos - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=phgkjzGgiIw"
+      }
+    ],
+    "questions": [
+      {
+        "question": "¿Qué es la programación?",
+        "options": [
+          "El proceso de resolver problemas matemáticos",
+          "El acto de escribir código para dar instrucciones a una computadora",
+          "Una técnica para diseñar gráficos",
+          "Una herramienta de edición de texto"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Cuál de los siguientes es un lenguaje de programación?",
+        "options": ["Microsoft Word", "JavaScript", "Adobe Photoshop", "HTML"],
+        "correct": 1
+      },
+      {
+        "question": "¿Para qué sirve una variable en programación?",
+        "options": [
+          "Para almacenar valores que pueden cambiar durante la ejecución del programa",
+          "Para almacenar únicamente valores constantes",
+          "Para editar documentos de texto",
+          "Para diseñar gráficos en movimiento"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué es un bucle en programación?",
+        "options": [
+          "Un tipo de error común en los programas",
+          "Una estructura que repite un bloque de código varias veces",
+          "Un archivo de texto con instrucciones para la computadora",
+          "Una manera de almacenar datos"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Qué es un error de sintaxis?",
+        "options": [
+          "Un error que ocurre cuando una variable no tiene valor",
+          "Un error que ocurre cuando el código no sigue la estructura correcta",
+          "Un problema causado por una computadora lenta",
+          "Un error en la lógica del programa"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Qué es la depuración en programación?",
+        "options": [
+          "Crear gráficos",
+          "Revisar y corregir errores en el código",
+          "Escribir código",
+          "Almacenar datos en una base de datos"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Qué es la programación orientada a objetos?",
+        "options": [
+          "Un estilo de programación que organiza el código en módulos independientes",
+          "Una técnica para gestionar errores",
+          "Un paradigma que utiliza objetos y clases para organizar el código",
+          "Una forma de ejecutar el código en diferentes dispositivos"
+        ],
+        "correct": 2
+      }
+    ],
+    "image_url": "https://img.freepik.com/psd-premium/codigo-programacion-logo-icono-3d-render_568120-2146.jpg",
+    "duration": 7,
+    "instructor": "Luis Martínez",
+    "is_free": false,
+    "status_courses": true
+  },
+  {
+    "title": "Curso de ReactJS",
+    "type": "Frontend",
+    "description": "El Curso de ReactJS es una experiencia de aprendizaje diseñada para aquellos que ya cuentan con conocimientos previos en desarrollo web y desean profundizar en uno de los frameworks más populares y demandados en la industria del desarrollo frontend. A lo largo del curso, los estudiantes aprenderán a construir interfaces de usuario interactivas y eficientes utilizando React, una biblioteca de JavaScript que permite crear aplicaciones web de una manera declarativa y basada en componentes. El curso incluye conceptos fundamentales, como la estructura y los componentes de React, el manejo de estado y propiedades, así como el uso de hooks para optimizar el rendimiento de las aplicaciones. Además, los estudiantes llevarán a cabo un proyecto final, donde aplicarán todos los conocimientos adquiridos, lo que les permitirá enfrentar los retos del desarrollo real y fortalecer su portafolio profesional. El curso es 100% online, lo que permite a los participantes gestionar su tiempo de manera flexible y acceder a los materiales en cualquier momento.",
+    "difficulty": "intermedio",
+    "requirements": "Requiere conocimientos previos.",
+    "format": "100% online",
+    "includes_exercises": true,
+    "objetives": "El objetivo principal de este curso es capacitar a los estudiantes en el uso de ReactJS para el desarrollo de aplicaciones web modernas y eficientes. Al finalizar el curso, los participantes deberán ser capaces de: 1) Comprender los principios fundamentales de React, incluyendo la arquitectura basada en componentes. 2) Desarrollar aplicaciones completas utilizando React y sus herramientas asociadas. 3) Aplicar técnicas de manejo de estado y gestión de eventos en React. 4) Utilizar hooks para gestionar el ciclo de vida de los componentes y optimizar el rendimiento. 5) Implementar el enrutamiento en aplicaciones de React para crear experiencias de usuario fluidas. 6) Realizar solicitudes HTTP y manejar datos asíncronos. 7) Aplicar buenas prácticas de programación y estructuración de proyectos en React.",
+    "learn": "En este curso, los estudiantes aprenderán a: 1) Introducirse en el entorno de desarrollo de React y comprender su estructura básica. 2) Crear y utilizar componentes funcionales y de clase. 3) Implementar el manejo de propiedades (props) y el estado local (state) de los componentes. 4) Utilizar hooks de React, como useState y useEffect, para gestionar el estado y los efectos secundarios. 5) Estilizar componentes y aplicaciones utilizando CSS y bibliotecas como Styled Components. 6) Implementar formularios y manejar la validación de datos. 7) Comprender y aplicar el enrutamiento utilizando React Router. 8) Realizar peticiones HTTP para interactuar con APIs externas utilizando Fetch y Axios. 9) Manejar el estado global de la aplicación utilizando Context API y otros patrones de gestión de estado. 10) Implementar buenas prácticas en la depuración y estructuración de proyectos para un desarrollo escalable y mantenible.",
+    "content": [
+      {
+        "title": "1-Introducción a React JS - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=xgfc6q5ieGQ"
+      },
+      {
+        "title": "2-Componentes de React - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=YplA1CsQBrs"
+      },
+      {
+        "title": "3-Presentación proyecto final - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=ZZKvIA5MqZg"
+      },
+      {
+        "title": "4-Introducción a los Hooks de React - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=GJY2cGQy1Bw"
+      },
+      {
+        "title": "5-Avance en el proyecto final - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=HWuE94KY3Aw"
+      },
+      {
+        "title": "6-Dando estilos a un proyecto ReactJS - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=YoXMr9yzk_M"
+      },
+      {
+        "title": "7-Avance en el proyecto final - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=GqLdkKyrC0o"
+      },
+      {
+        "title": "8-Manejo de eventos en React JS - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=ZwOhPK0uISA"
+      },
+      {
+        "title": "9-Avance en el proyecto final - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=2a7P8ud9zFs"
+      },
+      {
+        "title": "10-Depuración del código en proyectos ReactJS - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=PM6t6bk6pTE"
+      }
+    ],
+    "questions": [
+      {
+        "question": "¿Qué es React?",
+        "options": [
+          "Una biblioteca para crear interfaces de usuario",
+          "Un framework de backend",
+          "Un lenguaje de programación",
+          "Una base de datos"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué son los componentes en React?",
+        "options": [
+          "Son variables que almacenan datos",
+          "Son elementos que representan partes de la interfaz de usuario",
+          "Son funciones que hacen cálculos",
+          "Son estilos CSS aplicados a una página"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Cuál es la función de los Hooks en React?",
+        "options": [
+          "Son componentes de clase",
+          "Son elementos de estilo",
+          "Permiten usar el estado y otros elementos de React en componentes funcionales",
+          "Son funciones de eventos"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "¿Qué es el enrutamiento en una aplicación React?",
+        "options": [
+          "La manera de conectar con bases de datos",
+          "Una técnica de programación para manejar datos",
+          "Una herramienta de diseño",
+          "La forma de gestionar la navegación entre diferentes vistas"
+        ],
+        "correct": 3
+      },
+      {
+        "question": "¿Qué función tiene el estado en un componente de React?",
+        "options": [
+          "Almacenar información que puede cambiar durante el ciclo de vida del componente",
+          "Definir el estilo de un componente",
+          "Determinar el tamaño de la aplicación",
+          "Crear eventos"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué método se utiliza para hacer peticiones HTTP en React?",
+        "options": [
+          "fetch() o Axios",
+          "getElementById()",
+          "console.log()",
+          "alert()"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué significa JSX?",
+        "options": [
+          "Es un tipo de variable",
+          "Es una extensión de sintaxis que permite escribir HTML dentro de JavaScript",
+          "Es un método para manejar errores",
+          "Es un framework de backend"
+        ],
+        "correct": 1
+      }
+    ],
+    "image_url": "https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png",
+    "duration": 7,
+    "instructor": "Luis Martínez",
+    "is_free": false,
+    "status_courses": true
+  },
+  {
+    "title": "Curso de Typescript",
+    "type": "Introducción",
+    "description": "Este curso de TypeScript está diseñado para desarrolladores con experiencia en JavaScript que buscan dar el siguiente paso en la escritura de código más robusto y mantenible. TypeScript, un superset de JavaScript desarrollado por Microsoft, introduce un sistema de tipos estático que permite detectar errores en tiempo de desarrollo y facilita la creación de aplicaciones complejas. A lo largo del curso, los estudiantes aprenderán a definir tipos y estructuras de datos, gestionar eventos, y aplicar conceptos avanzados como interfaces, herencia y decoradores. Además, se abordarán prácticas de depuración y estrategias para mejorar el rendimiento del código en proyectos grandes. Al final del curso, los participantes contarán con las habilidades necesarias para trabajar en proyectos TypeScript de manera eficiente y profesional.",
+    "difficulty": "intermedio",
+    "requirements": "Requiere conocimientos previos.",
+    "format": "100% online",
+    "includes_exercises": true,
+    "objetives": "Al finalizar este curso, los estudiantes estarán capacitados para crear y mantener aplicaciones sólidas en TypeScript, comprendiendo el uso de tipos, clases, y módulos para mejorar la legibilidad y eficiencia del código. Desarrollarán un entendimiento profundo de cómo TypeScript puede integrarse en entornos JavaScript, aplicando conceptos de programación orientada a objetos y validando sus conocimientos a través de ejercicios prácticos y un proyecto final. Los participantes aprenderán no solo a implementar código seguro y predecible, sino también a trabajar en equipo, compartiendo y documentando su trabajo de manera efectiva.",
+    "learn": "En este curso, los estudiantes aprenderán a definir tipos y trabajar con estructuras de datos avanzadas, aprovechando las capacidades de TypeScript para mejorar la seguridad y previsibilidad del código. Se explorarán temas como la definición y uso de clases, objetos, y funciones, así como la aplicación de interfaces y herencia para estructurar proyectos de forma modular y escalable. También se cubrirán aspectos importantes de la depuración y el rendimiento, brindando a los estudiantes las herramientas necesarias para identificar y resolver problemas de forma eficiente en entornos de desarrollo reales. Al final del curso, los estudiantes habrán construido una base sólida en TypeScript, lista para aplicarse a proyectos profesionales y contribuir significativamente en equipos de desarrollo.",
+    "content": [
+      {
+        "title": "1-Introducción a TypeScript - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=RI7j5bicTEw"
+      },
+      {
+        "title": "2-Variables, datos, palabras reservadas y estructuras de control - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=wutMZAg2t_4"
+      },
+      {
+        "title": "3-Funciones - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=uxNYQWdjr7E"
+      },
+      {
+        "title": "4-Persistencia de los datos y gestión de eventos - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=9cx98y7gYfA"
+      },
+      {
+        "title": "5-Clases y objetos - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=6a9K_KrIB2w"
+      },
+      {
+        "title": "6-Interfaces, herencias y decoradores - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=SzRh4JexeDg"
+      },
+      {
+        "title": "7-Conceptos de depuración - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=QoVd9U6fzzw"
+      }
+    ],
+    "questions": [
+      {
+        "question": "¿Qué es TypeScript?",
+        "options": [
+          "Un lenguaje de programación tipado que extiende JavaScript",
+          "Un framework de frontend",
+          "Una herramienta de diseño gráfico",
+          "Una base de datos relacional"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Cuál es una de las principales ventajas de usar TypeScript?",
+        "options": [
+          "Permite crear páginas web rápidamente",
+          "Ofrece tipado estático para reducir errores en tiempo de desarrollo",
+          "Es el reemplazo oficial de JavaScript",
+          "Es un lenguaje más fácil de aprender que JavaScript"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Qué es una interfaz en TypeScript?",
+        "options": [
+          "Un componente gráfico en una aplicación",
+          "Una herramienta para el diseño de bases de datos",
+          "Una forma de definir la estructura de un objeto",
+          "Una función especial para manejar eventos"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "¿Para qué se usa el tipo 'any' en TypeScript?",
+        "options": [
+          "Para especificar un valor que puede ser de cualquier tipo",
+          "Para definir funciones que no retornan valor",
+          "Para crear variables globales",
+          "Para manejar errores en tiempo de ejecución"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué permite hacer el operador de aserción de tipos en TypeScript?",
+        "options": [
+          "Eliminar todos los tipos de las variables",
+          "Convertir un tipo de dato en otro en tiempo de ejecución",
+          "Indicar al compilador que trate un valor como un tipo específico",
+          "Permitir operaciones aritméticas avanzadas"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "¿Qué diferencia principal tiene 'let' frente a 'var' en TypeScript?",
+        "options": [
+          "let tiene un alcance de bloque, mientras que var tiene un alcance de función",
+          "let solo puede usarse en funciones",
+          "let es más rápido que var",
+          "let permite definir variables globales"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué función cumple el archivo tsconfig.json en un proyecto TypeScript?",
+        "options": [
+          "Define la estructura de la base de datos",
+          "Configura las opciones de compilación del proyecto",
+          "Almacena datos temporales de la aplicación",
+          "Especifica los estilos CSS del proyecto"
+        ],
+        "correct": 1
+      }
+    ],
+    "image_url": "https://repository-images.githubusercontent.com/657740231/7a6b015e-0013-4f20-990e-01fa1f8e2968",
+    "duration": 7,
+    "instructor": "Luis Martínez",
+    "is_free": false,
+    "status_courses": true
+  },
+  {
+    "title": "Curso de Bases de datos",
+    "type": "Backend",
+    "description": "Este curso de Bases de Datos está diseñado para introducirte en el mundo de la gestión de datos desde una perspectiva práctica y profesional. Aprenderás a trabajar con bases de datos relacionales, comprendiendo los conceptos fundamentales y desarrollando habilidades en consultas SQL para gestionar, organizar y recuperar datos. Este curso intermedio te brindará los conocimientos necesarios para comenzar a diseñar y administrar bases de datos eficientemente, preparándote para tareas comunes en el desarrollo de software y la administración de datos.",
+    "difficulty": "intermedio",
+    "requirements": "No requiere conocimientos previos",
+    "format": "100% online",
+    "includes_exercises": true,
+    "objetives": "Al completar este curso, podrás comprender el funcionamiento de las bases de datos relacionales, conocer los principios de diseño de bases de datos y ejecutar consultas SQL básicas y avanzadas para manejar y analizar información de manera efectiva. Estarás preparado para aplicar estos conocimientos en proyectos de desarrollo y administración de sistemas de datos.",
+    "learn": "Durante este curso, aprenderás a: - Comprender los principios fundamentales de las bases de datos relacionales. - Trabajar con PgAdmin para gestionar bases de datos y tablas. - Diseñar y crear tablas para organizar datos de manera estructurada. - Realizar consultas SQL para extraer y manipular información de bases de datos. - Optimizar consultas mediante el uso de índices. - Aplicar buenas prácticas en la gestión y seguridad de datos en entornos profesionales.",
+    "content": [
+      {
+        "title": "1-Bases de datos - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=vGITAWI2gmk"
+      },
+      {
+        "title": "2-PgAdmin y conceptos de bases de datos - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=FOd3Ivo4198"
+      },
+      {
+        "title": "3-Tablas en PgAdming - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=mft4mrABg5s"
+      },
+      {
+        "title": "4-Consultas de SQL - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=FKI_QUJqovY"
+      },
+      {
+        "title": "5-Consultas e índices - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=XeVaUjp_uCM"
+      }
+    ],
+    "questions": [
+      {
+        "question": "¿Qué es una base de datos?",
+        "options": [
+          "Un conjunto organizado de datos almacenados y accesibles",
+          "Un sistema operativo",
+          "Una red de computadoras",
+          "Un lenguaje de programación"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué es SQL?",
+        "options": [
+          "Un lenguaje de programación orientado a objetos",
+          "Un sistema de gestión de archivos",
+          "Un lenguaje para manipular y consultar bases de datos",
+          "Una herramienta para diseño gráfico"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "¿Cuál de los siguientes es un sistema de gestión de bases de datos?",
+        "options": [
+          "PgAdmin",
+          "Microsoft Word",
+          "Adobe Photoshop",
+          "JavaScript"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué función tiene una tabla en una base de datos?",
+        "options": [
+          "Definir los usuarios de una aplicación",
+          "Almacenar datos en filas y columnas de manera organizada",
+          "Crear gráficos para reportes",
+          "Administrar redes de computadoras"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Qué es una consulta en SQL?",
+        "options": [
+          "Un error de programación",
+          "Un comando para modificar el diseño de la interfaz",
+          "Una instrucción para recuperar o manipular datos en una base de datos",
+          "Un sistema de control de versiones"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "¿Qué es PgAdmin?",
+        "options": [
+          "Un software de diseño gráfico",
+          "Un gestor de archivos multimedia",
+          "Una herramienta para administrar bases de datos PostgreSQL",
+          "Un sistema operativo"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "¿Cuál es la función de un índice en una base de datos?",
+        "options": [
+          "Crear un nuevo usuario",
+          "Acelerar la búsqueda de datos dentro de una tabla",
+          "Modificar el diseño de una aplicación",
+          "Almacenar archivos multimedia"
+        ],
+        "correct": 1
+      }
+    ],
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5fG2bR22zr-k6k-B_McEkyMmxoFDxT_bILQ&s",
+    "duration": 7,
+    "instructor": "Luis Martínez",
+    "is_free": false,
+    "status_courses": true
+  }
+]

@@ -24,12 +24,11 @@ export class CoursesService {
     return this.coursesRepository.addCourses();
   }
 
-  async findAll(page, limit): Promise<Course[]> {
+  async findAll(): Promise<Course[]> {
     // Utiliza el repositorio para obtener todos los cursos
-    const start = (page - 1) * limit;
-    const end = start + limit;
+
     const courses = await this.coursesRepository.findAll();
-    return courses.slice(start, end);
+    return courses;
   }
 
   async findOne(id: string): Promise<Course> {

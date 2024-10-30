@@ -81,11 +81,8 @@ export class CoursesController {
   })
   @ApiResponse({ status: 200, description: 'Una lista con los cursos.' })
   @Get()
-  async findAll(
-    @Query('limit') limit = 5,
-    @Query('page') page = 1,
-  ): Promise<Course[]> {
-    return this.coursesService.findAll(Number(page), Number(limit));
+  async findAll(): Promise<Course[]> {
+    return this.coursesService.findAll();
   }
 
   @ApiOperation({
