@@ -20,6 +20,7 @@ import { log } from 'console';
 import { SubscriptionTypeModule } from './SuscriptionType/subscriptionType.module';
 import { SubscriptionTypeService } from './SuscriptionType/subscriptionType.service';
 import { SubscriptionTypeRepository } from './SuscriptionType/subscriptionType.repository';
+import { ChatModule } from './chat/chat.module';
 
 @Module({
   imports: [
@@ -47,6 +48,7 @@ import { SubscriptionTypeRepository } from './SuscriptionType/subscriptionType.r
     FileUploadModule,
     NotificationsModule,
     SubscriptionTypeModule,
+    ChatModule,
   ],
   controllers: [AppController],
   providers: [
