@@ -45,7 +45,7 @@ export class Course {
   @ApiProperty({
     description:
       'Descripcion del curso. Es de tipo varchar, tiene una longitud maxima de 255 caracteres y no puede ser nulo',
-    example: 'Curso de backend con Java y Spring Boot',
+      example: 'Curso de backend con Java y Spring Boot',
   })
   description: string;
 
@@ -92,10 +92,14 @@ export class Course {
     isArray: true,
   })
   content: { title: string; url: string }[];
+<<<<<<< HEAD
 
   @Column({ type: 'simple-json', nullable: false })
   questions: Array<{ question: string; options: string[]; correct: number }>;
 
+=======
+  
+>>>>>>> cbd1e5e3301191bc8133f178f8a043276de9fac4
   @Column({
     type: 'varchar',
     default:
