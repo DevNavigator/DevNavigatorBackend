@@ -98,7 +98,9 @@ export class CoursesRepository {
   }
 
   async findOne(id: string): Promise<Course> {
-    return await this.courseRepository.findOneBy({ id });
+    const course = await this.courseRepository.findOneBy({ id });
+
+    return course;
   }
 
   async update(id: string, updateCourseDto: UpdateCourseDto): Promise<Course> {

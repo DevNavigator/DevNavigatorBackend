@@ -1,133 +1,134 @@
 [
   {
-    "title": "Curso de Java",
+    "title": "Curso .NET",
     "type": "Backend",
-    "description": "Este curso de Java Avanzado está diseñado para aquellos que ya tienen una base en programación Java y desean profundizar en temas más avanzados. A través de este curso, aprenderás a trabajar con conceptos avanzados como programación concurrente, Streams y API funcionales, gestión de errores, y técnicas de optimización y patrones de diseño. Con un enfoque en aplicaciones reales y técnicas avanzadas de Java, este curso te ayudará a convertirte en un desarrollador Java altamente competente.",
-    "difficulty": "dificil",
+    "description": "En el Curso .NET, te adentrarás en uno de los frameworks más robustos y demandados para el desarrollo backend. Este curso avanzado está diseñado para aquellos que ya cuentan con una base sólida en programación y buscan expandir sus habilidades en el desarrollo de aplicaciones empresariales y servicios backend con .NET. A través de proyectos prácticos y ejercicios, aprenderás a construir aplicaciones escalables, seguras y de alto rendimiento en el ecosistema de Microsoft.",
+    "difficulty": "intermedio",
     "requirements": "Requiere conocimientos previos.",
     "format": "100% online",
     "includes_exercises": true,
-    "objetives": "El objetivo de este curso es proporcionar a los estudiantes una comprensión avanzada de Java, equipándolos con las habilidades necesarias para desarrollar aplicaciones robustas y eficientes. Los estudiantes aprenderán a utilizar técnicas de programación avanzada, realizarán operaciones complejas en Java y optimizarán su código para maximizar el rendimiento de las aplicaciones.",
-    "learn": "Al completar este curso, los estudiantes habrán adquirido un conocimiento profundo de Java avanzado. Podrán manejar excepciones y errores de manera eficaz, comprendiendo cómo afectan el flujo de un programa y aplicando soluciones robustas para su control. Además, dominarán la programación funcional y la manipulación de Streams, aprendiendo a realizar operaciones complejas de manera óptima y efectiva. Con una comprensión completa del manejo de hilos y la concurrencia en Java, los estudiantes estarán capacitados para desarrollar aplicaciones que optimicen el rendimiento a través del uso adecuado de recursos del sistema. También adquirirán la habilidad de aplicar patrones de diseño reconocidos, como Singleton, Factory y Observer, que permiten crear código más modular, flexible y mantenible. Por último, los estudiantes estarán preparados para implementar aplicaciones complejas en Java, con un enfoque en la optimización de la memoria y el rendimiento, siguiendo buenas prácticas y estándares avanzados de programación.",
+    "objetives": "El objetivo principal de este curso es comprender los fundamentos de .NET y su estructura para el desarrollo backend, lo que te permitirá dominar la construcción de APIs RESTful y servicios avanzados en .NET. A lo largo del curso, también implementarás principios de seguridad, autenticación y autorización en aplicaciones backend, optimizando el rendimiento y escalabilidad de aplicaciones empresariales. Además, adquirirás habilidades para desplegar y gestionar aplicaciones .NET en entornos productivos.",
+    "learn": "Durante el curso, explorarás diversos temas esenciales, incluyendo los fundamentos del framework .NET y sus componentes clave, la creación de APIs RESTful con .NET y C#, y el manejo de bases de datos con Entity Framework. También profundizarás en los principios de diseño de software y patrones arquitectónicos, la implementación de seguridad en aplicaciones web, y el despliegue en servicios en la nube como Azure. Todo esto te equipará con las herramientas necesarias para convertirte en un desarrollador backend competente y versátil en el mundo de .NET.",
     "content": [
       {
-        "title": "1-Curso Java Avanzado - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=3BMrpuzDWes"
+        "title": "1-Primeros pasos - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=Zn7pzMMfzXg"
       },
       {
-        "title": "1.2-Curso Java Avanzado - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=tRD4sa_HEys"
+        "title": "2-Parámetros y diagramas - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=W-6umyVKPFA"
       },
       {
-        "title": "2-Curso Java Avanzado - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=Y_8PYS6W1Ng"
+        "title": "3-Consultas avanzadas - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=wg3haJunom0"
       },
       {
-        "title": "3-Curso Java Avanzado - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=Uf3MLQIIcgI"
+        "title": "4-Consultas avanzadas 2 - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=UUrPl9QuWwo"
       },
       {
-        "title": "4-Curso Java Avanzado - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=9j05x-jBl_M"
+        "title": "5-Proceso de autenticación - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=eVgGWIh4WDI"
       },
       {
-        "title": "5-Curso Java Avanzado - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=njO-G5Syf0I"
+        "title": "6-Peticiones json token - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=L5a4Y-XxiO4"
       },
       {
-        "title": "6-Curso Java Avanzado - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=pN1jioJCmjg"
+        "title": "7-Internacionalizando aplicación - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=-EsLAWXazac"
       },
       {
-        "title": "7-Curso Java Avanzado - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=gtDbqWDualM"
+        "title": "8-Gestión del versionado - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=ijtm2BSNV-o"
       },
       {
-        "title": "8-Curso Java Avanzado - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=JKRSOm7Cijk"
+        "title": "9.1-Conceptos de log in - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=gOTJkthFWhw"
       },
       {
-        "title": "9-Curso Java Avanzado - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=UmeL7e9SJdc"
+        "title": "9.2-Conceptos de log in - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=vpWB2lf2r8s"
       },
       {
-        "title": "10-Curso Java Avanzado - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=iyNEnFzUqJ4"
+        "title": "10-La asincronía - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=1vxpZzANoA4"
       }
     ],
     "questions": [
       {
-        "question": "¿Qué es la programación concurrente en Java?",
+        "question": "¿Qué es .NET?",
         "options": [
-          "Es la ejecución de múltiples programas de Java al mismo tiempo",
-          "Es el uso de múltiples hilos para ejecutar tareas en paralelo",
-          "Es una técnica para mejorar la seguridad en Java",
-          "Es una manera de optimizar la gestión de memoria"
+          "Un sistema operativo",
+          "Un framework para el desarrollo de aplicaciones",
+          "Un lenguaje de programación",
+          "Un software de diseño gráfico"
         ],
         "correct": 1
       },
       {
-        "question": "¿Cuál es el propósito de un Stream en Java?",
+        "question": "¿Cuál de las siguientes es una característica principal de .NET?",
         "options": [
-          "Para procesar datos de manera secuencial y funcional",
-          "Para crear conexiones de red",
-          "Para gestionar excepciones en el código",
-          "Para ejecutar múltiples hilos de manera simultánea"
+          "Interoperabilidad con otros lenguajes",
+          "Exclusividad para aplicaciones de escritorio",
+          "Uso exclusivo en sistemas operativos Windows",
+          "No permite el desarrollo web"
         ],
         "correct": 0
       },
       {
-        "question": "¿Qué ventaja ofrece la programación funcional en Java?",
+        "question": "¿Qué es una API RESTful?",
         "options": [
-          "Facilita el uso de clases abstractas",
-          "Reduce la memoria utilizada por las variables locales",
-          "Elimina la necesidad de crear métodos en las clases",
-          "Permite escribir código con menos errores al evitar el estado mutable"
+          "Una interfaz gráfica de usuario",
+          "Un conjunto de reglas para construir aplicaciones web",
+          "Un tipo de base de datos",
+          "Un lenguaje de programación"
         ],
-        "correct": 3
+        "correct": 1
       },
       {
-        "question": "¿Cuál de los siguientes es un patrón de diseño comúnmente usado en Java?",
-        "options": ["Observer", "ArrayList", "Lambda", "IntStream"],
+        "question": "¿Qué lenguaje se utiliza comúnmente para el desarrollo en .NET?",
+        "options": ["Java", "C#", "Python", "JavaScript"],
+        "correct": 1
+      },
+      {
+        "question": "¿Qué es Entity Framework?",
+        "options": [
+          "Un sistema operativo",
+          "Un ORM (Object-Relational Mapper) para .NET",
+          "Un framework de diseño web",
+          "Una herramienta para crear interfaces gráficas"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Cuál es el propósito de la autenticación en una aplicación web?",
+        "options": [
+          "Garantizar que solo usuarios autorizados accedan a recursos protegidos",
+          "Aumentar la velocidad de la aplicación",
+          "Crear una interfaz atractiva para el usuario",
+          "Almacenar datos en la nube"
+        ],
         "correct": 0
       },
       {
-        "question": "¿Cuál es la función de la interfaz Callable en Java?",
+        "question": "¿Qué es Azure?",
         "options": [
-          "Crear una clase que maneje múltiples hilos",
-          "Permitir que un hilo devuelva un valor o lance una excepción",
-          "Gestionar la ejecución de hilos en segundo plano",
-          "Simplificar el uso de Streams en Java"
+          "Una herramienta de diseño gráfico",
+          "Un lenguaje de programación",
+          "Una plataforma de servicios en la nube de Microsoft",
+          "Un sistema operativo"
         ],
-        "correct": 1
-      },
-      {
-        "question": "¿Para qué se utiliza la palabra clave 'synchronized' en Java?",
-        "options": [
-          "Para detener la ejecución de un hilo",
-          "Para restringir el acceso concurrente a un bloque de código o método",
-          "Para crear un Stream a partir de una colección",
-          "Para optimizar el rendimiento de una aplicación"
-        ],
-        "correct": 1
-      },
-      {
-        "question": "¿Qué es el patrón Singleton en Java?",
-        "options": [
-          "Un patrón que permite crear múltiples instancias de una clase",
-          "Un patrón que asegura que una clase solo tenga una instancia",
-          "Un patrón de diseño para manejar hilos concurrentes",
-          "Un patrón que facilita la creación de excepciones personalizadas"
-        ],
-        "correct": 1
+        "correct": 2
       }
     ],
-    "image_url": "https://logos-world.net/wp-content/uploads/2022/07/Java-Logo.jpg",
-    "duration": 7,
-    "instructor": "Luis Martínez",
+    "image_url": "https://res.cloudinary.com/dckxhsgw0/image/upload/v1730333166/jrvwy6jvngiijhfv8455.png",
+    "duration": 9,
+    "instructor": "Laura Fernández",
     "is_free": false,
     "status_courses": true
   },
+
   {
     "title": "Curso de PHP",
     "type": "Backend",
@@ -227,268 +228,143 @@
         "correct": 1
       }
     ],
-    "image_url": "https://banner2.cleanpng.com/20180904/xhu/kisspng-logo-image-computer-icons-php-portable-network-gra-william-davies-meng-mongodb-1713944344684.webp",
+    "image_url": "https://res.cloudinary.com/dckxhsgw0/image/upload/v1730333119/smcj4tf0grgh3affyysf.png",
     "duration": 7,
-    "instructor": "Luis Martínez",
+    "instructor": "Diego Martínez",
     "is_free": false,
     "status_courses": true
   },
+
   {
-    "title": "Introducción a la programación",
+    "title": "Curso Python Básico",
     "type": "Introducción",
-    "description": "Este curso de introducción a la programación está diseñado para personas que desean comenzar su viaje en el mundo de la tecnología. Aquí aprenderás los conceptos básicos de la programación y desarrollarás habilidades fundamentales que te permitirán entender cómo funcionan los programas y aplicaciones que utilizamos a diario. A través de una serie de lecciones prácticas y teóricas, descubrirás el pensamiento lógico detrás de la programación, cómo estructurar un código y cómo resolver problemas de manera efectiva. Este curso es perfecto para quienes no tienen experiencia previa, y te proporcionará una sólida base para avanzar a niveles más complejos.",
+    "description": "Este curso de Python Básico está diseñado para aquellos que desean adentrarse en el mundo de la programación sin necesidad de contar con conocimientos previos. A lo largo del curso, aprenderás los fundamentos de Python, un lenguaje de programación versátil y ampliamente utilizado en la industria. A través de materiales interactivos y ejercicios prácticos, desarrollarás las habilidades necesarias para escribir tus propios programas y resolver problemas con código. Al final del curso, estarás listo para explorar aplicaciones más avanzadas de Python, como el desarrollo web con Django.",
     "difficulty": "facil",
-    "image": "",
+    "image": "https://res.cloudinary.com/dckxhsgw0/image/upload/v1730333035/h6cb4lccetmpybqrx5f7.png",
     "requirements": "No se requieren conocimientos previos.",
     "format": "100% online",
     "includes_exercises": true,
-    "objetives": "Este curso tiene como objetivo enseñar los fundamentos de la programación desde cero. A través de ejemplos y ejercicios prácticos, aprenderás a pensar de manera lógica y estructurada, lo cual es esencial para la resolución de problemas en programación. Al finalizar el curso, serás capaz de escribir código simple y comprender cómo se estructuran los programas, lo que te permitirá continuar tu camino en el aprendizaje de lenguajes de programación más avanzados. También aprenderás buenas prácticas de programación, que te ayudarán a desarrollar proyectos de manera ordenada y eficiente.",
-    "learn": "En este curso aprenderás los conceptos básicos de la programación, que incluyen variables, operadores, estructuras de control y la lógica detrás de la toma de decisiones en el código. Empezarás a comprender cómo estructurar un programa y cuáles son las mejores prácticas para escribir código claro y eficiente. Además, verás cómo identificar y corregir errores comunes y desarrollarás habilidades de pensamiento lógico para resolver problemas paso a paso. Este curso te proporcionará una base sólida para abordar proyectos de programación de mayor complejidad y avanzar en tu carrera de programación o en otras áreas de la tecnología.",
+    "objetives": "El objetivo principal de este curso es proporcionar a los estudiantes una comprensión sólida de los conceptos básicos de Python. Los participantes aprenderán a manejar la sintaxis del lenguaje, comprenderán los tipos de datos y las estructuras de control de flujo, y desarrollarán habilidades en la creación de funciones y clases. Además, se enfocará en la utilización de módulos y la manipulación de datos de entrada y salida. Al finalizar, los estudiantes podrán aplicar lo aprendido en proyectos reales y tendrán una base sólida para seguir avanzando en su aprendizaje de programación.",
+    "learn": "En este curso, aprenderás a usar el intérprete de Python y comprenderás los tipos de objetos disponibles. Aprenderás a controlar el flujo de los programas mediante estructuras como bucles y condicionales, y desarrollarás funciones y clases para organizar tu código de manera efectiva. Además, te introducirás en el uso de módulos y aprenderás a manejar la entrada y salida de datos. Finalmente, tendrás una visión general de la biblioteca estándar de Python, y recibirás una introducción a Django, un framework popular para el desarrollo web.",
     "content": [
       {
-        "title": "1-Historia de la programación - DevNavigator.",
-        "url": "https://www.youtube.com/watch?v=P_7QAaWgvF8"
+        "title": "1-Introducción a Python - DevNavigator.",
+        "url": "https://www.youtube.com/watch?v=ziXpreifQ68"
       },
       {
-        "title": "2-Tipos de lenguajes de programación - DevNavigator.",
-        "url": "https://www.youtube.com/watch?v=c0Ij2ILdeW4"
+        "title": "2-El intérprete de Python - DevNavigator.",
+        "url": "https://www.youtube.com/watch?v=ubPsYnkxk68"
       },
       {
-        "title": "3-Aplicaciones cliente servidor - DevNavigator.",
-        "url": "https://www.youtube.com/watch?v=VPaXejWc_Ak"
+        "title": "3-Introducción a los tipos de objetos - DevNavigator.",
+        "url": "https://www.youtube.com/watch?v=C15MkeW-3Yc"
       },
       {
-        "title": "4-Memoria y variables - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=1dxcz8CY_c8"
+        "title": "4-Control de flujo - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=2vR3ktU-QQ4"
       },
       {
-        "title": "5-Repaso memoria y tipos de datos de texto - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=KPum7L7sANk"
+        "title": "5-Funciones - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=H03UoQoNiuM"
       },
       {
-        "title": "6-Tipos de datos numéricos - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=cHQSUauC69s"
+        "title": "6-Clases y objetos - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=X9CSDly8gSM"
       },
       {
-        "title": "7-Tipos de datos booleanos y repaso tipos de datos simples - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=v6iMDj5c-A4"
+        "title": "7-Módulos: ejecutando módulos como scripts - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=jEmYXqwpIhU"
       },
       {
-        "title": "8-Tipos de datos complejos arrays - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=dcBKs2XEFo0"
+        "title": "8-Entrada y salida - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=NiKy9dhjI0w"
       },
       {
-        "title": "9-Tipos de datos tuplas y arrays asociativos - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=RAc1mnhcHsY"
+        "title": "9-Introducción a la biblioteca estándar de Python y funciones Built-in - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=eoGilEziYwU"
       },
       {
-        "title": "10-Tipos de datos complejos objetos - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=phgkjzGgiIw"
+        "title": "10-GUI - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=YObczQ25y4E"
+      },
+      {
+        "title": "11-Bases de datos - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=yXIk7WeUorc"
+      },
+      {
+        "title": "12-Introducción a Django - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=07g11ylvc7o"
       }
     ],
     "questions": [
       {
-        "question": "¿Qué es la programación?",
+        "question": "¿Qué es Python?",
         "options": [
-          "El proceso de resolver problemas matemáticos",
-          "El acto de escribir código para dar instrucciones a una computadora",
-          "Una técnica para diseñar gráficos",
-          "Una herramienta de edición de texto"
-        ],
-        "correct": 1
-      },
-      {
-        "question": "¿Cuál de los siguientes es un lenguaje de programación?",
-        "options": ["Microsoft Word", "JavaScript", "Adobe Photoshop", "HTML"],
-        "correct": 1
-      },
-      {
-        "question": "¿Para qué sirve una variable en programación?",
-        "options": [
-          "Para almacenar valores que pueden cambiar durante la ejecución del programa",
-          "Para almacenar únicamente valores constantes",
-          "Para editar documentos de texto",
-          "Para diseñar gráficos en movimiento"
+          "Un lenguaje de programación de alto nivel.",
+          "Un sistema operativo.",
+          "Un software de diseño gráfico.",
+          "Un sistema de gestión de bases de datos."
         ],
         "correct": 0
       },
       {
-        "question": "¿Qué es un bucle en programación?",
+        "question": "¿Qué tipo de datos se pueden utilizar en Python?",
         "options": [
-          "Un tipo de error común en los programas",
-          "Una estructura que repite un bloque de código varias veces",
-          "Un archivo de texto con instrucciones para la computadora",
-          "Una manera de almacenar datos"
+          "Solo números.",
+          "Números, cadenas de texto, listas, diccionarios, entre otros.",
+          "Solo cadenas de texto.",
+          "Ninguna de las anteriores."
         ],
         "correct": 1
       },
       {
-        "question": "¿Qué es un error de sintaxis?",
+        "question": "¿Cuál es la función de las estructuras de control de flujo en Python?",
         "options": [
-          "Un error que ocurre cuando una variable no tiene valor",
-          "Un error que ocurre cuando el código no sigue la estructura correcta",
-          "Un problema causado por una computadora lenta",
-          "Un error en la lógica del programa"
+          "Almacenar datos.",
+          "Controlar el flujo de ejecución del programa.",
+          "Crear interfaces gráficas.",
+          "Ninguna de las anteriores."
         ],
         "correct": 1
       },
       {
-        "question": "¿Qué es la depuración en programación?",
+        "question": "¿Qué es una función en Python?",
         "options": [
-          "Crear gráficos",
-          "Revisar y corregir errores en el código",
-          "Escribir código",
-          "Almacenar datos en una base de datos"
-        ],
-        "correct": 1
-      },
-      {
-        "question": "¿Qué es la programación orientada a objetos?",
-        "options": [
-          "Un estilo de programación que organiza el código en módulos independientes",
-          "Una técnica para gestionar errores",
-          "Un paradigma que utiliza objetos y clases para organizar el código",
-          "Una forma de ejecutar el código en diferentes dispositivos"
-        ],
-        "correct": 2
-      }
-    ],
-    "image_url": "https://img.freepik.com/psd-premium/codigo-programacion-logo-icono-3d-render_568120-2146.jpg",
-    "duration": 7,
-    "instructor": "Luis Martínez",
-    "is_free": false,
-    "status_courses": true
-  },
-  {
-    "title": "Curso de ReactJS",
-    "type": "Frontend",
-    "description": "El Curso de ReactJS es una experiencia de aprendizaje diseñada para aquellos que ya cuentan con conocimientos previos en desarrollo web y desean profundizar en uno de los frameworks más populares y demandados en la industria del desarrollo frontend. A lo largo del curso, los estudiantes aprenderán a construir interfaces de usuario interactivas y eficientes utilizando React, una biblioteca de JavaScript que permite crear aplicaciones web de una manera declarativa y basada en componentes. El curso incluye conceptos fundamentales, como la estructura y los componentes de React, el manejo de estado y propiedades, así como el uso de hooks para optimizar el rendimiento de las aplicaciones. Además, los estudiantes llevarán a cabo un proyecto final, donde aplicarán todos los conocimientos adquiridos, lo que les permitirá enfrentar los retos del desarrollo real y fortalecer su portafolio profesional. El curso es 100% online, lo que permite a los participantes gestionar su tiempo de manera flexible y acceder a los materiales en cualquier momento.",
-    "difficulty": "intermedio",
-    "requirements": "Requiere conocimientos previos.",
-    "format": "100% online",
-    "includes_exercises": true,
-    "objetives": "El objetivo principal de este curso es capacitar a los estudiantes en el uso de ReactJS para el desarrollo de aplicaciones web modernas y eficientes. Al finalizar el curso, los participantes deberán ser capaces de: 1) Comprender los principios fundamentales de React, incluyendo la arquitectura basada en componentes. 2) Desarrollar aplicaciones completas utilizando React y sus herramientas asociadas. 3) Aplicar técnicas de manejo de estado y gestión de eventos en React. 4) Utilizar hooks para gestionar el ciclo de vida de los componentes y optimizar el rendimiento. 5) Implementar el enrutamiento en aplicaciones de React para crear experiencias de usuario fluidas. 6) Realizar solicitudes HTTP y manejar datos asíncronos. 7) Aplicar buenas prácticas de programación y estructuración de proyectos en React.",
-    "learn": "En este curso, los estudiantes aprenderán a: 1) Introducirse en el entorno de desarrollo de React y comprender su estructura básica. 2) Crear y utilizar componentes funcionales y de clase. 3) Implementar el manejo de propiedades (props) y el estado local (state) de los componentes. 4) Utilizar hooks de React, como useState y useEffect, para gestionar el estado y los efectos secundarios. 5) Estilizar componentes y aplicaciones utilizando CSS y bibliotecas como Styled Components. 6) Implementar formularios y manejar la validación de datos. 7) Comprender y aplicar el enrutamiento utilizando React Router. 8) Realizar peticiones HTTP para interactuar con APIs externas utilizando Fetch y Axios. 9) Manejar el estado global de la aplicación utilizando Context API y otros patrones de gestión de estado. 10) Implementar buenas prácticas en la depuración y estructuración de proyectos para un desarrollo escalable y mantenible.",
-    "content": [
-      {
-        "title": "1-Introducción a React JS - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=xgfc6q5ieGQ"
-      },
-      {
-        "title": "2-Componentes de React - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=YplA1CsQBrs"
-      },
-      {
-        "title": "3-Presentación proyecto final - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=ZZKvIA5MqZg"
-      },
-      {
-        "title": "4-Introducción a los Hooks de React - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=GJY2cGQy1Bw"
-      },
-      {
-        "title": "5-Avance en el proyecto final - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=HWuE94KY3Aw"
-      },
-      {
-        "title": "6-Dando estilos a un proyecto ReactJS - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=YoXMr9yzk_M"
-      },
-      {
-        "title": "7-Avance en el proyecto final - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=GqLdkKyrC0o"
-      },
-      {
-        "title": "8-Manejo de eventos en React JS - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=ZwOhPK0uISA"
-      },
-      {
-        "title": "9-Avance en el proyecto final - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=2a7P8ud9zFs"
-      },
-      {
-        "title": "10-Depuración del código en proyectos ReactJS - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=PM6t6bk6pTE"
-      }
-    ],
-    "questions": [
-      {
-        "question": "¿Qué es React?",
-        "options": [
-          "Una biblioteca para crear interfaces de usuario",
-          "Un framework de backend",
-          "Un lenguaje de programación",
-          "Una base de datos"
+          "Un bloque de código reutilizable que realiza una tarea específica.",
+          "Una variable que almacena información.",
+          "Una estructura de datos.",
+          "Una forma de representar gráficos."
         ],
         "correct": 0
       },
       {
-        "question": "¿Qué son los componentes en React?",
+        "question": "¿Qué permite hacer un módulo en Python?",
         "options": [
-          "Son variables que almacenan datos",
-          "Son elementos que representan partes de la interfaz de usuario",
-          "Son funciones que hacen cálculos",
-          "Son estilos CSS aplicados a una página"
-        ],
-        "correct": 1
-      },
-      {
-        "question": "¿Cuál es la función de los Hooks en React?",
-        "options": [
-          "Son componentes de clase",
-          "Son elementos de estilo",
-          "Permiten usar el estado y otros elementos de React en componentes funcionales",
-          "Son funciones de eventos"
+          "Almacenar variables globales.",
+          "Ejecutar varias funciones al mismo tiempo.",
+          "Organizar y reutilizar código.",
+          "Ninguna de las anteriores."
         ],
         "correct": 2
       },
       {
-        "question": "¿Qué es el enrutamiento en una aplicación React?",
+        "question": "¿Qué es Django?",
         "options": [
-          "La manera de conectar con bases de datos",
-          "Una técnica de programación para manejar datos",
-          "Una herramienta de diseño",
-          "La forma de gestionar la navegación entre diferentes vistas"
-        ],
-        "correct": 3
-      },
-      {
-        "question": "¿Qué función tiene el estado en un componente de React?",
-        "options": [
-          "Almacenar información que puede cambiar durante el ciclo de vida del componente",
-          "Definir el estilo de un componente",
-          "Determinar el tamaño de la aplicación",
-          "Crear eventos"
-        ],
-        "correct": 0
-      },
-      {
-        "question": "¿Qué método se utiliza para hacer peticiones HTTP en React?",
-        "options": [
-          "fetch() o Axios",
-          "getElementById()",
-          "console.log()",
-          "alert()"
-        ],
-        "correct": 0
-      },
-      {
-        "question": "¿Qué significa JSX?",
-        "options": [
-          "Es un tipo de variable",
-          "Es una extensión de sintaxis que permite escribir HTML dentro de JavaScript",
-          "Es un método para manejar errores",
-          "Es un framework de backend"
+          "Un lenguaje de programación.",
+          "Un framework para el desarrollo web en Python.",
+          "Un editor de texto.",
+          "Un sistema de gestión de bases de datos."
         ],
         "correct": 1
       }
     ],
-    "image_url": "https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png",
-    "duration": 7,
-    "instructor": "Luis Martínez",
+    "image_url": "https://res.cloudinary.com/dckxhsgw0/image/upload/v1730333035/h6cb4lccetmpybqrx5f7.png",
+    "duration": 11,
+    "instructor": "Sofía Gómez",
     "is_free": false,
     "status_courses": true
   },
+
   {
     "title": "Curso de Typescript",
     "type": "Introducción",
@@ -601,9 +477,9 @@
         "correct": 1
       }
     ],
-    "image_url": "https://repository-images.githubusercontent.com/657740231/7a6b015e-0013-4f20-990e-01fa1f8e2968",
-    "duration": 7,
-    "instructor": "Luis Martínez",
+    "image_url": "https://res.cloudinary.com/dckxhsgw0/image/upload/v1730333095/ejjgzqgnh4getwes1v1s.png",
+    "duration": 9,
+    "instructor": "Javier López",
     "is_free": false,
     "status_courses": true
   },
@@ -711,9 +587,123 @@
         "correct": 1
       }
     ],
-    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5fG2bR22zr-k6k-B_McEkyMmxoFDxT_bILQ&s",
-    "duration": 7,
-    "instructor": "Luis Martínez",
+    "image_url": "https://res.cloudinary.com/dckxhsgw0/image/upload/v1730333210/ncj8a5yjml4tidyyatju.png",
+    "duration": 15,
+    "instructor": "Valentina Ramírez",
+    "is_free": false,
+    "status_courses": true
+  },
+  {
+    "title": "Curso de Docker",
+    "type": "DevOps",
+    "description": "Este curso de Docker está diseñado para desarrolladores que desean adquirir una comprensión profunda de la contenerización y sus aplicaciones prácticas. A través de ejercicios prácticos y tutoriales en video, aprenderás desde los conceptos básicos hasta técnicas avanzadas de manejo de contenedores.",
+    "difficulty": "intermedio",
+    "requirements": "Requiere conocimientos previos.",
+    "format": "100% online",
+    "includes_exercises": true,
+    "objetives": "Al finalizar este curso, los estudiantes serán capaces de implementar y gestionar contenedores de Docker en entornos de desarrollo y producción, optimizar el flujo de trabajo en sus aplicaciones y realizar configuraciones avanzadas con Docker Compose.",
+    "learn": "En este curso aprenderás a:\n- Crear y gestionar contenedores en Docker\n- Trabajar con imágenes y optimizar el tamaño de las mismas\n- Configurar redes y almacenamiento para aplicaciones contenerizadas\n- Utilizar Docker Compose para orquestar aplicaciones multicontenedor\n- Aplicar Docker en entornos de desarrollo y producción",
+    "content": [
+      {
+        "title": "1-Primeros pasos - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=HNzXM9qK1oU"
+      },
+      {
+        "title": "2-Trabajando con imágenes - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=wD3AdGUcpI4"
+      },
+      {
+        "title": "3-Contenerización de Aplicaciones - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=9WLCWNYEHLU"
+      },
+      {
+        "title": "4-Networking - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=QJpUbwYuQfY"
+      },
+      {
+        "title": "5-Almacenamiento - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=5-tGry2fwLo"
+      },
+      {
+        "title": "6-Docker Compose - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=SsXCUqNJFSo"
+      }
+    ],
+    "questions": [
+      {
+        "question": "¿Qué es Docker?",
+        "options": [
+          "Un lenguaje de programación",
+          "Una plataforma para contenerizar aplicaciones",
+          "Un sistema operativo para servidores",
+          "Una herramienta para diseño gráfico"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Qué es un contenedor en Docker?",
+        "options": [
+          "Una máquina virtual",
+          "Una herramienta de edición de código",
+          "Una instancia ejecutable de una imagen en Docker",
+          "Un gestor de redes"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "¿Cuál es el propósito de Docker Compose?",
+        "options": [
+          "Definir y orquestar aplicaciones multicontenedor",
+          "Crear un sistema de archivos distribuido",
+          "Generar imágenes de Docker automáticamente",
+          "Implementar redes de contenedores entre servidores"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué es una imagen en Docker?",
+        "options": [
+          "Una representación gráfica de un contenedor",
+          "Un archivo que contiene todo lo necesario para ejecutar una aplicación en Docker",
+          "Un sistema operativo alternativo",
+          "Una función de respaldo de datos"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Para qué se utiliza Docker Networking?",
+        "options": [
+          "Para conectar contenedores entre sí y con servicios externos",
+          "Para crear interfaces de usuario",
+          "Para hacer copias de seguridad de contenedores",
+          "Para analizar el rendimiento de aplicaciones"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Cuál es la ventaja de contenerizar aplicaciones con Docker?",
+        "options": [
+          "Mayor compatibilidad y eficiencia en el despliegue",
+          "Reducción de tamaño en el archivo de instalación",
+          "Interfaz gráfica mejorada",
+          "Mayor costo de implementación"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué comando se utiliza para construir una imagen a partir de un Dockerfile?",
+        "options": [
+          "docker run",
+          "docker build",
+          "docker start",
+          "docker exec"
+        ],
+        "correct": 1
+      }
+    ],
+    "image_url": "https://res.cloudinary.com/dckxhsgw0/image/upload/v1730333143/del1ccumvuztfrfkgogt.png",
+    "duration": 6,
+    "instructor": "Alejandro Torres",
     "is_free": false,
     "status_courses": true
   }
