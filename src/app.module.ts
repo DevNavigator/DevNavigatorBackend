@@ -16,11 +16,10 @@ import { EmailModule } from './email/email.module';
 import { NotificationsService } from './notifications/notifications.service';
 import { NotificationsModule } from './notifications/notifications.module';
 import { CoursesService } from './courses/courses.service';
-import { log } from 'console';
 import { SubscriptionTypeModule } from './SuscriptionType/subscriptionType.module';
 import { SubscriptionTypeService } from './SuscriptionType/subscriptionType.service';
-import { SubscriptionTypeRepository } from './SuscriptionType/subscriptionType.repository';
 import { PassportModule } from '@nestjs/passport';
+import { UserService } from './user/user.service';
 
 @Module({
   imports: [
@@ -56,15 +55,18 @@ import { PassportModule } from '@nestjs/passport';
     NotificationsService,
     CoursesService,
     SubscriptionTypeService,
+    UserService,
   ],
 })
 export class AppModule {
   constructor(
     private readonly coursesService: CoursesService,
     private readonly subscriptionType: SubscriptionTypeService,
+    private readonly userService: UserService,
   ) {}
   async onModuleInit() {
     await this.coursesService.addCourses();
     await this.subscriptionType.seeder();
+    await this.userService.createSuperAdminIfNotExists(); // Llama al método para crear SUPER_ADMIN
   }
 }
