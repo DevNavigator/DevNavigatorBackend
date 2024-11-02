@@ -48,6 +48,7 @@ import { UserService } from './user/user.service';
     FileUploadModule,
     NotificationsModule,
     SubscriptionTypeModule,
+    ChatModule,
   ],
   controllers: [AppController],
   providers: [
