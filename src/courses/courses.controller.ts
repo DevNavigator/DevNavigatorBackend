@@ -25,6 +25,7 @@ import { TypeUser } from 'src/decorator/type.decorator';
 import { UserType } from 'src/user/enum/UserType.enum';
 import { AuthGuard } from 'src/auth/guards/AuthGuard';
 import { TypeGuard } from 'src/auth/guards/TypeGuard';
+import { RegistrationDto } from './dto/registration.dto';
 
 @ApiTags('courses')
 @Controller('courses')
@@ -80,11 +81,8 @@ export class CoursesController {
   })
   @ApiResponse({ status: 200, description: 'Una lista con los cursos.' })
   @Get()
-  async findAll(
-    @Query('limit') limit = 5,
-    @Query('page') page = 1,
-  ): Promise<Course[]> {
-    return this.coursesService.findAll(Number(page), Number(limit));
+  async findAll(): Promise<Course[]> {
+    return this.coursesService.findAll();
   }
 
   @ApiOperation({
@@ -145,5 +143,11 @@ export class CoursesController {
     @Body() updateCourseDto: UpdateCourseDto,
   ): Promise<Course> {
     return this.coursesService.update(id, updateCourseDto);
+  }
+
+  /* @UseGuards(AuthGuard) */
+  @Post('link-user')
+  async linkUsertoCourse(@Body() registration: RegistrationDto) {
+    return this.coursesService.linkUserToCourse(registration);
   }
 }

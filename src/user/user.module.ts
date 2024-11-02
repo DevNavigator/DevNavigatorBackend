@@ -11,6 +11,6 @@ import { cloudinaryConfig } from 'src/config/cloudinary.config';
   imports: [TypeOrmModule.forFeature([User]), EmailModule],
   controllers: [UserController],
   providers: [UserService, UserRepository, cloudinaryConfig],
-  exports: [UserService, UserRepository],
+  exports: [UserService, UserRepository, TypeOrmModule],
 })
 export class UserModule {}

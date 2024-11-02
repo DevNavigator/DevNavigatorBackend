@@ -2,14 +2,13 @@ import {
   Injectable,
   ConflictException,
   NotFoundException,
-  BadRequestException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Course } from './entities/course.entity';
 import { CreateCourseDto } from './dto/create-course.dto';
 import { UpdateCourseDto } from './dto/update-course.dto';
-import * as data from '../../utils/courses.json';
+import * as data from '../../utils/course.json';
 import { difficulty } from './enum/difficulty.enum';
 
 @Injectable()
@@ -53,9 +52,15 @@ export class CoursesRepository {
             title: element.title,
             type: element.type,
             description: element.description,
-            content: element.content,
-            image_url: element.image_url,
             difficulty: this.mapDifficulty(element.difficulty),
+            requirements: element.requirements,
+            format: element.format,
+            includes_exercises: element.includes_exercises,
+            objetives: element.objetives,
+            learn: element.learn,
+            content: element.content,
+            questions: element.questions,
+            image_url: element.image_url,
             duration: element.duration,
             instructor: element.instructor,
             is_free: element.is_free,
@@ -93,7 +98,9 @@ export class CoursesRepository {
   }
 
   async findOne(id: string): Promise<Course> {
-    return await this.courseRepository.findOneBy({ id });
+    const course = await this.courseRepository.findOneBy({ id });
+
+    return course;
   }
 
   async update(id: string, updateCourseDto: UpdateCourseDto): Promise<Course> {
