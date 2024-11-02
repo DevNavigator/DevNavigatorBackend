@@ -20,6 +20,7 @@ import { log } from 'console';
 import { SubscriptionTypeModule } from './SuscriptionType/subscriptionType.module';
 import { SubscriptionTypeService } from './SuscriptionType/subscriptionType.service';
 import { SubscriptionTypeRepository } from './SuscriptionType/subscriptionType.repository';
+import { PassportModule } from '@nestjs/passport';
 
 @Module({
   imports: [
@@ -32,6 +33,7 @@ import { SubscriptionTypeRepository } from './SuscriptionType/subscriptionType.r
       useFactory: (configService: ConfigService) =>
         configService.get('typeorm'),
     }),
+    PassportModule.register({ defaultStrategy: 'google' }),
     JwtModule.register({
       global: true,
       signOptions: { expiresIn: '3h' },
