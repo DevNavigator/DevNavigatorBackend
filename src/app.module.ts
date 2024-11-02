@@ -16,10 +16,9 @@ import { EmailModule } from './email/email.module';
 import { NotificationsService } from './notifications/notifications.service';
 import { NotificationsModule } from './notifications/notifications.module';
 import { CoursesService } from './courses/courses.service';
-import { log } from 'console';
 import { SubscriptionTypeModule } from './SuscriptionType/subscriptionType.module';
 import { SubscriptionTypeService } from './SuscriptionType/subscriptionType.service';
-import { SubscriptionTypeRepository } from './SuscriptionType/subscriptionType.repository';
+import { ChatModule } from './chat/chat.module';
 import { PassportModule } from '@nestjs/passport';
 
 @Module({
@@ -49,6 +48,7 @@ import { PassportModule } from '@nestjs/passport';
     FileUploadModule,
     NotificationsModule,
     SubscriptionTypeModule,
+    ChatModule,
   ],
   controllers: [AppController],
   providers: [
