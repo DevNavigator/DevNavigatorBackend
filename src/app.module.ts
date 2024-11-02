@@ -18,6 +18,7 @@ import { NotificationsModule } from './notifications/notifications.module';
 import { CoursesService } from './courses/courses.service';
 import { SubscriptionTypeModule } from './SuscriptionType/subscriptionType.module';
 import { SubscriptionTypeService } from './SuscriptionType/subscriptionType.service';
+import { ChatModule } from './chat/chat.module';
 import { PassportModule } from '@nestjs/passport';
 import { UserService } from './user/user.service';
 
