@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { SubscriptionType } from './entities/subscriptionType.entity';
 import { Repository } from 'typeorm';
@@ -19,9 +19,12 @@ export class SubscriptionTypeRepository {
     return await this.subscriptionTypeRepository.find();
   }
 
-  async findOne(id: string) {
+  async findOne(type: string) {
+    if (type !== 'MENSUAL') {
+      return new BadRequestException('Error en el tipo de suscripcion.');
+    }
     const typeSub = await this.subscriptionTypeRepository.findOne({
-      where: { id },
+      where: { type: SubsType.Mensual },
     });
     return typeSub;
   }

@@ -1,4 +1,8 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { CoursesRepository } from './courses.repository';
 import { CreateCourseDto } from './dto/create-course.dto';
 import { UpdateCourseDto } from './dto/update-course.dto';
@@ -50,10 +54,15 @@ export class CoursesService {
 
     const user = await this.userRepository.findOne({
       where: { id: userId },
-      relations: ['Courses'],
+      relations: ['Courses', 'Subscription'],
     });
     if (!user) {
       throw new NotFoundException('Usuario no encontrado');
+    }
+    if (user.Subscription === null) {
+      return new BadRequestException(
+        'Debes tener una suscripcion para inscribirte a un curso',
+      );
     }
     const course = await this.coursesRepository.findOne(courseId);
     if (!course) {
@@ -62,6 +71,10 @@ export class CoursesService {
     if (!user.Courses.some((c) => c.id === courseId)) {
       user.Courses.push(course);
       await this.userRepository.save(user);
+    } else {
+      throw new BadRequestException(
+        `Ya te encuentras suscripto al curso: ${course.title}`,
+      );
     }
     return `Usuario ${userId} vinculado al curso ${courseId}`;
   }
