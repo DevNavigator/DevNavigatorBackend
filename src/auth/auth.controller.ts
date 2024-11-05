@@ -91,11 +91,12 @@ export class AuthController {
   @UseGuards(GoogleAuthGuard)
   @Get('callback/google')
   async googleAuthCallback(@Req() req: Request, @Res() res: Response) {
-    const user = req.user as User; // Obtiene el usuario autenticado
+    const user = req.body.user as User; // Obtiene el usuario autenticado // .body ?
     const createdUser = await this.authService.validateUser(user); // Crea o valida el usuario
     const token = await this.authService.generateJwt(createdUser); // Genera el token JWT
     res.redirect(`http://localhost:3000?token=${token}`); // Redirige con el token
   }
+
   @Post('create-user')
   async createUser(@Body() userData: CreateUserGoogleDto): Promise<User> {
     return this.authService.validateUser(userData);
