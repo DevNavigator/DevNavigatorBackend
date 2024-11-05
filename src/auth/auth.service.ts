@@ -22,22 +22,22 @@ export class AuthService {
   ): Promise<{ user: User; success: boolean; token: string }> {
     const { email, password } = loginUser;
 
-    const user = await this.userRepository.findOneByEmail(email);
-    if (!user)
+    const userFound = await this.userRepository.findOneByEmail(email);
+    if (!userFound)
       throw new BadRequestException('Usuario y/o contraseña incorrecta.');
 
-    const result = await bcrypt.compare(password, user.password);
+    const result = await bcrypt.compare(password, userFound.password);
     if (!result)
       throw new BadRequestException('Usuario y/o contraseña incorrecta.');
-    const userType: UserType = user.userType;
-    const userPayload = {
-      id: user.id,
-      email: user.email,
+    const userType: UserType = userFound.userType;
+    const user = {
+      id: userFound.id,
+      email: userFound.email,
       types: userType,
     };
-    const token = this.jwtService.sign(userPayload);
+    const token = this.jwtService.sign(user);
     return {
-      user: user,
+      user: userFound,
       success: true,
       token,
     };
@@ -74,5 +74,48 @@ export class AuthService {
     );
 
     return userWithoutPassword;
+  }
+
+  async generateJwt(user: User): Promise<string> {
+    const payload = {
+      id: user.id,
+      email: user.email,
+      name: user.name,
+      userType: user.userType,
+    };
+    console.log('auth', payload);
+    return this.jwtService.sign(payload, { expiresIn: '3h' });
+  }
+
+  async validateUser(profile: Partial<User>): Promise<any> {
+    let foundUser = await this.userRepository.findOneByEmail(profile.email);
+    console.log(foundUser);
+    if (!foundUser) {
+      foundUser = await this.userRepository.createUser({
+        name: profile.name,
+        email: profile.email,
+        imgProfile: profile.imgProfile || '',
+        userType: UserType.User,
+        password: '',
+      });
+      console.log('Nuevo usuario creado:', foundUser);
+    } else {
+      console.log('Usuario existente encontrado:', foundUser);
+    }
+
+    const userType: UserType = foundUser.userType;
+    const user = {
+      id: foundUser.id,
+      name: foundUser.name,
+      email: foundUser.email,
+      imgProfile: foundUser.imgProfile,
+      types: userType,
+    };
+    const token = await this.jwtService.sign(user);
+    return {
+      user,
+      success: true,
+      token,
+    };
   }
 }

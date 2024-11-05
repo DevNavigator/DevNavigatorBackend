@@ -203,4 +203,26 @@ export class UserService {
       message: 'Contraseña cambiada exitosamente.',
     };
   }
+
+  async createSuperAdminIfNotExists() {
+    const superAdminEmail = 'superadmin@devnavigator.com'; // Cambia esto a un email adecuado
+    const existingSuperAdmin =
+      await this.userRepository.findOneByEmail(superAdminEmail);
+
+    if (!existingSuperAdmin) {
+      const superAdminData = {
+        name: 'Super Admin DevNavigator',
+        email: superAdminEmail,
+        password: await bcrypt.hash('Superadmin123*.', 10),
+        userType: UserType.SuperAdmin,
+        phone: '1234567890',
+        address: '123 Super Admin St DevNavigator',
+      };
+
+      await this.userRepository.createUser(superAdminData);
+      console.log('Usuario SUPER_ADMIN creado.');
+    } else {
+      console.log('El usuario SUPER_ADMIN ya existe.');
+    }
+  }
 }

@@ -43,14 +43,14 @@ export class User {
   })
   password: string;
 
-  @Column({ type: 'varchar', nullable: false })
+  @Column({ type: 'varchar', nullable: true })
   @ApiProperty({
     description: 'Número de teléfono del usuario.',
     example: '2634123567',
   })
   phone: string;
 
-  @Column({ type: 'varchar', nullable: false })
+  @Column({ type: 'varchar', nullable: true })
   @ApiProperty({
     description: 'Dirección del usuario.',
     example: '123 Calle Falsa, Departamento 4B',
