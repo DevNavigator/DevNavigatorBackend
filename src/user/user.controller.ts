@@ -62,7 +62,7 @@ export class UserController {
   @ApiResponse({ status: 404, description: 'El usuario no existe.' })
   @ApiBearerAuth()
   @HttpCode(200)
-  @UseGuards(AuthGuard)
+  @UseGuards(AuthGuard) //
   @Get(':id')
   findOne(@Param('id', ParseUUIDPipe) id: string) {
     return this.userService.findOne(id);

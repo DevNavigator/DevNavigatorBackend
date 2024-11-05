@@ -18,8 +18,8 @@ export class SubscriptionTypeService {
     const subs = await this.subscriptionTypeRepository.findAll();
     return subs.slice(start, end); // falta
   }
-  async findOne(id: string) {
-    return this.subscriptionTypeRepository.findOne(id);
+  async findOne(type: string) {
+    return this.subscriptionTypeRepository.findOne(type);
   }
 
   async seeder() {

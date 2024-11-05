@@ -40,7 +40,7 @@ export class SubscriptionsController {
   @ApiResponse({ status: 404, description: 'User not found.' })
   @ApiResponse({ status: 409, description: 'User already subscribed.' })
   @ApiBearerAuth()
-  @UseGuards(AuthGuard)
+  /* @UseGuards(AuthGuard) */
   @Post(':userId')
   async create(@Body() createSubscriptionDto: CreateSubscriptionDto) {
     return this.subscriptionsService.create(createSubscriptionDto);

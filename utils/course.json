@@ -12,47 +12,47 @@
     "content": [
       {
         "title": "1-Primeros pasos - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=Zn7pzMMfzXg"
+        "url": "https://www.youtube.com/embed/Zn7pzMMfzXg"
       },
       {
         "title": "2-Parámetros y diagramas - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=W-6umyVKPFA"
+        "url": "https://www.youtube.com/embed/W-6umyVKPFA"
       },
       {
         "title": "3-Consultas avanzadas - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=wg3haJunom0"
+        "url": "https://www.youtube.com/embed/wg3haJunom0"
       },
       {
         "title": "4-Consultas avanzadas 2 - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=UUrPl9QuWwo"
+        "url": "https://www.youtube.com/embed/UUrPl9QuWwo"
       },
       {
         "title": "5-Proceso de autenticación - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=eVgGWIh4WDI"
+        "url": "https://www.youtube.com/embed/eVgGWIh4WDI"
       },
       {
         "title": "6-Peticiones json token - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=L5a4Y-XxiO4"
+        "url": "https://www.youtube.com/embed/L5a4Y-XxiO4"
       },
       {
         "title": "7-Internacionalizando aplicación - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=-EsLAWXazac"
+        "url": "https://www.youtube.com/embed/-EsLAWXazac"
       },
       {
         "title": "8-Gestión del versionado - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=ijtm2BSNV-o"
+        "url": "https://www.youtube.com/embed/ijtm2BSNV-o"
       },
       {
         "title": "9.1-Conceptos de log in - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=gOTJkthFWhw"
+        "url": "https://www.youtube.com/embed/gOTJkthFWhw"
       },
       {
         "title": "9.2-Conceptos de log in - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=vpWB2lf2r8s"
+        "url": "https://www.youtube.com/embed/vpWB2lf2r8s"
       },
       {
         "title": "10-La asincronía - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=1vxpZzANoA4"
+        "url": "https://www.youtube.com/embed/1vxpZzANoA4"
       }
     ],
     "questions": [
@@ -249,51 +249,51 @@
     "content": [
       {
         "title": "1-Introducción a Python - DevNavigator.",
-        "url": "https://www.youtube.com/watch?v=ziXpreifQ68"
+        "url": "https://www.youtube.com/embed/ziXpreifQ68"
       },
       {
         "title": "2-El intérprete de Python - DevNavigator.",
-        "url": "https://www.youtube.com/watch?v=ubPsYnkxk68"
+        "url": "https://www.youtube.com/embed/ubPsYnkxk68"
       },
       {
         "title": "3-Introducción a los tipos de objetos - DevNavigator.",
-        "url": "https://www.youtube.com/watch?v=C15MkeW-3Yc"
+        "url": "https://www.youtube.com/embed/C15MkeW-3Yc"
       },
       {
         "title": "4-Control de flujo - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=2vR3ktU-QQ4"
+        "url": "https://www.youtube.com/embed/2vR3ktU-QQ4"
       },
       {
         "title": "5-Funciones - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=H03UoQoNiuM"
+        "url": "https://www.youtube.com/embed/H03UoQoNiuM"
       },
       {
         "title": "6-Clases y objetos - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=X9CSDly8gSM"
+        "url": "https://www.youtube.com/embed/X9CSDly8gSM"
       },
       {
         "title": "7-Módulos: ejecutando módulos como scripts - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=jEmYXqwpIhU"
+        "url": "https://www.youtube.com/embed/jEmYXqwpIhU"
       },
       {
         "title": "8-Entrada y salida - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=NiKy9dhjI0w"
+        "url": "https://www.youtube.com/embed/NiKy9dhjI0w"
       },
       {
         "title": "9-Introducción a la biblioteca estándar de Python y funciones Built-in - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=eoGilEziYwU"
+        "url": "https://www.youtube.com/embed/eoGilEziYwU"
       },
       {
         "title": "10-GUI - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=YObczQ25y4E"
+        "url": "https://www.youtube.com/embed/YObczQ25y4E"
       },
       {
         "title": "11-Bases de datos - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=yXIk7WeUorc"
+        "url": "https://www.youtube.com/embed/yXIk7WeUorc"
       },
       {
         "title": "12-Introducción a Django - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=07g11ylvc7o"
+        "url": "https://www.youtube.com/embed/07g11ylvc7o"
       }
     ],
     "questions": [
@@ -378,31 +378,31 @@
     "content": [
       {
         "title": "1-Introducción a TypeScript - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=RI7j5bicTEw"
+        "url": "https://www.youtube.com/embed/RI7j5bicTEw"
       },
       {
         "title": "2-Variables, datos, palabras reservadas y estructuras de control - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=wutMZAg2t_4"
+        "url": "https://www.youtube.com/embed/wutMZAg2t_4"
       },
       {
         "title": "3-Funciones - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=uxNYQWdjr7E"
+        "url": "https://www.youtube.com/embed/uxNYQWdjr7E"
       },
       {
         "title": "4-Persistencia de los datos y gestión de eventos - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=9cx98y7gYfA"
+        "url": "https://www.youtube.com/embed/9cx98y7gYfA"
       },
       {
         "title": "5-Clases y objetos - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=6a9K_KrIB2w"
+        "url": "https://www.youtube.com/embed/6a9K_KrIB2w"
       },
       {
         "title": "6-Interfaces, herencias y decoradores - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=SzRh4JexeDg"
+        "url": "https://www.youtube.com/embed/SzRh4JexeDg"
       },
       {
         "title": "7-Conceptos de depuración - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=QoVd9U6fzzw"
+        "url": "https://www.youtube.com/embed/QoVd9U6fzzw"
       }
     ],
     "questions": [
@@ -496,23 +496,23 @@
     "content": [
       {
         "title": "1-Bases de datos - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=vGITAWI2gmk"
+        "url": "https://www.youtube.com/embed/vGITAWI2gmk"
       },
       {
         "title": "2-PgAdmin y conceptos de bases de datos - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=FOd3Ivo4198"
+        "url": "https://www.youtube.com/embed/FOd3Ivo4198"
       },
       {
         "title": "3-Tablas en PgAdming - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=mft4mrABg5s"
+        "url": "https://www.youtube.com/embed/mft4mrABg5s"
       },
       {
         "title": "4-Consultas de SQL - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=FKI_QUJqovY"
+        "url": "https://www.youtube.com/embed/FKI_QUJqovY"
       },
       {
         "title": "5-Consultas e índices - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=XeVaUjp_uCM"
+        "url": "https://www.youtube.com/embed/XeVaUjp_uCM"
       }
     ],
     "questions": [
@@ -606,27 +606,27 @@
     "content": [
       {
         "title": "1-Primeros pasos - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=HNzXM9qK1oU"
+        "url": "https://www.youtube.com/embed/HNzXM9qK1oU"
       },
       {
         "title": "2-Trabajando con imágenes - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=wD3AdGUcpI4"
+        "url": "https://www.youtube.com/embed/wD3AdGUcpI4"
       },
       {
         "title": "3-Contenerización de Aplicaciones - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=9WLCWNYEHLU"
+        "url": "https://www.youtube.com/embed/9WLCWNYEHLU"
       },
       {
         "title": "4-Networking - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=QJpUbwYuQfY"
+        "url": "https://www.youtube.com/embed/QJpUbwYuQfY"
       },
       {
         "title": "5-Almacenamiento - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=5-tGry2fwLo"
+        "url": "https://www.youtube.com/embed/5-tGry2fwLo"
       },
       {
         "title": "6-Docker Compose - DevNavigator",
-        "url": "https://www.youtube.com/watch?v=SsXCUqNJFSo"
+        "url": "https://www.youtube.com/embed/SsXCUqNJFSo"
       }
     ],
     "questions": [
