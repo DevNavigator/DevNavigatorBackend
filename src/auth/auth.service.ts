@@ -104,16 +104,14 @@ export class AuthService {
     }
 
     const userType: UserType = foundUser.userType;
-    const userPayload = {
+    const user = {
       id: foundUser.id,
-      name: foundUser.name,
       email: foundUser.email,
-      imgProfile: foundUser.imgProfile,
       types: userType,
     };
-    const token = await this.jwtService.sign(userPayload);
+    const token = await this.jwtService.sign(user);
     return {
-      userPayload,
+      user,
       success: true,
       token,
     };

@@ -1,0 +1,225 @@
+[
+  {
+    "title": "EL FAMOSO \"FIZZ BUZZ\"",
+    "description": "Escribe un programa que muestre por consola (con un print) los números de 1 a 100 (ambos incluidos y con un salto de línea entre cada impresión), sustituyendo los siguientes: - Múltiplos de 3 por la palabra \"fizz\". - Múltiplos de 5 por la palabra \"buzz\". - Múltiplos de 3 y de 5 a la vez por la palabra \"fizzbuzz\".",
+    "solution": {
+      "JavaScript": "for (let i = 1; i <= 100; i++) { console.log((i % 3 === 0 ? 'fizz' : '') + (i % 5 === 0 ? 'buzz' : '') || i); }",
+      "PHP": "<?php for ($i = 1; $i <= 100; $i++) { echo ($i % 3 === 0 ? 'fizz' : '') . ($i % 5 === 0 ? 'buzz' : '') ?: $i; echo \"\\n\"; } ?>",
+      "Java": "for (int i = 1; i <= 100; i++) { System.out.println((i % 3 == 0 ? \"fizz\" : \"\") + (i % 5 == 0 ? \"buzz\" : \"\") + (i % 3 != 0 && i % 5 != 0 ? i : \"\")); }",
+      "C#": "for (int i = 1; i <= 100; i++) { Console.WriteLine((i % 3 == 0 ? \"fizz\" : \"\") + (i % 5 == 0 ? \"buzz\" : \"\") + (i % 3 != 0 && i % 5 != 0 ? i.ToString() : \"\")); }",
+      "Python": "for i in range(1, 101):\n    print('fizz' * (i % 3 == 0) + 'buzz' * (i % 5 == 0) or i)"
+    }
+  },
+  {
+    "title": "¿ES UN ANAGRAMA?",
+    "description": "Escribe una función que reciba dos palabras (String) y retorne verdadero o falso (Bool) según sean o no anagramas.",
+    "solution": {
+      "JavaScript": "function isAnagram(str1, str2) { return str1.split('').sort().join('') === str2.split('').sort().join('') && str1 !== str2; }",
+      "PHP": "<?php function isAnagram($str1, $str2) { return count_chars($str1) === count_chars($str2) && $str1 !== $str2; } ?>",
+      "Java": "public static boolean isAnagram(String str1, String str2) { char[] arr1 = str1.toCharArray(); char[] arr2 = str2.toCharArray(); Arrays.sort(arr1); Arrays.sort(arr2); return Arrays.equals(arr1, arr2) && !str1.equals(str2); }",
+      "C#": "public static bool IsAnagram(string str1, string str2) { var arr1 = str1.ToCharArray(); var arr2 = str2.ToCharArray(); Array.Sort(arr1); Array.Sort(arr2); return arr1.SequenceEqual(arr2) && str1 != str2; }",
+      "Python": "def is_anagram(str1, str2):\n    return sorted(str1) == sorted(str2) and str1 != str2"
+    }
+  },
+  {
+    "title": "LA SUCESIÓN DE FIBONACCI",
+    "description": "Escribe un programa que imprima los 50 primeros números de la sucesión de Fibonacci empezando en 0.",
+    "solution": {
+      "JavaScript": "let a = 0, b = 1; for (let i = 0; i < 50; i++) { console.log(a); [a, b] = [b, a + b]; }",
+      "PHP": "<?php $a = 0; $b = 1; for ($i = 0; $i < 50; $i++) { echo \"$a\\n\"; list($a, $b) = array($b, $a + $b); } ?>",
+      "Java": "int a = 0, b = 1; for (int i = 0; i < 50; i++) { System.out.println(a); int next = a + b; a = b; b = next; }",
+      "C#": "int a = 0, b = 1; for (int i = 0; i < 50; i++) { Console.WriteLine(a); int next = a + b; a = b; b = next; }",
+      "Python": "a, b = 0, 1\nfor _ in range(50):\n    print(a)\n    a, b = b, a + b"
+    }
+  },
+  {
+    "title": "¿ES UN NÚMERO PRIMO?",
+    "description": "Escribe un programa que se encargue de comprobar si un número es o no primo.",
+    "solution": {
+      "JavaScript": "function isPrime(num) { if (num <= 1) return false; for (let i = 2; i <= Math.sqrt(num); i++) { if (num % i === 0) return false; } return true; } console.log([...Array(100).keys()].filter(isPrime));",
+      "PHP": "<?php function isPrime($num) { if ($num <= 1) return false; for ($i = 2; $i <= sqrt($num); $i++) { if ($num % $i === 0) return false; } return true; } for ($i = 1; $i <= 100; $i++) { if (isPrime($i)) echo \"$i\\n\"; } ?>",
+      "Java": "public static boolean isPrime(int num) { if (num <= 1) return false; for (int i = 2; i <= Math.sqrt(num); i++) { if (num % i == 0) return false; } return true; } public static void main(String[] args) { for (int i = 1; i <= 100; i++) { if (isPrime(i)) System.out.println(i); } }",
+      "C#": "public static bool IsPrime(int num) { if (num <= 1) return false; for (int i = 2; i <= Math.Sqrt(num); i++) { if (num % i == 0) return false; } return true; } public static void Main() { for (int i = 1; i <= 100; i++) { if (IsPrime(i)) Console.WriteLine(i); } }",
+      "Python": "def is_prime(num):\n    if num <= 1:\n        return False\n    for i in range(2, int(num ** 0.5) + 1):\n        if num % i == 0:\n            return False\n    return True\nfor i in range(1, 101):\n    if is_prime(i):\n        print(i)"
+    }
+  },
+  {
+    "title": "ÁREA DE UN POLÍGONO",
+    "description": "Crea una única función (importante que sólo sea una) que sea capaz de calcular y retornar el área de un polígono.",
+    "solution": {
+      "JavaScript": "function areaOfPolygon(type, ...params) { if (type === 'triángulo') return (params[0] * params[1]) / 2; else if (type === 'cuadrado') return params[0] ** 2; else if (type === 'rectángulo') return params[0] * params[1]; } console.log(areaOfPolygon('triángulo', 10, 5), areaOfPolygon('cuadrado', 4), areaOfPolygon('rectángulo', 4, 5));",
+      "PHP": "<?php function areaOfPolygon($type, ...$params) { if ($type === 'triángulo') return ($params[0] * $params[1]) / 2; elseif ($type === 'cuadrado') return $params[0] ** 2; elseif ($type === 'rectángulo') return $params[0] * $params[1]; } echo areaOfPolygon('triángulo', 10, 5) . \"\\n\"; echo areaOfPolygon('cuadrado', 4) . \"\\n\"; echo areaOfPolygon('rectángulo', 4, 5) . \"\\n\"; ?>",
+      "Java": "public static double areaOfPolygon(String type, double... params) { switch (type) { case \"triángulo\": return (params[0] * params[1]) / 2; case \"cuadrado\": return Math.pow(params[0], 2); case \"rectángulo\": return params[0] * params[1]; default: return 0; } } public static void main(String[] args) { System.out.println(areaOfPolygon(\"triángulo\", 10, 5)); System.out.println(areaOfPolygon(\"cuadrado\", 4)); System.out.println(areaOfPolygon(\"rectángulo\", 4, 5)); }",
+      "C#": "public static double AreaOfPolygon(string type, params double[] parameters) { switch (type) { case \"triángulo\": return (parameters[0] * parameters[1]) / 2; case \"cuadrado\": return Math.Pow(parameters[0], 2); case \"rectángulo\": return parameters[0] * parameters[1]; default: return 0; } } public static void Main() { Console.WriteLine(AreaOfPolygon(\"triángulo\", 10, 5)); Console.WriteLine(AreaOfPolygon(\"cuadrado\", 4)); Console.WriteLine(AreaOfPolygon(\"rectángulo\", 4, 5)); }",
+      "Python": "def area_of_polygon(type, *params):\n    if type == 'triángulo':\n        return (params[0] * params[1]) / 2\n    elif type == 'cuadrado':\n        return params[0] ** 2\n    elif type == 'rectángulo':\n        return params[0] * params[1]\nprint(area_of_polygon('triángulo', 10, 5), area_of_polygon('cuadrado', 4), area_of_polygon('rectángulo', 4, 5))"
+    }
+  },
+  {
+    "title": "ASPECT RATIO DE UNA IMAGEN",
+    "description": "Crea un programa que se encargue de calcular el aspect ratio de una imagen a partir de una url.",
+    "solution": {
+      "JavaScript": "async function getAspectRatio(url) { const img = new Image(); img.src = url; await img.decode(); return `${img.width}:${img.height}`; } getAspectRatio('https://raw.githubusercontent.com/mouredevmouredev/master/mouredev_github_profile.png').then(console.log);",
+      "PHP": "<?php function getAspectRatio($url) { list($width, $height) = getimagesize($url); return \"$width:$height\"; } echo getAspectRatio('https://raw.githubusercontent.com/mouredevmouredev/master/mouredev_github_profile.png'); ?>",
+      "Java": "import java.awt.image.BufferedImage;\nimport javax.imageio.ImageIO;\nimport java.io.File;\nimport java.io.IOException;\n\npublic static String getAspectRatio(String url) throws IOException {\n    BufferedImage img = ImageIO.read(new File(url));\n    return img.getWidth() + \":\" + img.getHeight();\n}\n\npublic static void main(String[] args) throws IOException {\n    System.out.println(getAspectRatio(\"path/to/image.png\"));\n}",
+      "C#": "public static async Task<string> GetAspectRatio(string url) { using (var img = new Bitmap(url)) { return $"{img.Width}:{img.Height}"; } } public static async Task Main() { Console.WriteLine(await GetAspectRatio(\"https://raw.githubusercontent.com/mouredevmouredev/master/mouredev_github_profile.png\")); }",
+      "Python": "from PIL import Image\nimport requests\n\ndef get_aspect_ratio(url):\n    img = Image.open(requests.get(url, stream=True).raw)\n    return f'{img.width}:{img.height}'\n\nprint(get_aspect_ratio('https://raw.githubusercontent.com/mouredevmouredev/master/mouredev_github_profile.png'))"
+    }
+  },
+  {
+    "title": "INVIRTIENDO CADENAS",
+    "description": "Crea un programa que invierta el orden de una cadena de texto sin usar funciones propias del lenguaje que lo hagan de forma automática.",
+    "solution": {
+      "JavaScript": "function reverseString(str) { let reversed = ''; for (let i = str.length - 1; i >= 0; i--) { reversed += str[i]; } return reversed; } console.log(reverseString('Hola mundo'));",
+      "PHP": "<?php function reverseString($str) { $reversed = ''; for ($i = strlen($str) - 1; $i >= 0; $i--) { $reversed .= $str[$i]; } return $reversed; } echo reverseString('Hola mundo'); ?>",
+      "Java": "public static String reverseString(String str) { StringBuilder reversed = new StringBuilder(); for (int i = str.length() - 1; i >= 0; i--) { reversed.append(str.charAt(i)); } return reversed.toString(); } public static void main(String[] args) { System.out.println(reverseString(\"Hola mundo\")); }",
+      "C#": "public static string ReverseString(string str) { char[] charArray = str.ToCharArray(); Array.Reverse(charArray); return new string(charArray); } public static void Main() { Console.WriteLine(ReverseString(\"Hola mundo\")); }",
+      "Python": "def reverse_string(s):\n    reversed = ''\n    for char in s[::-1]:\n        reversed += char\n    return reversed\nprint(reverse_string('Hola mundo'))"
+    }
+  },
+  {
+    "title": "CONTANDO PALABRAS",
+    "description": "Crea un programa que cuente cuantas veces se repite cada palabra y que muestre el recuento final de todas ellas.",
+    "solution": {
+      "JavaScript": "function countWords(str) { const words = str.match(/\\w+/g); const counts = {}; words.forEach(word => { word = word.toLowerCase(); counts[word] = (counts[word] || 0) + 1; }); return counts; } console.log(countWords('Hola mundo mundo'));",
+      "PHP": "<?php function countWords($str) { $words = preg_split('/\\W+/', strtolower($str)); $counts = array_count_values($words); return $counts; } print_r(countWords('Hola mundo mundo')); ?>",
+      "Java": "public static Map<String, Integer> countWords(String str) { String[] words = str.toLowerCase().split(\"\\W+\"); Map<String, Integer> counts = new HashMap<>(); for (String word : words) { counts.put(word, counts.getOrDefault(word, 0) + 1); } return counts; } public static void main(String[] args) { System.out.println(countWords(\"Hola mundo mundo\")); }",
+      "C#": "public static Dictionary<string, int> CountWords(string str) { var words = Regex.Matches(str.ToLower(), \"\\w+\").Cast<Match>().Select(m => m.Value); return words.GroupBy(w => w).ToDictionary(g => g.Key, g => g.Count()); } public static void Main() { var counts = CountWords(\"Hola mundo mundo\"); foreach (var pair in counts) { Console.WriteLine($"{pair.Key}: {pair.Value}"); } }",
+      "Python": "import re\ndef count_words(s):\n    words = re.findall('\\w+', s.lower())\n    return {word: words.count(word) for word in set(words)}\nprint(count_words('Hola mundo mundo'))"
+    }
+  },
+  {
+    "title": "DECIMAL A BINARIO",
+    "description": "Crea un programa se encargue de transformar un número decimal a binario sin utilizar funciones propias del lenguaje que lo hagan directamente.",
+    "solution": {
+      "JavaScript": "function decimalToBinary(num) { let binary = ''; while (num > 0) { binary = (num % 2) + binary; num = Math.floor(num / 2); } return binary; } console.log(decimalToBinary(10));",
+      "PHP": "<?php function decimalToBinary($num) { $binary = ''; while ($num > 0) { $binary = ($num % 2) . $binary; $num = floor($num / 2); } return $binary; } echo decimalToBinary(10); ?>",
+      "Java": "public static String decimalToBinary(int num) { StringBuilder binary = new StringBuilder(); while (num > 0) { binary.insert(0, num % 2); num /= 2; } return binary.toString(); } public static void main(String[] args) { System.out.println(decimalToBinary(10)); }",
+      "C#": "public static string DecimalToBinary(int num) { var binary = \"\"; while (num > 0) { binary = (num % 2) + binary; num /= 2; } return binary; } public static void Main() { Console.WriteLine(DecimalToBinary(10)); }",
+      "Python": "def decimal_to_binary(num):\n    binary = ''\n    while num > 0:\n        binary = str(num % 2) + binary\n        num //= 2\n    return binary\nprint(decimal_to_binary(10))"
+    }
+  },
+  {
+        "title": "CÓDIGO MORSE",
+    "description": "Crea un programa que sea capaz de transformar texto natural a código morse y viceversa.",
+    "solution": {
+      "JavaScript": "const morseCode = { 'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..', '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.', ' ': ' ' }; function textToMorse(text) { return text.toUpperCase().split('').map(char => morseCode[char]).join(' '); } function morseToText(morse) { const reversedMorseCode = Object.fromEntries(Object.entries(morseCode).map(([k, v]) => [v, k])); return morse.split(' ').map(code => reversedMorseCode[code]).join(''); } console.log(textToMorse('Hola mundo')); console.log(morseToText('.... --- .-.. .- / -- ..- -. -.. ---'));",
+      "PHP": "<?php $morseCode = [ 'A' => '.-', 'B' => '-...', 'C' => '-.-.', 'D' => '-..', 'E' => '.', 'F' => '..-.', 'G' => '--.', 'H' => '....', 'I' => '..', 'J' => '.---', 'K' => '-.-', 'L' => '.-..', 'M' => '--', 'N' => '-.', 'O' => '---', 'P' => '.--.', 'Q' => '--.-', 'R' => '.-.', 'S' => '...', 'T' => '-', 'U' => '..-', 'V' => '...-', 'W' => '.--', 'X' => '-..-', 'Y' => '-.--', 'Z' => '--..', '0' => '-----', '1' => '.----', '2' => '..---', '3' => '...--', '4' => '....-', '5' => '.....', '6' => '-....', '7' => '--...', '8' => '---..', '9' => '----.', ' ' => ' ' ]; function textToMorse($text) { global $morseCode; return implode(' ', array_map(function($char) { return $morseCode[strtoupper($char)]; }, str_split($text))); } function morseToText($morse) { global $morseCode; $reversedMorseCode = array_flip($morseCode); return implode('', array_map(function($code) use ($reversedMorseCode) { return $reversedMorseCode[$code]; }, explode(' ', $morse))); } echo textToMorse('Hola mundo') . \"\\n\"; echo morseToText('.... --- .-.. .- / -- ..- -. -.. ---'); ?>",
+      "Java": "import java.util.HashMap; import java.util.Map; public class MorseCode { private static final Map<Character, String> morseCode = new HashMap<>(); static { morseCode.put('A', \".-\"); morseCode.put('B', \"-...\"); morseCode.put('C', \"-.-.\"); morseCode.put('D', \"-..\"); morseCode.put('E', \".\"); morseCode.put('F', \"..-.\"); morseCode.put('G', \"--.\"); morseCode.put('H', \"....\"); morseCode.put('I', \"..\"); morseCode.put('J', \".---\"); morseCode.put('K', \"-.-\"); morseCode.put('L', \".-..\"); morseCode.put('M', \"--\"); morseCode.put('N', \"-.\"); morseCode.put('O', \"---\"); morseCode.put('P', \".--.\"); morseCode.put('Q', \"--.-\"); morseCode.put('R', \".-.\"); morseCode.put('S', \"...\"); morseCode.put('T', \"-\"); morseCode.put('U', \"..-\"); morseCode.put('V', \"...-\"); morseCode.put('W', \".--\"); morseCode.put('X', \"-..-\"); morseCode.put('Y', \"-.--\"); morseCode.put('Z', \"--..\"); morseCode.put('0', \"-----\"); morseCode.put('1', \".----\"); morseCode.put('2', \"..---\"); morseCode.put('3', \"...--\"); morseCode.put('4', \"....-\"); morseCode.put('5', \".....\"); morseCode.put('6', \"-....\"); morseCode.put('7', \"--...\"); morseCode.put('8', \"---..\"); morseCode.put('9', \"----.\"); morseCode.put(' ', \" \"); } public static String textToMorse(String text) { StringBuilder morse = new StringBuilder(); for (char c : text.toUpperCase().toCharArray()) { morse.append(morseCode.get(c)).append(' '); } return morse.toString().trim(); } public static String morseToText(String morse) { StringBuilder text = new StringBuilder(); String[] codes = morse.split(\" \"); for (String code : codes) { for (Map.Entry<Character, String> entry : morseCode.entrySet()) { if (entry.getValue().equals(code)) { text.append(entry.getKey()); break; } } } return text.toString(); } public static void main(String[] args) { System.out.println(textToMorse(\"Hola mundo\")); System.out.println(morseToText(\".... --- .-.. .- / -- ..- -. -.. ---\")); } }",
+      "C#": "using System;\nusing System.Collections.Generic;\nusing System.Linq;\n\nclass MorseCode {\n    private static Dictionary<char, string> morseCode = new Dictionary<char, string> {\n        {'A', \".-\"}, {'B', \"-...\"}, {'C', \"-.-.\"}, {'D', \"-..\"}, {'E', \".\"}, {'F', \"..-.\"},\n        {'G', \"--.\"}, {'H', \"....\"}, {'I', \"..\"}, {'J', \".---\"}, {'K', \"-.-\"}, {'L', \".-..\"},\n        {'M', \"--\"}, {'N', \"-.\"}, {'O', \"---\"}, {'P', \".--.\"}, {'Q', \"--.-\"}, {'R', \".-.\"},\n        {'S', \"...\"}, {'T', \"-\"}, {'U', \"..-\"}, {'V', \"...-\"}, {'W', \".--\"}, {'X', \"-..-\"},\n        {'Y', \"-.--\"}, {'Z', \"--..\"}, {'0', \"-----\"}, {'1', \".----\"}, {'2', \"..---\"},\n        {'3', \"...--\"}, {'4', \"....-\"}, {'5', \".....\"}, {'6', \"-....\"}, {'7', \"--...\"},\n        {'8', \"---..\"}, {'9', \"----.\"}, {' ', \" \"}\n    };\n\n    public static string TextToMorse(string text) {\n        return string.Join(\" \", text.ToUpper().Select(c => morseCode[c]));\n    }\n\n    public static string MorseToText(string morse) {\n        var reversedMorseCode = morseCode.ToDictionary(x => x.Value, x => x.Key);\n        return string.Join(\"\", morse.Split(' ').Select(code => reversedMorseCode[code]));\n    }\n\n    public static void Main() {\n        Console.WriteLine(TextToMorse(\"Hola mundo\"));\n        Console.WriteLine(MorseToText(\".... --- .-.. .- / -- ..- -. -.. ---\"));\n    }\n}",
+      "Python": "morse_code = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..', '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.', ' ': ' '}\\ndef text_to_morse(text):\\n    return ' '.join(morse_code[char] for char in text.upper())\\ndef morse_to_text(morse):\\n    reversed_morse_code = {v: k for k, v in morse_code.items()}\\n    return ''.join(reversed_morse_code[code] for code in morse.split(' '))\\nprint(text_to_morse('Hola mundo'))\\nprint(morse_to_text('.... --- .-.. .- / -- ..- -. -.. ---'))"
+    }
+  },
+  {
+    "title": "EXPRESIONES EQUILIBRADAS",
+    "description": "Crea un programa que comprueba si los paréntesis, llaves y corchetes de una expresión están equilibrados.",
+    "solution": {
+      "JavaScript": "function isBalanced(expression) { const stack = []; const pairs = { '(': ')', '{': '}', '[': ']' }; for (let char of expression) { if (pairs[char]) stack.push(char); else if (Object.values(pairs).includes(char)) { if (pairs[stack.pop()] !== char) return false; } } return stack.length === 0; } console.log(isBalanced('{ [ a * ( c + d ) ] - 5 }'));",
+      "PHP": "<?php function isBalanced($expression) { $stack = []; $pairs = ['(' => ')', '{' => '}', '[' => ']']; foreach (str_split($expression) as $char) { if (isset($pairs[$char])) { array_push($stack, $char); } elseif (in_array($char, $pairs)) { if (array_pop($stack) === null || $pairs[array_pop($stack)] !== $char) return false; } } return empty($stack); } echo isBalanced('{ [ a * ( c + d ) ] - 5 }') ? 'Equilibrado' : 'No equilibrado'; ?>",
+      "Java": "public static boolean isBalanced(String expression) { Stack<Character> stack = new Stack<>(); Map<Character, Character> pairs = Map.of('(', ')', '{', '}', '[', ']'); for (char c : expression.toCharArray()) { if (pairs.containsKey(c)) { stack.push(c); } else if (pairs.containsValue(c)) { if (stack.isEmpty() || pairs.get(stack.pop()) != c) return false; } } return stack.isEmpty(); } public static void main(String[] args) { System.out.println(isBalanced(\"{ [ a * ( c + d ) ] - 5 }\")); }",
+      "C#": "public static bool IsBalanced(string expression) { var stack = new Stack<char>(); var pairs = new Dictionary<char, char> { {'(', ')'}, {'{', '}'}, {'[', ']'} }; foreach (char c in expression) { if (pairs.ContainsKey(c)) { stack.Push(c); } else if (pairs.ContainsValue(c)) { if (stack.Count == 0 || pairs[stack.Pop()] != c) return false; } } return stack.Count == 0; } public static void Main() { Console.WriteLine(IsBalanced(\"{ [ a * ( c + d ) ] - 5 }\") ? \"Equilibrado\" : \"No equilibrado\"); }",
+      "Python": "def is_balanced(expression):\n    stack = []\n    pairs = {'(': ')', '{': '}', '[': ']'}\n    for char in expression:\n        if char in pairs:\n            stack.append(char)\n        elif char in pairs.values():\n            if not stack or pairs[stack.pop()] != char:\n                return False\n    return not stack\nprint(is_balanced('{ [ a * ( c + d ) ] - 5 }'))"
+    }
+  },
+  {
+    "title": "ELIMINANDO CARACTERES",
+    "description": "Crea una función que reciba dos cadenas como parámetro (str1, str2) e imprima otras dos cadenas como salida (out1, out2).",
+    "solution": {
+      "JavaScript": "function removeCharacters(str1, str2) { let out1 = '', out2 = ''; for (let char of str1) { if (!str2.includes(char)) out1 += char; } for (let char of str2) { if (!str1.includes(char)) out2 += char; } return [out1, out2]; } const [out1, out2] = removeCharacters('abcde', 'cdefg'); console.log(out1, out2);",
+      "PHP": "<?php function removeCharacters($str1, $str2) { $out1 = ''; $out2 = ''; foreach (str_split($str1) as $char) { if (strpos($str2, $char) === false) $out1 .= $char; } foreach (str_split($str2) as $char) { if (strpos($str1, $char) === false) $out2 .= $char; } return [$out1, $out2]; } list($out1, $out2) = removeCharacters('abcde', 'cdefg'); echo \"$out1 \\n$out2\"; ?>",
+      "Java": "public static String[] removeCharacters(String str1, String str2) { StringBuilder out1 = new StringBuilder(); StringBuilder out2 = new StringBuilder(); for (char c : str1.toCharArray()) { if (str2.indexOf(c) == -1) out1.append(c); } for (char c : str2.toCharArray()) { if (str1.indexOf(c) == -1) out2.append(c); } return new String[]{out1.toString(), out2.toString()}; } public static void main(String[] args) { String[] result = removeCharacters(\"abcde\", \"cdefg\"); System.out.println(result[0] + \"\\n\" + result[1]); }",
+      "C#": "public static (string, string) RemoveCharacters(string str1, string str2) { var out1 = new StringBuilder(); var out2 = new StringBuilder(); foreach (char c in str1) { if (!str2.Contains(c)) out1.Append(c); } foreach (char c in str2) { if (!str1.Contains(c)) out2.Append(c); } return (out1.ToString(), out2.ToString()); } public static void Main() { var (out1, out2) = RemoveCharacters(\"abcde\", \"cdefg\"); Console.WriteLine(out1); Console.WriteLine(out2); }",
+      "Python": "def remove_characters(str1, str2):\n    out1 = ''.join(c for c in str1 if c not in str2)\n    out2 = ''.join(c for c in str2 if c not in str1)\n    return out1, out2\nout1, out2 = remove_characters('abcde', 'cdefg')\nprint(out1)\nprint(out2)"
+    }
+  },
+  {
+    "title": "¿ES UN PALÍNDROMO?",
+    "description": "Escribe una función que reciba un texto y retorne verdadero o falso (Boolean) según sean o no palíndromos.",
+    "solution": {
+      "JavaScript": "function isPalindrome(text) { const cleaned = text.replace(/[^a-zA-Z0-9]/g, '').toLowerCase(); return cleaned === cleaned.split('').reverse().join(''); } console.log(isPalindrome('Ana lleva al oso la avellana.'));",
+      "PHP": "<?php function isPalindrome($text) { $cleaned = strtolower(preg_replace('/[^a-zA-Z0-9]/', '', $text)); return $cleaned === strrev($cleaned); } echo isPalindrome('Ana lleva al oso la avellana.') ? 'Es un palíndromo' : 'No es un palíndromo'; ?>",
+            "Java": "public static boolean isPalindrome(String text) { String cleaned = text.replaceAll(\"[^a-zA-Z0-9]\", \"\").toLowerCase(); return cleaned.equals(new StringBuilder(cleaned).reverse().toString()); } public static void main(String[] args) { System.out.println(isPalindrome(\"Ana lleva al oso la avellana.\") ? \"Es un palíndromo\" : \"No es un palíndromo\"); }",
+      "C#": "public static bool IsPalindrome(string text) { var cleaned = new string(text.Where(c => char.IsLetterOrDigit(c)).ToArray()).ToLower(); return cleaned == new string(cleaned.Reverse().ToArray()); } public static void Main() { Console.WriteLine(IsPalindrome(\"Ana lleva al oso la avellana.\") ? \"Es un palíndromo\" : \"No es un palíndromo\"); }",
+      "Python": "def is_palindrome(text):\n    cleaned = ''.join(c.lower() for c in text if c.isalnum())\n    return cleaned == cleaned[::-1]\nprint('Es un palíndromo' if is_palindrome('Ana lleva al oso la avellana.') else 'No es un palíndromo')"
+    }
+  },
+  {
+    "title": "FACTORIAL RECURSIVO",
+    "description": "Escribe una función que calcule y retorne el factorial de un número dado de forma recursiva.",
+    "solution": {
+      "JavaScript": "function factorial(n) { return n <= 1 ? 1 : n * factorial(n - 1); } console.log(factorial(5));",
+      "PHP": "<?php function factorial($n) { return $n <= 1 ? 1 : $n * factorial($n - 1); } echo factorial(5); ?>",
+      "Java": "public static int factorial(int n) { return n <= 1 ? 1 : n * factorial(n - 1); } public static void main(String[] args) { System.out.println(factorial(5)); }",
+      "C#": "public static int Factorial(int n) { return n <= 1 ? 1 : n * Factorial(n - 1); } public static void Main() { Console.WriteLine(Factorial(5)); }",
+      "Python": "def factorial(n):\n    return 1 if n <= 1 else n * factorial(n - 1)\nprint(factorial(5))"
+    }
+  },
+  {
+    "title": "¿ES UN NÚMERO DE ARMSTRONG?",
+    "description": "Escribe una función que calcule si un número dado es un número de Armstrong (o también llamado narcisista).",
+    "solution": {
+      "JavaScript": "function isArmstrong(num) { const digits = String(num).split('').map(Number); const sum = digits.reduce((acc, digit) => acc + Math.pow(digit, digits.length), 0); return sum === num; } console.log(isArmstrong(153));",
+      "PHP": "<?php function isArmstrong($num) { $digits = str_split($num); $sum = array_reduce($digits, function($acc, $digit) use ($digits) { return $acc + pow($digit, count($digits)); }, 0); return $sum === $num; } echo isArmstrong(153) ? 'Es un número de Armstrong' : 'No es un número de Armstrong'; ?>",
+      "Java": "public static boolean isArmstrong(int num) { String strNum = String.valueOf(num); int sum = 0; for (char c : strNum.toCharArray()) { sum += Math.pow(Character.getNumericValue(c), strNum.length()); } return sum == num; } public static void main(String[] args) { System.out.println(isArmstrong(153) ? \"Es un número de Armstrong\" : \"No es un número de Armstrong\"); }",
+      "C#": "public static bool IsArmstrong(int num) { var digits = num.ToString().Select(c => (int)char.GetNumericValue(c)).ToArray(); var sum = digits.Sum(digit => (int)Math.Pow(digit, digits.Length)); return sum == num; } public static void Main() { Console.WriteLine(IsArmstrong(153) ? \"Es un número de Armstrong\" : \"No es un número de Armstrong\"); }",
+      "Python": "def is_armstrong(num):\n    digits = [int(d) for d in str(num)]\n    sum_of_powers = sum(d ** len(digits) for d in digits)\n    return sum_of_powers == num\nprint('Es un número de Armstrong' if is_armstrong(153) else 'No es un número de Armstrong')"
+    }
+  },
+  {
+    "title": "¿CUÁNTOS DÍAS?",
+    "description": "Crea una función que calcule y retorne cuántos días hay entre dos cadenas de texto que representen fechas.",
+    "solution": {
+      "JavaScript": "function daysBetween(date1, date2) { const d1 = new Date(date1.split('/').reverse().join('-')); const d2 = new Date(date2.split('/').reverse().join('-')); return Math.abs((d2 - d1) / (1000 * 60 * 60 * 24)); } console.log(daysBetween('01/01/2020', '01/01/2021'));",
+      "PHP": "<?php function daysBetween($date1, $date2) { $d1 = DateTime::createFromFormat('d/m/Y', $date1); $d2 = DateTime::createFromFormat('d/m/Y', $date2); return abs($d1->diff($d2)->days); } echo daysBetween('01/01/2020', '01/01/2021'); ?>",
+      "Java": "import java.time.LocalDate;\nimport java.time.format.DateTimeFormatter;\nimport java.time.temporal.ChronoUnit;\n\npublic static long daysBetween(String date1, String date2) {\n    DateTimeFormatter formatter = DateTimeFormatter.ofPattern(\"dd/MM/yyyy\");\n    LocalDate d1 = LocalDate.parse(date1, formatter);\n    LocalDate d2 = LocalDate.parse(date2, formatter);\n    return Math.abs(ChronoUnit.DAYS.between(d1, d2));\n}\npublic static void main(String[] args) {\n    System.out.println(daysBetween(\"01/01/2020\", \"01/01/2021\"));\n}",
+      "C#": "public static int DaysBetween(string date1, string date2) { var d1 = DateTime.ParseExact(date1, \"dd/MM/yyyy\", null); var d2 = DateTime.ParseExact(date2, \"dd/MM/yyyy\", null); return Math.Abs((d2 - d1).Days); } public static void Main() { Console.WriteLine(DaysBetween(\"01/01/2020\", \"01/01/2021\")); }",
+      "Python": "from datetime import datetime\ndef days_between(date1, date2):\n    d1 = datetime.strptime(date1, '%d/%m/%Y')\n    d2 = datetime.strptime(date2, '%d/%m/%Y')\n    return abs((d2 - d1).days)\nprint(days_between('01/01/2020', '01/01/2021'))"
+    }
+  },
+  {
+    "title": "EN MAYÚSCULA",
+    "description": "Crea una función que reciba un String de cualquier tipo y se encargue de poner en mayúscula la primera letra de cada palabra.",
+    "solution": {
+      "JavaScript": "function capitalizeFirstLetter(str) { return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '); } console.log(capitalizeFirstLetter('hola mundo'));",
+      "PHP": "<?php function capitalizeFirstLetter($str) { return implode(' ', array_map('ucfirst', explode(' ', $str))); } echo capitalizeFirstLetter('hola mundo'); ?>",
+      "Java": "public static String capitalizeFirstLetter(String str) { String[] words = str.split(\" \"); StringBuilder capitalized = new StringBuilder(); for (String word : words) { capitalized.append(Character.toUpperCase(word.charAt(0))).append(word.substring(1)).append(\" \"); } return capitalized.toString().trim(); } public static void main(String[] args) { System.out.println(capitalizeFirstLetter(\"hola mundo\")); }",
+      "C#": "public static string CapitalizeFirstLetter(string str) { return string.Join(\" \", str.Split(' ').Select(word => char.ToUpper(word[0]) + word.Substring(1))); } public static void Main() { Console.WriteLine(CapitalizeFirstLetter(\"hola mundo\")); }",
+      "Python": "def capitalize_first_letter(s):\n    return ' '.join(word.capitalize() for word in s.split())\nprint(capitalize_first_letter('hola mundo'))"
+    }
+  },
+  {
+    "title": "LA CARRERA DE OBSTÁCULOS",
+    "description": "Crea una función que evalúe si un/a atleta ha superado correctamente una carrera de obstáculos.",
+    "solution": {
+      "JavaScript": "function evaluateRace(actions, track) { let result = track.split(''); for (let action of actions) { if (action === 'run' && result[0] === '_') result[0] = '_'; else if (action === 'jump' && result[0] === '|') result[0] = '|'; else if (action === 'jump' && result[0] === '_') result[0] = 'x'; else if (action === 'run' && result[0] === '|') result[0] = '/'; else return false; result.shift(); } return result.every(pos => pos === '_'); } console.log(evaluateRace(['run', 'jump'], '__|__'));",
+      "PHP": "<?php function evaluateRace($actions, $track) { $result = str_split($track); foreach ($actions as $action) { if ($action === 'run' && $result[0] === '_') continue; elseif ($action === 'jump' && $result[0] === '|') continue; elseif ($action === 'jump' && $result[0] === '_') $result[0] = 'x'; elseif ($action === 'run' && $result[0] === '|') $result[0] = '/'; else return false; array_shift($result); } return count(array_filter($result, fn($pos) => $pos !== '_')) === 0; } echo evaluateRace(['run', 'jump'], '__|__') ? 'Superado' : 'No superado'; ?>",
+      "Java": "public static boolean evaluateRace(String[] actions, String track) { char[] result = track.toCharArray(); for (String action : actions) { if (action.equals(\"run\") && result[0] == '_') continue; else if (action.equals(\"jump\") && result[0] == '|') continue; else if (action.equals(\"jump\") && result[0] == '_') result[0] = 'x'; else if (action.equals(\"run\") && result[0] == '|') result[0] = '/'; else return false; result = Arrays.copyOfRange(result, 1, result.length); } return Arrays.stream(result).allMatch(c -> c == '_'); } public static void main(String[] args) { System.out.println(evaluateRace(new String[]{\"run\", \"jump\"}, \"__|__\") ? \"Superado\" : \"No superado\"); }",
+      "C#": "public static bool EvaluateRace(string[] actions, string track) { char[] result = track.ToCharArray(); foreach (var action in actions) { if (action == \"run\" && result[0] == '_') continue; else if (action == \"jump\" && result[0] == '|') continue; else if (action == \"jump\" && result[0] == '_') result[0] = 'x'; else if (action == \"run\" && result[0] == '|') result[0] = '/'; else return false; result = result.Skip(1).ToArray(); } return result.All(c => c == '_'); } public static void Main() { Console.WriteLine(EvaluateRace(new string[] { \"run\", \"jump\" }, \"__|__\") ? \"Superado\" : \"No superado\"); }",
+      "Python": "def evaluate_race(actions, track):\n    result = list(track)\n    for action in actions:\n        if action == 'run' and result[0] == '_':\n            continue\n        elif action == 'jump' and result[0] == '|':\n            continue\n        elif action == 'jump' and result[0] == '_':\n            result[0] = 'x'\n        elif action == 'run' and result[0] == '|':\n            result[0] = '/'\n        else:\n            return False\n        result.pop(0)\n    return all(pos == '_' for pos in result)\nprint('Superado' if evaluate_race(['run', 'jump'], '__|__') else 'No superado')"
+    }
+  },
+  {
+    "title": "TRES EN RAYA",
+    "description": "Crea una función que analice una matriz 3x3 compuesta por \"X\" y \"O\" y retorne lo siguiente: - \"X\" si han ganado las \"X\" - \"O\" si han ganado los \"O\" - \"Empate\" si ha habido un empate - \"Nulo\" si la proporción de \"X\", de \"O\", o de la matriz no es correcta.",
+    "solution": {
+      "JavaScript": "function checkTicTacToe(board) { const winConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]; const xWins = winConditions.some(condition => condition.every(index => board[index] === 'X')); const oWins = winConditions.some(condition => condition.every(index => board[index] === 'O')); if (xWins && oWins) return 'Nulo'; if (xWins) return 'X'; if (oWins) return 'O'; if (board.includes('')) return 'Nulo'; return 'Empate'; } console.log(checkTicTacToe(['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', '']));",
+      "PHP": "<?php function checkTicTacToe($board) { $winConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]; $xWins = false; $oWins = false; foreach ($winConditions as $condition) { if ($board[$condition[0]] === 'X' && $board[$condition[1]] === 'X' && $board[$condition[2]] === 'X') $xWins = true; if ($board[$condition[0]] === 'O' && $board[$condition[1]] === 'O' && $board[$condition[2]] === 'O') $oWins = true; } if ($xWins && $oWins) return 'Nulo'; if ($xWins) return 'X'; if ($oWins) return 'O'; if (in_array('', $board)) return 'Nulo'; return 'Empate'; } echo checkTicTacToe(['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', '']); ?>",
+      "Java": "public static String checkTicTacToe(String[] board) { int[][] winConditions = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, {0, 4, 8}, {2, 4, 6}}; boolean xWins = false, oWins = false; for (int[] condition : winConditions) { if (board[condition[0]].equals(\"X\") && board[condition[1]].equals(\"X\") && board[condition[2]].equals(\"X\")) xWins = true; if (board[condition[0]].equals(\"O\") && board[condition[1]].equals(\"O\") && board[condition[2]].equals(\"O\")) oWins = true; } if (xWins && oWins) return \"Nulo\"; if (xWins) return \"X\"; if (oWins) return \"O\"; if (Arrays.asList(board).contains(\"\")) return \"Nulo\"; return \"Empate\"; } public static void main(String[] args) { System.out.println(checkTicTacToe(new String[]{\"X\", \"O\", \"X\", \"O\", \"X\", \"O\", \"X\", \"O\", \"\"})); }",
+              "C#": "public static string CheckTicTacToe(string[] board) { int[][] winConditions = new int[][] { new int[] { 0, 1, 2 }, new int[] { 3, 4, 5 }, new int[] { 6, 7, 8 }, new int[] { 0, 3, 6 }, new int[] { 1, 4, 7 }, new int[] { 2, 5, 8 }, new int[] { 0, 4, 8 }, new int[] { 2, 4, 6 } }; bool xWins = false, oWins = false; foreach (var condition in winConditions) { if (board[condition[0]] == \"X\" && board[condition[1]] == \"X\" && board[condition[2]] == \"X\") xWins = true; if (board[condition[0]] == \"O\" && board[condition[1]] == \"O\" && board[condition[2]] == \"O\") oWins = true; } if (xWins && oWins) return \"Nulo\"; if (xWins) return \"X\"; if (oWins) return \"O\"; if (board.Contains(\"\")) return \"Nulo\"; return \"Empate\"; } public static void Main() { Console.WriteLine(CheckTicTacToe(new string[] { \"X\", \"O\", \"X\", \"O\", \"X\", \"O\", \"X\", \"O\", \"\" })); }",
+      "Python": "def check_tic_tac_toe(board):\n    win_conditions = [(0, 1, 2), (3, 4, 5), (6, 7, 8), (0, 3, 6), (1, 4, 7), (2, 5, 8), (0, 4, 8), (2, 4, 6)]\n    x_wins = any(all(board[i] == 'X' for i in condition) for condition in win_conditions)\n    o_wins = any(all(board[i] == 'O' for i in condition) for condition in win_conditions)\n    if x_wins and o_wins:\n        return 'Nulo'\n    if x_wins:\n        return 'X'\n    if o_wins:\n        return 'O'\n    if '' in board:\n        return 'Nulo'\n    return 'Empate'\nprint(check_tic_tac_toe(['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', '']))"
+    }
+  },
+  {
+    "title": "CONVERSOR DE UNIDADES",
+    "description": "Crea una función que convierta entre diferentes unidades de medida (por ejemplo, metros a kilómetros, gramos a kilogramos, etc.).",
+    "solution": {
+      "JavaScript": "function convertUnits(value, fromUnit, toUnit) { const conversions = { 'meters': 0.001, 'grams': 0.001 }; return value * conversions[fromUnit] / conversions[toUnit]; } console.log(convertUnits(1000, 'grams', 'kilograms'));",
+      "PHP": "<?php function convertUnits($value, $fromUnit, $toUnit) { $conversions = ['meters' => 0.001, 'grams' => 0.001]; return $value * $conversions[$fromUnit] / $conversions[$toUnit]; } echo convertUnits(1000, 'grams', 'kilograms'); ?>",
+      "Java": "public static double convertUnits(double value, String fromUnit, String toUnit) { Map<String, Double> conversions = Map.of(\"meters\", 0.001, \"grams\", 0.001); return value * conversions.get(fromUnit) / conversions.get(toUnit); } public static void main(String[] args) { System.out.println(convertUnits(1000, \"grams\", \"kilograms\")); }",
+      "C#": "public static double ConvertUnits(double value, string fromUnit, string toUnit) { var conversions = new Dictionary<string, double> { { \"meters\", 0.001 }, { \"grams\", 0.001 } }; return value * conversions[fromUnit] / conversions[toUnit]; } public static void Main() { Console.WriteLine(ConvertUnits(1000, \"grams\", \"kilograms\")); }",
+      "Python": "def convert_units(value, from_unit, to_unit):\n    conversions = {'meters': 0.001, 'grams': 0.001}\n    return value * conversions[from_unit] / conversions[to_unit]\nprint(convert_units(1000, 'grams', 'kilograms'))"
+    }
+  }
+]
+
+
+
