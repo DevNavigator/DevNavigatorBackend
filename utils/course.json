@@ -1,0 +1,710 @@
+[
+  {
+    "title": "Curso .NET",
+    "type": "Backend",
+    "description": "En el Curso .NET, te adentrarás en uno de los frameworks más robustos y demandados para el desarrollo backend. Este curso avanzado está diseñado para aquellos que ya cuentan con una base sólida en programación y buscan expandir sus habilidades en el desarrollo de aplicaciones empresariales y servicios backend con .NET. A través de proyectos prácticos y ejercicios, aprenderás a construir aplicaciones escalables, seguras y de alto rendimiento en el ecosistema de Microsoft.",
+    "difficulty": "intermedio",
+    "requirements": "Requiere conocimientos previos.",
+    "format": "100% online",
+    "includes_exercises": true,
+    "objetives": "El objetivo principal de este curso es comprender los fundamentos de .NET y su estructura para el desarrollo backend, lo que te permitirá dominar la construcción de APIs RESTful y servicios avanzados en .NET. A lo largo del curso, también implementarás principios de seguridad, autenticación y autorización en aplicaciones backend, optimizando el rendimiento y escalabilidad de aplicaciones empresariales. Además, adquirirás habilidades para desplegar y gestionar aplicaciones .NET en entornos productivos.",
+    "learn": "Durante el curso, explorarás diversos temas esenciales, incluyendo los fundamentos del framework .NET y sus componentes clave, la creación de APIs RESTful con .NET y C#, y el manejo de bases de datos con Entity Framework. También profundizarás en los principios de diseño de software y patrones arquitectónicos, la implementación de seguridad en aplicaciones web, y el despliegue en servicios en la nube como Azure. Todo esto te equipará con las herramientas necesarias para convertirte en un desarrollador backend competente y versátil en el mundo de .NET.",
+    "content": [
+      {
+        "title": "1-Primeros pasos - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=Zn7pzMMfzXg"
+      },
+      {
+        "title": "2-Parámetros y diagramas - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=W-6umyVKPFA"
+      },
+      {
+        "title": "3-Consultas avanzadas - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=wg3haJunom0"
+      },
+      {
+        "title": "4-Consultas avanzadas 2 - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=UUrPl9QuWwo"
+      },
+      {
+        "title": "5-Proceso de autenticación - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=eVgGWIh4WDI"
+      },
+      {
+        "title": "6-Peticiones json token - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=L5a4Y-XxiO4"
+      },
+      {
+        "title": "7-Internacionalizando aplicación - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=-EsLAWXazac"
+      },
+      {
+        "title": "8-Gestión del versionado - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=ijtm2BSNV-o"
+      },
+      {
+        "title": "9.1-Conceptos de log in - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=gOTJkthFWhw"
+      },
+      {
+        "title": "9.2-Conceptos de log in - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=vpWB2lf2r8s"
+      },
+      {
+        "title": "10-La asincronía - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=1vxpZzANoA4"
+      }
+    ],
+    "questions": [
+      {
+        "question": "¿Qué es .NET?",
+        "options": [
+          "Un sistema operativo",
+          "Un framework para el desarrollo de aplicaciones",
+          "Un lenguaje de programación",
+          "Un software de diseño gráfico"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Cuál de las siguientes es una característica principal de .NET?",
+        "options": [
+          "Interoperabilidad con otros lenguajes",
+          "Exclusividad para aplicaciones de escritorio",
+          "Uso exclusivo en sistemas operativos Windows",
+          "No permite el desarrollo web"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué es una API RESTful?",
+        "options": [
+          "Una interfaz gráfica de usuario",
+          "Un conjunto de reglas para construir aplicaciones web",
+          "Un tipo de base de datos",
+          "Un lenguaje de programación"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Qué lenguaje se utiliza comúnmente para el desarrollo en .NET?",
+        "options": ["Java", "C#", "Python", "JavaScript"],
+        "correct": 1
+      },
+      {
+        "question": "¿Qué es Entity Framework?",
+        "options": [
+          "Un sistema operativo",
+          "Un ORM (Object-Relational Mapper) para .NET",
+          "Un framework de diseño web",
+          "Una herramienta para crear interfaces gráficas"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Cuál es el propósito de la autenticación en una aplicación web?",
+        "options": [
+          "Garantizar que solo usuarios autorizados accedan a recursos protegidos",
+          "Aumentar la velocidad de la aplicación",
+          "Crear una interfaz atractiva para el usuario",
+          "Almacenar datos en la nube"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué es Azure?",
+        "options": [
+          "Una herramienta de diseño gráfico",
+          "Un lenguaje de programación",
+          "Una plataforma de servicios en la nube de Microsoft",
+          "Un sistema operativo"
+        ],
+        "correct": 2
+      }
+    ],
+    "image_url": "https://res.cloudinary.com/dckxhsgw0/image/upload/v1730333166/jrvwy6jvngiijhfv8455.png",
+    "duration": 9,
+    "instructor": "Laura Fernández",
+    "is_free": false,
+    "status_courses": true
+  },
+
+  {
+    "title": "Curso de PHP",
+    "type": "Backend",
+    "description": "Este curso completo de PHP está diseñado para llevarte desde los conceptos básicos hasta técnicas avanzadas en el desarrollo backend. A lo largo del curso, aprenderás a utilizar PHP para construir aplicaciones web dinámicas y robustas. Exploraremos la estructura del lenguaje, el uso de variables, control de flujo, funciones, programación orientada a objetos, manejo de errores y más. Además, se incluye un cuestionario práctico en cada clase para ayudarte a afianzar tus conocimientos y desarrollar confianza en la escritura de código eficiente y escalable en PHP.",
+    "difficulty": "intermedio",
+    "requirements": "No requiere conocimientos previos",
+    "format": "100% online",
+    "includes_exercises": true,
+    "objetives": "Al finalizar este curso, serás capaz de comprender y aplicar los fundamentos y conceptos avanzados de PHP en el desarrollo de aplicaciones web backend. Aprenderás a crear código claro y efectivo en PHP, utilizando buenas prácticas y organizando tus proyectos de manera profesional. Podrás trabajar con estructuras de control, manejar datos a través de arrays, funciones y clases, y utilizar PHP para gestionar datos en bases de datos y ejecutar operaciones del lado del servidor. Este curso te prepara para continuar profundizando en el desarrollo web o integrarte a proyectos de desarrollo de aplicaciones web con PHP.",
+    "learn": "En este curso, aprenderás desde los fundamentos de PHP hasta los conceptos avanzados, permitiéndote construir aplicaciones web dinámicas. Empezaremos con una introducción al lenguaje PHP y sus usos en el desarrollo web. Verás cómo utilizar variables y constantes para almacenar y manipular datos. Aprenderás a aplicar operadores y estructuras de control para el flujo de la aplicación y a utilizar arrays para trabajar con conjuntos de datos. Profundizaremos en funciones, programación orientada a objetos y el manejo de errores y excepciones, esenciales para el desarrollo profesional. A lo largo del curso, trabajarás en ejercicios prácticos que te permitirán aplicar los conceptos aprendidos y resolver problemas reales de programación. Al terminar, estarás preparado para iniciar proyectos completos de backend con PHP o incorporarte a equipos de desarrollo web utilizando PHP en el stack tecnológico.",
+    "content": [
+      {
+        "title": "1-Introducción al curso en PHP - DevNavigator.",
+        "url": "https://www.youtube.com/embed/qUei-wOdbnw"
+      },
+      {
+        "title": "2-Tipos de Variables y Constantes en PHP - DevNavigator.",
+        "url": "https://www.youtube.com/embed/cV_dFN9UFao"
+      },
+      {
+        "title": "3-Operadores en PHP - DevNavigator.",
+        "url": "https://www.youtube.com/embed/jQ2ph0eP4D4"
+      },
+      {
+        "title": "4.1-Estructuras de control en PHP - DevNavigator.",
+        "url": "https://www.youtube.com/embed/y3UpXb2liI0"
+      },
+      {
+        "title": "4.2-Estructuras de control en PHP - DevNavigator.",
+        "url": "https://www.youtube.com/embed/nVm5MbmUlnA"
+      },
+      {
+        "title": "5-Arrays en PHP - DevNavigator.",
+        "url": "https://www.youtube.com/embed/QAm2A3ALB1o"
+      },
+      {
+        "title": "6-Funciones en PHP - DevNavigator.",
+        "url": "https://www.youtube.com/embed/Gc6hDHsSdSI"
+      },
+      {
+        "title": "7-Funciones, clases y objetos en PHP - DevNavigator.",
+        "url": "https://www.youtube.com/embed/oZep0vGtCxY"
+      },
+      {
+        "title": "8-Funciones, clases y objetos en PHP - DevNavigator.",
+        "url": "https://www.youtube.com/embed/mbE1gJH_HW4"
+      },
+      {
+        "title": "9-Errores y excepciones en PHP - DevNavigator.",
+        "url": "https://www.youtube.com/embed/lqsVVH5Jb3o"
+      }
+    ],
+    "questions": [
+      {
+        "question": "¿Qué es PHP?",
+        "options": [
+          "Un sistema operativo",
+          "Un editor de texto",
+          "Un lenguaje de programación",
+          "Una base de datos"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "¿Qué se puede hacer con PHP?",
+        "options": [
+          "Desarrollar aplicaciones web",
+          "Crear videojuegos",
+          "Diseñar gráficos",
+          "Ninguna de las anteriores"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Cómo se ejecuta un script PHP?",
+        "options": [
+          "En el navegador",
+          "En el servidor",
+          "En la base de datos",
+          "Ninguna de las anteriores"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Qué es un framework?",
+        "options": [
+          "Conjunto de herramientas",
+          "Un lenguaje de programación",
+          "Un tipo de base de datos",
+          "Ninguna de las anteriores"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿PHP es un lenguaje compilado o interpretado?",
+        "options": ["Compilado", "Interpretado", "Ambos", "Ninguno"],
+        "correct": 1
+      }
+    ],
+    "image_url": "https://res.cloudinary.com/dckxhsgw0/image/upload/v1730333119/smcj4tf0grgh3affyysf.png",
+    "duration": 7,
+    "instructor": "Diego Martínez",
+    "is_free": false,
+    "status_courses": true
+  },
+
+  {
+    "title": "Curso Python Básico",
+    "type": "Introducción",
+    "description": "Este curso de Python Básico está diseñado para aquellos que desean adentrarse en el mundo de la programación sin necesidad de contar con conocimientos previos. A lo largo del curso, aprenderás los fundamentos de Python, un lenguaje de programación versátil y ampliamente utilizado en la industria. A través de materiales interactivos y ejercicios prácticos, desarrollarás las habilidades necesarias para escribir tus propios programas y resolver problemas con código. Al final del curso, estarás listo para explorar aplicaciones más avanzadas de Python, como el desarrollo web con Django.",
+    "difficulty": "facil",
+    "image": "https://res.cloudinary.com/dckxhsgw0/image/upload/v1730333035/h6cb4lccetmpybqrx5f7.png",
+    "requirements": "No se requieren conocimientos previos.",
+    "format": "100% online",
+    "includes_exercises": true,
+    "objetives": "El objetivo principal de este curso es proporcionar a los estudiantes una comprensión sólida de los conceptos básicos de Python. Los participantes aprenderán a manejar la sintaxis del lenguaje, comprenderán los tipos de datos y las estructuras de control de flujo, y desarrollarán habilidades en la creación de funciones y clases. Además, se enfocará en la utilización de módulos y la manipulación de datos de entrada y salida. Al finalizar, los estudiantes podrán aplicar lo aprendido en proyectos reales y tendrán una base sólida para seguir avanzando en su aprendizaje de programación.",
+    "learn": "En este curso, aprenderás a usar el intérprete de Python y comprenderás los tipos de objetos disponibles. Aprenderás a controlar el flujo de los programas mediante estructuras como bucles y condicionales, y desarrollarás funciones y clases para organizar tu código de manera efectiva. Además, te introducirás en el uso de módulos y aprenderás a manejar la entrada y salida de datos. Finalmente, tendrás una visión general de la biblioteca estándar de Python, y recibirás una introducción a Django, un framework popular para el desarrollo web.",
+    "content": [
+      {
+        "title": "1-Introducción a Python - DevNavigator.",
+        "url": "https://www.youtube.com/watch?v=ziXpreifQ68"
+      },
+      {
+        "title": "2-El intérprete de Python - DevNavigator.",
+        "url": "https://www.youtube.com/watch?v=ubPsYnkxk68"
+      },
+      {
+        "title": "3-Introducción a los tipos de objetos - DevNavigator.",
+        "url": "https://www.youtube.com/watch?v=C15MkeW-3Yc"
+      },
+      {
+        "title": "4-Control de flujo - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=2vR3ktU-QQ4"
+      },
+      {
+        "title": "5-Funciones - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=H03UoQoNiuM"
+      },
+      {
+        "title": "6-Clases y objetos - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=X9CSDly8gSM"
+      },
+      {
+        "title": "7-Módulos: ejecutando módulos como scripts - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=jEmYXqwpIhU"
+      },
+      {
+        "title": "8-Entrada y salida - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=NiKy9dhjI0w"
+      },
+      {
+        "title": "9-Introducción a la biblioteca estándar de Python y funciones Built-in - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=eoGilEziYwU"
+      },
+      {
+        "title": "10-GUI - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=YObczQ25y4E"
+      },
+      {
+        "title": "11-Bases de datos - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=yXIk7WeUorc"
+      },
+      {
+        "title": "12-Introducción a Django - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=07g11ylvc7o"
+      }
+    ],
+    "questions": [
+      {
+        "question": "¿Qué es Python?",
+        "options": [
+          "Un lenguaje de programación de alto nivel.",
+          "Un sistema operativo.",
+          "Un software de diseño gráfico.",
+          "Un sistema de gestión de bases de datos."
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué tipo de datos se pueden utilizar en Python?",
+        "options": [
+          "Solo números.",
+          "Números, cadenas de texto, listas, diccionarios, entre otros.",
+          "Solo cadenas de texto.",
+          "Ninguna de las anteriores."
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Cuál es la función de las estructuras de control de flujo en Python?",
+        "options": [
+          "Almacenar datos.",
+          "Controlar el flujo de ejecución del programa.",
+          "Crear interfaces gráficas.",
+          "Ninguna de las anteriores."
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Qué es una función en Python?",
+        "options": [
+          "Un bloque de código reutilizable que realiza una tarea específica.",
+          "Una variable que almacena información.",
+          "Una estructura de datos.",
+          "Una forma de representar gráficos."
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué permite hacer un módulo en Python?",
+        "options": [
+          "Almacenar variables globales.",
+          "Ejecutar varias funciones al mismo tiempo.",
+          "Organizar y reutilizar código.",
+          "Ninguna de las anteriores."
+        ],
+        "correct": 2
+      },
+      {
+        "question": "¿Qué es Django?",
+        "options": [
+          "Un lenguaje de programación.",
+          "Un framework para el desarrollo web en Python.",
+          "Un editor de texto.",
+          "Un sistema de gestión de bases de datos."
+        ],
+        "correct": 1
+      }
+    ],
+    "image_url": "https://res.cloudinary.com/dckxhsgw0/image/upload/v1730333035/h6cb4lccetmpybqrx5f7.png",
+    "duration": 11,
+    "instructor": "Sofía Gómez",
+    "is_free": false,
+    "status_courses": true
+  },
+
+  {
+    "title": "Curso de Typescript",
+    "type": "Introducción",
+    "description": "Este curso de TypeScript está diseñado para desarrolladores con experiencia en JavaScript que buscan dar el siguiente paso en la escritura de código más robusto y mantenible. TypeScript, un superset de JavaScript desarrollado por Microsoft, introduce un sistema de tipos estático que permite detectar errores en tiempo de desarrollo y facilita la creación de aplicaciones complejas. A lo largo del curso, los estudiantes aprenderán a definir tipos y estructuras de datos, gestionar eventos, y aplicar conceptos avanzados como interfaces, herencia y decoradores. Además, se abordarán prácticas de depuración y estrategias para mejorar el rendimiento del código en proyectos grandes. Al final del curso, los participantes contarán con las habilidades necesarias para trabajar en proyectos TypeScript de manera eficiente y profesional.",
+    "difficulty": "intermedio",
+    "requirements": "Requiere conocimientos previos.",
+    "format": "100% online",
+    "includes_exercises": true,
+    "objetives": "Al finalizar este curso, los estudiantes estarán capacitados para crear y mantener aplicaciones sólidas en TypeScript, comprendiendo el uso de tipos, clases, y módulos para mejorar la legibilidad y eficiencia del código. Desarrollarán un entendimiento profundo de cómo TypeScript puede integrarse en entornos JavaScript, aplicando conceptos de programación orientada a objetos y validando sus conocimientos a través de ejercicios prácticos y un proyecto final. Los participantes aprenderán no solo a implementar código seguro y predecible, sino también a trabajar en equipo, compartiendo y documentando su trabajo de manera efectiva.",
+    "learn": "En este curso, los estudiantes aprenderán a definir tipos y trabajar con estructuras de datos avanzadas, aprovechando las capacidades de TypeScript para mejorar la seguridad y previsibilidad del código. Se explorarán temas como la definición y uso de clases, objetos, y funciones, así como la aplicación de interfaces y herencia para estructurar proyectos de forma modular y escalable. También se cubrirán aspectos importantes de la depuración y el rendimiento, brindando a los estudiantes las herramientas necesarias para identificar y resolver problemas de forma eficiente en entornos de desarrollo reales. Al final del curso, los estudiantes habrán construido una base sólida en TypeScript, lista para aplicarse a proyectos profesionales y contribuir significativamente en equipos de desarrollo.",
+    "content": [
+      {
+        "title": "1-Introducción a TypeScript - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=RI7j5bicTEw"
+      },
+      {
+        "title": "2-Variables, datos, palabras reservadas y estructuras de control - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=wutMZAg2t_4"
+      },
+      {
+        "title": "3-Funciones - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=uxNYQWdjr7E"
+      },
+      {
+        "title": "4-Persistencia de los datos y gestión de eventos - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=9cx98y7gYfA"
+      },
+      {
+        "title": "5-Clases y objetos - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=6a9K_KrIB2w"
+      },
+      {
+        "title": "6-Interfaces, herencias y decoradores - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=SzRh4JexeDg"
+      },
+      {
+        "title": "7-Conceptos de depuración - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=QoVd9U6fzzw"
+      }
+    ],
+    "questions": [
+      {
+        "question": "¿Qué es TypeScript?",
+        "options": [
+          "Un lenguaje de programación tipado que extiende JavaScript",
+          "Un framework de frontend",
+          "Una herramienta de diseño gráfico",
+          "Una base de datos relacional"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Cuál es una de las principales ventajas de usar TypeScript?",
+        "options": [
+          "Permite crear páginas web rápidamente",
+          "Ofrece tipado estático para reducir errores en tiempo de desarrollo",
+          "Es el reemplazo oficial de JavaScript",
+          "Es un lenguaje más fácil de aprender que JavaScript"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Qué es una interfaz en TypeScript?",
+        "options": [
+          "Un componente gráfico en una aplicación",
+          "Una herramienta para el diseño de bases de datos",
+          "Una forma de definir la estructura de un objeto",
+          "Una función especial para manejar eventos"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "¿Para qué se usa el tipo 'any' en TypeScript?",
+        "options": [
+          "Para especificar un valor que puede ser de cualquier tipo",
+          "Para definir funciones que no retornan valor",
+          "Para crear variables globales",
+          "Para manejar errores en tiempo de ejecución"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué permite hacer el operador de aserción de tipos en TypeScript?",
+        "options": [
+          "Eliminar todos los tipos de las variables",
+          "Convertir un tipo de dato en otro en tiempo de ejecución",
+          "Indicar al compilador que trate un valor como un tipo específico",
+          "Permitir operaciones aritméticas avanzadas"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "¿Qué diferencia principal tiene 'let' frente a 'var' en TypeScript?",
+        "options": [
+          "let tiene un alcance de bloque, mientras que var tiene un alcance de función",
+          "let solo puede usarse en funciones",
+          "let es más rápido que var",
+          "let permite definir variables globales"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué función cumple el archivo tsconfig.json en un proyecto TypeScript?",
+        "options": [
+          "Define la estructura de la base de datos",
+          "Configura las opciones de compilación del proyecto",
+          "Almacena datos temporales de la aplicación",
+          "Especifica los estilos CSS del proyecto"
+        ],
+        "correct": 1
+      }
+    ],
+    "image_url": "https://res.cloudinary.com/dckxhsgw0/image/upload/v1730333095/ejjgzqgnh4getwes1v1s.png",
+    "duration": 9,
+    "instructor": "Javier López",
+    "is_free": false,
+    "status_courses": true
+  },
+  {
+    "title": "Curso de Bases de datos",
+    "type": "Backend",
+    "description": "Este curso de Bases de Datos está diseñado para introducirte en el mundo de la gestión de datos desde una perspectiva práctica y profesional. Aprenderás a trabajar con bases de datos relacionales, comprendiendo los conceptos fundamentales y desarrollando habilidades en consultas SQL para gestionar, organizar y recuperar datos. Este curso intermedio te brindará los conocimientos necesarios para comenzar a diseñar y administrar bases de datos eficientemente, preparándote para tareas comunes en el desarrollo de software y la administración de datos.",
+    "difficulty": "intermedio",
+    "requirements": "No requiere conocimientos previos",
+    "format": "100% online",
+    "includes_exercises": true,
+    "objetives": "Al completar este curso, podrás comprender el funcionamiento de las bases de datos relacionales, conocer los principios de diseño de bases de datos y ejecutar consultas SQL básicas y avanzadas para manejar y analizar información de manera efectiva. Estarás preparado para aplicar estos conocimientos en proyectos de desarrollo y administración de sistemas de datos.",
+    "learn": "Durante este curso, aprenderás a: - Comprender los principios fundamentales de las bases de datos relacionales. - Trabajar con PgAdmin para gestionar bases de datos y tablas. - Diseñar y crear tablas para organizar datos de manera estructurada. - Realizar consultas SQL para extraer y manipular información de bases de datos. - Optimizar consultas mediante el uso de índices. - Aplicar buenas prácticas en la gestión y seguridad de datos en entornos profesionales.",
+    "content": [
+      {
+        "title": "1-Bases de datos - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=vGITAWI2gmk"
+      },
+      {
+        "title": "2-PgAdmin y conceptos de bases de datos - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=FOd3Ivo4198"
+      },
+      {
+        "title": "3-Tablas en PgAdming - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=mft4mrABg5s"
+      },
+      {
+        "title": "4-Consultas de SQL - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=FKI_QUJqovY"
+      },
+      {
+        "title": "5-Consultas e índices - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=XeVaUjp_uCM"
+      }
+    ],
+    "questions": [
+      {
+        "question": "¿Qué es una base de datos?",
+        "options": [
+          "Un conjunto organizado de datos almacenados y accesibles",
+          "Un sistema operativo",
+          "Una red de computadoras",
+          "Un lenguaje de programación"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué es SQL?",
+        "options": [
+          "Un lenguaje de programación orientado a objetos",
+          "Un sistema de gestión de archivos",
+          "Un lenguaje para manipular y consultar bases de datos",
+          "Una herramienta para diseño gráfico"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "¿Cuál de los siguientes es un sistema de gestión de bases de datos?",
+        "options": [
+          "PgAdmin",
+          "Microsoft Word",
+          "Adobe Photoshop",
+          "JavaScript"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué función tiene una tabla en una base de datos?",
+        "options": [
+          "Definir los usuarios de una aplicación",
+          "Almacenar datos en filas y columnas de manera organizada",
+          "Crear gráficos para reportes",
+          "Administrar redes de computadoras"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Qué es una consulta en SQL?",
+        "options": [
+          "Un error de programación",
+          "Un comando para modificar el diseño de la interfaz",
+          "Una instrucción para recuperar o manipular datos en una base de datos",
+          "Un sistema de control de versiones"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "¿Qué es PgAdmin?",
+        "options": [
+          "Un software de diseño gráfico",
+          "Un gestor de archivos multimedia",
+          "Una herramienta para administrar bases de datos PostgreSQL",
+          "Un sistema operativo"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "¿Cuál es la función de un índice en una base de datos?",
+        "options": [
+          "Crear un nuevo usuario",
+          "Acelerar la búsqueda de datos dentro de una tabla",
+          "Modificar el diseño de una aplicación",
+          "Almacenar archivos multimedia"
+        ],
+        "correct": 1
+      }
+    ],
+    "image_url": "https://res.cloudinary.com/dckxhsgw0/image/upload/v1730333210/ncj8a5yjml4tidyyatju.png",
+    "duration": 15,
+    "instructor": "Valentina Ramírez",
+    "is_free": false,
+    "status_courses": true
+  },
+  {
+    "title": "Curso de Docker",
+    "type": "DevOps",
+    "description": "Este curso de Docker está diseñado para desarrolladores que desean adquirir una comprensión profunda de la contenerización y sus aplicaciones prácticas. A través de ejercicios prácticos y tutoriales en video, aprenderás desde los conceptos básicos hasta técnicas avanzadas de manejo de contenedores.",
+    "difficulty": "intermedio",
+    "requirements": "Requiere conocimientos previos.",
+    "format": "100% online",
+    "includes_exercises": true,
+    "objetives": "Al finalizar este curso, los estudiantes serán capaces de implementar y gestionar contenedores de Docker en entornos de desarrollo y producción, optimizar el flujo de trabajo en sus aplicaciones y realizar configuraciones avanzadas con Docker Compose.",
+    "learn": "En este curso aprenderás a:\n- Crear y gestionar contenedores en Docker\n- Trabajar con imágenes y optimizar el tamaño de las mismas\n- Configurar redes y almacenamiento para aplicaciones contenerizadas\n- Utilizar Docker Compose para orquestar aplicaciones multicontenedor\n- Aplicar Docker en entornos de desarrollo y producción",
+    "content": [
+      {
+        "title": "1-Primeros pasos - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=HNzXM9qK1oU"
+      },
+      {
+        "title": "2-Trabajando con imágenes - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=wD3AdGUcpI4"
+      },
+      {
+        "title": "3-Contenerización de Aplicaciones - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=9WLCWNYEHLU"
+      },
+      {
+        "title": "4-Networking - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=QJpUbwYuQfY"
+      },
+      {
+        "title": "5-Almacenamiento - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=5-tGry2fwLo"
+      },
+      {
+        "title": "6-Docker Compose - DevNavigator",
+        "url": "https://www.youtube.com/watch?v=SsXCUqNJFSo"
+      }
+    ],
+    "questions": [
+      {
+        "question": "¿Qué es Docker?",
+        "options": [
+          "Un lenguaje de programación",
+          "Una plataforma para contenerizar aplicaciones",
+          "Un sistema operativo para servidores",
+          "Una herramienta para diseño gráfico"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Qué es un contenedor en Docker?",
+        "options": [
+          "Una máquina virtual",
+          "Una herramienta de edición de código",
+          "Una instancia ejecutable de una imagen en Docker",
+          "Un gestor de redes"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "¿Cuál es el propósito de Docker Compose?",
+        "options": [
+          "Definir y orquestar aplicaciones multicontenedor",
+          "Crear un sistema de archivos distribuido",
+          "Generar imágenes de Docker automáticamente",
+          "Implementar redes de contenedores entre servidores"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué es una imagen en Docker?",
+        "options": [
+          "Una representación gráfica de un contenedor",
+          "Un archivo que contiene todo lo necesario para ejecutar una aplicación en Docker",
+          "Un sistema operativo alternativo",
+          "Una función de respaldo de datos"
+        ],
+        "correct": 1
+      },
+      {
+        "question": "¿Para qué se utiliza Docker Networking?",
+        "options": [
+          "Para conectar contenedores entre sí y con servicios externos",
+          "Para crear interfaces de usuario",
+          "Para hacer copias de seguridad de contenedores",
+          "Para analizar el rendimiento de aplicaciones"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Cuál es la ventaja de contenerizar aplicaciones con Docker?",
+        "options": [
+          "Mayor compatibilidad y eficiencia en el despliegue",
+          "Reducción de tamaño en el archivo de instalación",
+          "Interfaz gráfica mejorada",
+          "Mayor costo de implementación"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "¿Qué comando se utiliza para construir una imagen a partir de un Dockerfile?",
+        "options": [
+          "docker run",
+          "docker build",
+          "docker start",
+          "docker exec"
+        ],
+        "correct": 1
+      }
+    ],
+    "image_url": "https://res.cloudinary.com/dckxhsgw0/image/upload/v1730333143/del1ccumvuztfrfkgogt.png",
+    "duration": 6,
+    "instructor": "Alejandro Torres",
+    "is_free": false,
+    "status_courses": true
+  }
+]

@@ -42,11 +42,8 @@ export class SubscriptionsController {
   @ApiBearerAuth()
   @UseGuards(AuthGuard)
   @Post(':userId')
-  async create(
-    @Param('userId') userId: string,
-    @Body() createSubscriptionDto: CreateSubscriptionDto,
-  ) {
-    return this.subscriptionsService.create(userId, createSubscriptionDto);
+  async create(@Body() createSubscriptionDto: CreateSubscriptionDto) {
+    return this.subscriptionsService.create(createSubscriptionDto);
   }
 
   @ApiOperation({
@@ -59,7 +56,7 @@ export class SubscriptionsController {
   @TypeUser(UserType.SuperAdmin)
   @UseGuards(AuthGuard, TypeGuard)
   @Get()
-  findAll(@Query() limit = 5, @Query() page = 1) {
+  findAll(@Query('limit') limit = 5, @Query('page') page = 1) {
     return this.subscriptionsService.findAll(Number(limit), Number(page));
   }
 

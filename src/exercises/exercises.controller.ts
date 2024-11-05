@@ -40,7 +40,7 @@ export class ExercisesController {
     description: 'Lista de ejercicios con sus respectivos cursos.',
   })
   @ApiBearerAuth()
-  @TypeUser(UserType.UserSuscribe, UserType.Admin, UserType.SuperAdmin)
+  @TypeUser(UserType.UserSubscribe, UserType.Admin, UserType.SuperAdmin)
   @UseGuards(AuthGuard, TypeGuard)
   @Get()
   findAll(@Query('limit') limit = 5, @Query('page') page = 1) {
@@ -56,7 +56,7 @@ export class ExercisesController {
     description: 'Devuelve un ejercicio con su respectivo curso.',
   })
   @ApiBearerAuth()
-  @TypeUser(UserType.UserSuscribe, UserType.Admin, UserType.SuperAdmin)
+  @TypeUser(UserType.UserSubscribe, UserType.Admin, UserType.SuperAdmin)
   @UseGuards(AuthGuard, TypeGuard)
   @Get(':id')
   findOne(@Param('id', ParseUUIDPipe) id: string) {

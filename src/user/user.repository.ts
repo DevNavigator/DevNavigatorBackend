@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
 import { Repository } from 'typeorm';
@@ -19,17 +19,34 @@ export class UserRepository {
   }
 
   async findOne(id: string): Promise<User> {
-    const user = await this.userRepository.findOneBy({ id });
+    const user = await this.userRepository.findOne({
+      where: { id },
+      relations: ['Subscription', 'Courses'],
+    });
     return user;
   }
 
   async findOneByEmail(email: string): Promise<User | null> {
-    const user = await this.userRepository.findOne({ where: { email } });
+    const user = await this.userRepository.findOne({
+      where: { email },
+      relations: ['Subscription'],
+    });
     return user;
   }
 
   async createUser(user: Partial<User>): Promise<User> {
-    return await this.userRepository.save(user);
+    // Verificar si el usuario ya existe
+    const existingUser = await this.findOneByEmail(user.email);
+    console.log('user repo, existingUser', existingUser);
+    if (existingUser) {
+      throw new BadRequestException(
+        'Ya existe una cuenta registrada con este email.',
+      );
+    }
+
+    // Crear el usuario
+    const newUser = this.userRepository.create(user);
+    return await this.userRepository.save(newUser);
   }
 
   async update(id: string, updatedUser: Partial<UpdateUserDto>) {

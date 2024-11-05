@@ -8,7 +8,6 @@ import { Repository } from 'typeorm';
 import { Subscription } from './entities/subscription.entity';
 import { CreateSubscriptionDto } from './dto/create-subscription.dto';
 import { UserRepository } from 'src/user/user.repository';
-import { User } from 'src/user/entities/user.entity';
 
 @Injectable()
 export class SubscriptionRepository {
@@ -45,7 +44,7 @@ export class SubscriptionRepository {
   }
 
   async findAll(): Promise<Subscription[]> {
-    return await this.subscriptionRepository.find({ relations: ['User'] });
+    return await this.subscriptionRepository.find();
   }
 
   async findOne(id: string): Promise<Subscription> {

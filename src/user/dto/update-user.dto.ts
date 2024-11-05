@@ -7,7 +7,10 @@ import {
   Matches,
   MaxLength,
   MinLength,
+  IsBoolean,
+  IsEnum,
 } from 'class-validator';
+import { UserType } from '../enum/UserType.enum';
 
 export class UpdateUserDto {
   @IsOptional()
@@ -98,4 +101,22 @@ export class UpdateUserDto {
     example: 'url_de_imagen.jpg',
   })
   imgProfile?: string;
+
+  @IsOptional()
+  @IsBoolean()
+  @ApiProperty({
+    description:
+      'Cambiar tipo de usuario (Darlo/darse de baja). Este campo es opcional.',
+    example: 'false',
+  })
+  statusUser?: boolean;
+
+  @IsOptional()
+  @IsEnum(UserType)
+  @ApiProperty({
+    description:
+      'Cambiar tipo de usuario (Darlo/darse de baja). Este campo es opcional.',
+    example: 'ADMIN',
+  })
+  userType?: UserType;
 }

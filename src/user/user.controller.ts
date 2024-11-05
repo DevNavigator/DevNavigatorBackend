@@ -8,6 +8,7 @@ import {
   UseGuards,
   Query,
   HttpCode,
+  Request,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -30,11 +31,10 @@ import { User } from './entities/user.entity';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  // findAll
   @ApiOperation({
     summary: 'Obtener la lista de usuarios.',
     description:
-      'Este endpoint permite obtener la lista de usuario registrados. Puedes agregar Querys de page y limit para paginar los resultados. Necesitas rol de administrador o superAdministrador para ejecutarlo.',
+      'Este endpoint permite obtener la lista de usuario registrados.',
   })
   @ApiResponse({
     status: 200,
@@ -50,11 +50,10 @@ export class UserController {
     return this.userService.findAll(Number(limit), Number(page));
   }
 
-  // findOne
   @ApiOperation({
     summary: 'Obtener información de un usuario',
     description:
-      'Este endpoint permite obtener información de un usuario buscado por su ID. Es necesario un token valido.',
+      'Este endpoint permite obtener información de un usuario buscado por su ID.',
   })
   @ApiResponse({
     status: 200,
@@ -69,43 +68,108 @@ export class UserController {
     return this.userService.findOne(id);
   }
 
-  // update
   @ApiOperation({
     summary: 'Actualizar información del usuario',
     description:
-      'Este endpoint permite actualizar la información de un usuario buscado por ID. Es necesario un token valido.',
+      'Este endpoint permite actualizar la información de un usuario buscado por ID.',
   })
   @ApiBody({
-    description:
-      'Datos para actualizar el usuario. Deben incluir los mismos campos que el DTO UpdateUserDto',
     type: UpdateUserDto,
   })
   @ApiResponse({
     status: 200,
     description: 'Usuario con los datos actualizados.',
   })
-  @ApiResponse({ status: 400, description: 'Contraseña actual incorrecta.' })
-  @ApiResponse({ status: 400, description: 'Error interno.' })
   @ApiBearerAuth()
   @UseGuards(AuthGuard)
-  @Patch('/userupdate/:id')
+  @Patch('/update/:id')
   update(
     @Param('id', ParseUUIDPipe) id: string,
     @Body() updateUserDto: UpdateUserDto,
+    @Request() req,
   ) {
-    return this.userService.update(id, updateUserDto);
+    return this.userService.updateUserInfo(id, updateUserDto, req.user.id);
   }
 
-  //updateToAdmin
   @ApiOperation({
-    summary:
-      'Actualizar informacion de usuario desde un usuario administrador.',
-    description:
-      'Este endpoint permite actualizar la informacion de un usuario buscado por ID. Esta actualizacion la puede realizar unicamente un usuario de tipo "superAdmin", tambien necesita un token valido.',
+    summary: 'Cambiar estado del usuario',
+    description: 'Este endpoint permite activar o desactivar un usuario.',
   })
   @ApiBody({
     description:
-      'Datos para actualizar el usuario. Debe incluir algunos campos del DTO UpdateBySuperAdmin',
+      'Estado del usuario (true para activar, false para desactivar).',
+    type: Boolean,
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'Estado del usuario actualizado.',
+  })
+  @ApiBearerAuth()
+  @UseGuards(AuthGuard)
+  @Patch('/changeStatus/:id')
+  changeStatus(
+    @Param('id', ParseUUIDPipe) id: string,
+    @Body('statusUser') status: boolean,
+    @Request() req,
+  ) {
+    return this.userService.changeUserStatus(id, status, req.user.id);
+  }
+
+  @ApiOperation({
+    summary: 'Actualizar tipo de usuario',
+    description:
+      'Este endpoint permite actualizar el tipo de usuario de un usuario.',
+  })
+  @ApiBody({
+    description: 'Nuevo tipo de usuario.',
+    type: 'USER',
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'Tipo de usuario actualizado.',
+  })
+  @ApiBearerAuth()
+  @UseGuards(AuthGuard)
+  @Patch('/userType/:id')
+  updateType(
+    @Param('id', ParseUUIDPipe) id: string,
+    @Body() updateUserDto: UpdateUserDto,
+    @Request() req,
+  ) {
+    return this.userService.updateUserType(id, updateUserDto, req.user.id);
+  }
+
+  @ApiOperation({
+    summary: 'Actualizar contraseña de usuario',
+    description:
+      'Este endpoint permite actualizar la contraseña de un usuario.',
+  })
+  @ApiBody({
+    description: 'Nuevo contraseña de usuario.',
+    type: UpdateUserDto,
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'Tipo de usuario actualizado.',
+  })
+  @ApiBearerAuth()
+  @UseGuards(AuthGuard)
+  @Patch('/changePassword/:id')
+  async changePassword(
+    @Param('id', ParseUUIDPipe) id: string,
+    @Body() updateUserDto: UpdateUserDto,
+    @Request() req,
+  ) {
+    return this.userService.changePassword(id, updateUserDto, req.user.id);
+  }
+
+  @ApiOperation({
+    summary:
+      'Actualizar información de usuario desde un usuario administrador.',
+    description:
+      'Este endpoint permite actualizar la información de un usuario buscado por ID.',
+  })
+  @ApiBody({
     type: UpdateBySuperAdmin,
   })
   @ApiResponse({
@@ -121,7 +185,8 @@ export class UserController {
   updateToAdmin(
     @Param('id', ParseUUIDPipe) id: string,
     @Body() updateByAdmin: UpdateBySuperAdmin,
+    @Request() req,
   ) {
-    return this.userService.updateAdmin(id, updateByAdmin);
+    return this.userService.updateAdmin(id, updateByAdmin, req.user.id);
   }
 }

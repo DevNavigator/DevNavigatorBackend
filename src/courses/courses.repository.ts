@@ -2,14 +2,13 @@ import {
   Injectable,
   ConflictException,
   NotFoundException,
-  BadRequestException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Course } from './entities/course.entity';
 import { CreateCourseDto } from './dto/create-course.dto';
 import { UpdateCourseDto } from './dto/update-course.dto';
-import * as data from '../../utils/courses.json';
+import * as data from '../../utils/course.json';
 import { difficulty } from './enum/difficulty.enum';
 
 @Injectable()
@@ -36,43 +35,49 @@ export class CoursesRepository {
   }
 
   async addCourses(): Promise<string> {
-    let addedCoursesCount = 0; //? Contador para cursos agregados de courses en la ruta
+    let addedCoursesCount = 0;
 
     await Promise.all(
       data.map(async (element: any) => {
-        // Verificar si el curso ya existe
-        const existingCourse = await this.courseRepository.findOne({
-          where: { title: element.title },
-        });
-        if (existingCourse) {
-          throw new BadRequestException(
-            'Ya existe un curso con el mismo titulo.',
-          );
+        try {
+          const existingCourse = await this.courseRepository.findOne({
+            where: { title: element.title },
+          });
+
+          if (existingCourse) {
+            return; // Salir de este curso, pasar al siguiente
+          }
+
+          const course = this.courseRepository.create({
+            title: element.title,
+            type: element.type,
+            description: element.description,
+            difficulty: this.mapDifficulty(element.difficulty),
+            requirements: element.requirements,
+            format: element.format,
+            includes_exercises: element.includes_exercises,
+            objetives: element.objetives,
+            learn: element.learn,
+            content: element.content,
+            questions: element.questions,
+            image_url: element.image_url,
+            duration: element.duration,
+            instructor: element.instructor,
+            is_free: element.is_free,
+            status_courses: element.status_courses,
+          });
+
+          await this.courseRepository.save(course);
+          addedCoursesCount++;
+        } catch (error) {
+          console.error(`Error al agregar el curso "${element.title}":`, error);
         }
-
-        const course = this.courseRepository.create({
-          title: element.title,
-          type: element.type,
-          description: element.description,
-          image_url: element.image_url,
-          difficulty: this.mapDifficulty(element.difficulty),
-          duration: element.duration,
-          instructor: element.instructor,
-          is_free: element.is_free,
-          status_courses: element.status_courses,
-        });
-
-        await this.courseRepository.save(course);
-        addedCoursesCount++; // Incrementar el contador
       }),
     );
 
-    //? Mensaje condicional a la hora de agregar las peliculas con el controlador loadCourses
-    if (addedCoursesCount > 0) {
-      return `¡${addedCoursesCount} Cursos Agregados Correctamente!`;
-    } else {
-      return 'No se agregaron nuevos cursos, ya existen con los mismos títulos.';
-    }
+    return addedCoursesCount > 0
+      ? `¡${addedCoursesCount} Cursos Agregados Correctamente!`
+      : 'No se agregaron nuevos cursos, ya existen con los mismos títulos.';
   }
 
   private mapDifficulty(difficultyString: string): difficulty {
@@ -93,7 +98,9 @@ export class CoursesRepository {
   }
 
   async findOne(id: string): Promise<Course> {
-    return await this.courseRepository.findOneBy({ id });
+    const course = await this.courseRepository.findOneBy({ id });
+
+    return course;
   }
 
   async update(id: string, updateCourseDto: UpdateCourseDto): Promise<Course> {

@@ -9,6 +9,7 @@ import { SubscriptionRepository } from './subscriptions.repository';
 import { Subscription } from './entities/subscription.entity';
 import { EmailService } from 'src/email/email.service';
 import { userSubscriber } from 'src/email/templates/userSubscribe.template';
+import { SubsType } from 'src/SuscriptionType/enum/SubsType.enum';
 
 @Injectable()
 export class SubscriptionsService {
@@ -18,12 +19,10 @@ export class SubscriptionsService {
   ) {}
 
   async create(
-    userId: string,
     createSubscriptionDto: CreateSubscriptionDto,
   ): Promise<Subscription> {
     // Cambiar el estado a activo
     createSubscriptionDto.status_sub = true;
-    createSubscriptionDto.userId = userId;
     const subs = await this.subscriptionRepository.createSubscription(
       createSubscriptionDto,
     );

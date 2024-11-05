@@ -40,7 +40,6 @@ export class Course {
 
   @Column({
     type: 'varchar',
-    length: 255,
     nullable: false,
   })
   @ApiProperty({
@@ -49,18 +48,6 @@ export class Course {
     example: 'Curso de backend con Java y Spring Boot',
   })
   description: string;
-
-  @Column({
-    type: 'varchar',
-    default:
-      'https://res.cloudinary.com/dckxhsgw0/image/upload/v1729623569/lpsekc5dxicsi0mhtmqr.png',
-  })
-  @ApiProperty({
-    description:
-      'Imagen del curso. Es de tipo varchar, tiene una longitud maxima de 255 caracteres y no puede ser nulo.',
-    example: 'http://devnavigator.com/image/98179857',
-  })
-  image_url?: string;
 
   @Column({
     type: 'enum',
@@ -73,6 +60,54 @@ export class Course {
     enumName: 'difficulty',
   })
   difficulty: difficulty;
+
+  @Column({ type: 'varchar', nullable: false })
+  requirements: string;
+
+  @Column({ type: 'varchar', nullable: false })
+  format: string;
+
+  @Column({ type: 'boolean', nullable: false })
+  includes_exercises: boolean;
+
+  @Column({ type: 'varchar', nullable: false })
+  objetives: string;
+
+  @Column({ type: 'varchar', nullable: false })
+  learn: string;
+
+  @Column({
+    type: 'simple-json', // Usa simple-json para almacenar un array de objetos.
+    nullable: true, // Puede ser opcional.
+  })
+  @ApiProperty({
+    description:
+      'Contenido del curso, que incluye un título y una URL. Se almacena como un array de objetos JSON.',
+    example: [
+      {
+        title: 'Introducción a JavaScript',
+        url: 'http://contenido-del-curso.com',
+      },
+    ],
+    isArray: true,
+  })
+  content: { title: string; url: string }[];
+
+  @Column({ type: 'simple-json', nullable: false })
+  questions: Array<{ question: string; options: string[]; correct: number }>;
+
+  @Column({
+    type: 'varchar',
+    default:
+      'https://res.cloudinary.com/dckxhsgw0/image/upload/v1729623569/lpsekc5dxicsi0mhtmqr.png',
+    nullable: false,
+  })
+  @ApiProperty({
+    description:
+      'Imagen del curso. Es de tipo varchar, tiene una longitud maxima de 255 caracteres y no puede ser nulo.',
+    example: 'http://devnavigator.com/image/98179857',
+  })
+  image_url: string;
 
   @Column({
     type: 'integer',

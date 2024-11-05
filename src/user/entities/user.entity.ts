@@ -24,43 +24,35 @@ export class User {
 
   @Column({ type: 'varchar', nullable: false })
   @ApiProperty({
-    description:
-      'Nombre y apellido del usuario. Es de tipo varchar y no tiene restricciones de longitud. Este campo es obligatorio (no puede ser nulo).',
-    example: 'Jonh',
+    description: 'Nombre y apellido del usuario.',
+    example: 'Jonh Doe',
   })
   name: string;
 
   @Column({ type: 'varchar', nullable: false, unique: true })
   @ApiProperty({
-    description:
-      'Email del usuario. Es de tipo varchar y no tiene restricciones de longitud. Este campo es obligatorio y único (no puede ser nulo).',
+    description: 'Email del usuario.',
     example: 'jonhdoe@mail.com',
   })
   email: string;
 
   @Column({ type: 'varchar', nullable: false })
   @ApiProperty({
-    description:
-      'Contraseña del usuario. Es de tipo varchar y no tiene restricciones de longitud. Este campo es obligatorio (no puede ser nulo).',
+    description: 'Contraseña del usuario.',
     example: 'Contraseña!123',
   })
   password: string;
 
-  @Column({ type: 'varchar', nullable: false })
+  @Column({ type: 'varchar', nullable: true })
   @ApiProperty({
-    description:
-      'Número de teléfono del usuario. Es de tipo varchar y no tiene restricciones de longitud. (no puede ser nulo)',
+    description: 'Número de teléfono del usuario.',
     example: '2634123567',
   })
   phone: string;
 
-  /*   @Column({ type: 'date', nullable: false })
-  birthdate: Date; */
-
-  @Column({ type: 'varchar', nullable: false })
+  @Column({ type: 'varchar', nullable: true })
   @ApiProperty({
-    description:
-      'Dirección del usuario. Es de tipo varchar, donde se almacena la información completa de la dirección. (no puede ser nulo).',
+    description: 'Dirección del usuario.',
     example: '123 Calle Falsa, Departamento 4B',
   })
   address: string;
@@ -88,7 +80,7 @@ export class User {
     default: UserType.User,
     enumName: 'UserType',
   })
-  typeUser?: UserType;
+  userType?: UserType;
 
   @Column({
     type: 'timestamp',
@@ -114,8 +106,7 @@ export class User {
 
   @Column({ type: 'boolean', default: true })
   @ApiProperty({
-    description:
-      'Indica si el usuario está activo o dado de baja (soft delete).',
+    description: 'Indica si el usuario está activo o dado de baja.',
     example: true,
   })
   statusUser: boolean;
@@ -128,12 +119,12 @@ export class User {
   })
   Courses: Course[];
 
-  @OneToOne(() => Subscription, (subscription) => subscription.id, {
+  @OneToOne(() => Subscription, (subscription) => subscription.User, {
     cascade: true,
   })
   @ApiProperty({
     type: Subscription,
     description: 'Suscripción asociada al usuario.',
   })
-  Subscription: Subscription[];
+  Subscription: Subscription;
 }

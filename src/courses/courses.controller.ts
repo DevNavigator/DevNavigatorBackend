@@ -7,6 +7,7 @@ import {
   Param,
   Patch,
   Post,
+  Query,
   UseGuards,
 } from '@nestjs/common';
 import { CoursesService } from './courses.service';
@@ -24,6 +25,7 @@ import { TypeUser } from 'src/decorator/type.decorator';
 import { UserType } from 'src/user/enum/UserType.enum';
 import { AuthGuard } from 'src/auth/guards/AuthGuard';
 import { TypeGuard } from 'src/auth/guards/TypeGuard';
+import { RegistrationDto } from './dto/registration.dto';
 
 @ApiTags('courses')
 @Controller('courses')
@@ -141,5 +143,11 @@ export class CoursesController {
     @Body() updateCourseDto: UpdateCourseDto,
   ): Promise<Course> {
     return this.coursesService.update(id, updateCourseDto);
+  }
+
+  /* @UseGuards(AuthGuard) */
+  @Post('link-user')
+  async linkUsertoCourse(@Body() registration: RegistrationDto) {
+    return this.coursesService.linkUserToCourse(registration);
   }
 }
