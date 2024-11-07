@@ -9,6 +9,7 @@ import {
   Query,
   HttpCode,
   Request,
+  UsePipes,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -25,6 +26,7 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 import { User } from './entities/user.entity';
+import { ValidateNonEmptyFieldsPipe } from 'src/decorator/validateNonEmptyFieldsPipe';
 
 @ApiTags('user')
 @Controller('user')
@@ -62,7 +64,7 @@ export class UserController {
   @ApiResponse({ status: 404, description: 'El usuario no existe.' })
   @ApiBearerAuth()
   @HttpCode(200)
-  @UseGuards(AuthGuard) //
+  @UseGuards(AuthGuard)
   @Get(':id')
   findOne(@Param('id', ParseUUIDPipe) id: string) {
     return this.userService.findOne(id);
@@ -81,6 +83,7 @@ export class UserController {
     description: 'Usuario con los datos actualizados.',
   })
   @ApiBearerAuth()
+  @UsePipes(ValidateNonEmptyFieldsPipe)
   @UseGuards(AuthGuard)
   @Patch('/update/:id')
   update(
