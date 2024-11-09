@@ -22,22 +22,22 @@ export class AuthService {
   ): Promise<{ user: User; success: boolean; token: string }> {
     const { email, password } = loginUser;
 
-    const user = await this.userRepository.findOneByEmail(email);
-    if (!user)
+    const userFound = await this.userRepository.findOneByEmail(email);
+    if (!userFound)
       throw new BadRequestException('Usuario y/o contraseña incorrecta.');
 
-    const result = await bcrypt.compare(password, user.password);
+    const result = await bcrypt.compare(password, userFound.password);
     if (!result)
       throw new BadRequestException('Usuario y/o contraseña incorrecta.');
-    const userType: UserType = user.userType;
-    const userPayload = {
-      id: user.id,
-      email: user.email,
+    const userType: UserType = userFound.userType;
+    const user = {
+      id: userFound.id,
+      email: userFound.email,
       types: userType,
     };
-    const token = this.jwtService.sign(userPayload);
+    const token = this.jwtService.sign(user);
     return {
-      user: user,
+      user: userFound,
       success: true,
       token,
     };

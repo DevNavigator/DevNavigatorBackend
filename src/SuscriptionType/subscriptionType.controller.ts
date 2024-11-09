@@ -31,8 +31,8 @@ export class SubscriptionTypeController {
     return this.subscriptionTypeService.seeder();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.subscriptionTypeService.findOne(id);
+  @Get(':type')
+  findOne(@Param('type') type: string) {
+    return this.subscriptionTypeService.findOne(type);
   }
 }

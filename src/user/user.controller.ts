@@ -9,6 +9,7 @@ import {
   Query,
   HttpCode,
   Request,
+  UsePipes,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -25,6 +26,7 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 import { User } from './entities/user.entity';
+import { ValidateNonEmptyFieldsPipe } from 'src/pipes/validateNonEmptyFieldsPipe';
 
 @ApiTags('user')
 @Controller('user')
@@ -81,6 +83,7 @@ export class UserController {
     description: 'Usuario con los datos actualizados.',
   })
   @ApiBearerAuth()
+  @UsePipes(ValidateNonEmptyFieldsPipe)
   @UseGuards(AuthGuard)
   @Patch('/update/:id')
   update(

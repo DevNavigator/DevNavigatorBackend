@@ -15,7 +15,6 @@ import { UserType } from '../enum/UserType.enum';
 export class UpdateUserDto {
   @IsOptional()
   @IsString()
-  @MinLength(1)
   @MaxLength(50)
   @ApiProperty({
     description: 'Nombre del usuario a actualizar. Este campo es opcional.',
