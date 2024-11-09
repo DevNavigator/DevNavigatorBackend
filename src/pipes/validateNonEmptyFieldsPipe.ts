@@ -4,7 +4,6 @@ import {
   ArgumentMetadata,
   BadRequestException,
 } from '@nestjs/common';
-import { map } from 'rxjs';
 
 @Injectable()
 export class ValidateNonEmptyFieldsPipe implements PipeTransform {
@@ -27,7 +26,6 @@ export class ValidateNonEmptyFieldsPipe implements PipeTransform {
         );
       }
     });
-
     const name = value.name;
     if (name && !/^[a-zA-Z\s]+$/.test(name)) {
       throw new BadRequestException(

@@ -26,7 +26,7 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 import { User } from './entities/user.entity';
-import { ValidateNonEmptyFieldsPipe } from 'src/decorator/validateNonEmptyFieldsPipe';
+import { ValidateNonEmptyFieldsPipe } from 'src/pipes/validateNonEmptyFieldsPipe';
 
 @ApiTags('user')
 @Controller('user')
