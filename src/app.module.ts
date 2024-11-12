@@ -21,6 +21,7 @@ import { SubscriptionTypeService } from './SuscriptionType/subscriptionType.serv
 import { ChatModule } from './chat/chat.module';
 import { PassportModule } from '@nestjs/passport';
 import { UserService } from './user/user.service';
+import { StatisticsModule } from './statistics/statistics.module';
 
 @Module({
   imports: [
@@ -50,6 +51,7 @@ import { UserService } from './user/user.service';
     NotificationsModule,
     SubscriptionTypeModule,
     ChatModule,
+    StatisticsModule,
   ],
   controllers: [AppController],
   providers: [
