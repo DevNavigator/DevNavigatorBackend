@@ -13,12 +13,14 @@ import { UpdateBySuperAdmin } from './dto/update-bySuperadmin-dto';
 import { EmailService } from 'src/email/email.service';
 import { usersUpdate } from 'src/email/templates/userUpdate.template';
 import { UserType } from './enum/UserType.enum';
+import { SubscriptionsService } from 'src/subscriptions/subscriptions.service';
 
 @Injectable()
 export class UserService {
   constructor(
     private userRepository: UserRepository,
     private readonly emailService: EmailService,
+    private readonly suscriptionService: SubscriptionsService,
   ) {}
 
   async findAll(
@@ -80,8 +82,12 @@ export class UserService {
     };
   }
 
-  async changeUserStatus(id: string, status: boolean, requesterId: string) {
-    const requester = await this.findOne(requesterId);
+  // Cambia el estado del usuario y borra su suscripcion.
+  async changeUserStatus(id: string, status: boolean, adminId: string) {
+    const requester = await this.findOne(id);
+    if (requester.Subscription && status === false) {
+      await this.suscriptionService.remove(requester.Subscription.id);
+    }
     await this.userRepository.update(id, { statusUser: status });
     return {
       message: `El usuario ha sido ${status ? 'activado' : 'desactivado'}.`,
