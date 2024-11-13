@@ -39,6 +39,7 @@ export const dailysNotifications = (userName) => {
       </head>
       <body>
         <div class='container'>
+        <img src='https://res.cloudinary.com/dckxhsgw0/image/upload/v1731468835/wmfsmnyqqqfdjagifna6.png' alt='DevNavigator Logo' class='logo'>
           <h1>¡Hola, ${userName}!</h1>
           <p>
             Esperamos que estés disfrutando de tu experiencia en <strong>DevNavigator</strong>.

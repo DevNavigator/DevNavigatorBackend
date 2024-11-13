@@ -10,6 +10,7 @@ import {
   HttpCode,
   Request,
   UsePipes,
+  Post,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -27,6 +28,8 @@ import {
 } from '@nestjs/swagger';
 import { User } from './entities/user.entity';
 import { ValidateNonEmptyFieldsPipe } from 'src/pipes/validateNonEmptyFieldsPipe';
+import { ResetPasswordDto } from './dto/reset-password.dto';
+import { UpdatePasswordDto } from './dto/update-password.dto';
 
 @ApiTags('user')
 @Controller('user')
@@ -191,5 +194,23 @@ export class UserController {
     @Request() req,
   ) {
     return this.userService.updateAdmin(id, updateByAdmin, req.user.id);
+  }
+
+  @ApiOperation({
+    summary: 'Solicitar restablecimiento de contraseña',
+  })
+  @HttpCode(200)
+  @Post('/request-password-reset')
+  async requestPasswordReset(@Body() resetPasswordDto: ResetPasswordDto) {
+    return this.userService.requestPasswordReset(resetPasswordDto);
+  }
+
+  @ApiOperation({
+    summary: 'Restablecer contraseña',
+  })
+  @HttpCode(200)
+  @Post('/reset-password')
+  async resetPassword(@Body() updatePasswordDto: UpdatePasswordDto) {
+    return this.userService.resetPassword(updatePasswordDto);
   }
 }

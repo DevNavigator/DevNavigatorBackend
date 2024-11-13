@@ -134,4 +134,10 @@ export class User {
     cascade: true,
   })
   statistics: Statistics[];
+
+  @Column({ nullable: true })
+  resetToken: string;
+
+  @Column({ type: 'timestamp', nullable: true })
+  resetTokenExpiration: Date;
 }

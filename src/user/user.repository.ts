@@ -63,4 +63,8 @@ export class UserRepository {
   async updateToAdmin(id: string, updatedUser: Partial<UpdateBySuperAdmin>) {
     return await this.userRepository.update(id, updatedUser);
   }
+
+  async findOneByResetToken(token: string): Promise<User | null> {
+    return this.userRepository.findOne({ where: { resetToken: token } });
+  }
 }
