@@ -30,7 +30,6 @@ import { User } from './entities/user.entity';
 import { ValidateNonEmptyFieldsPipe } from 'src/pipes/validateNonEmptyFieldsPipe';
 import { ResetPasswordDto } from './dto/reset-password.dto';
 import { UpdatePasswordDto } from './dto/update-password.dto';
-
 @ApiTags('user')
 @Controller('user')
 export class UserController {

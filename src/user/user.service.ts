@@ -248,7 +248,7 @@ export class UserService {
     const url = 'http://localhost:3000';
     const resetLink = `${url}/reset-password?token=${resetToken}`;
     const emailTemplate = resetPasswordTemplate(user.name, resetLink);
-    await this.emailService.sendEmailSubscriber(
+    await this.emailService.sendEmailUpdateUser(
       user.email,
       'Solicitud de restablecimiento de contraseña',
       emailTemplate,
