@@ -4,11 +4,13 @@ import { User } from './entities/user.entity';
 import { Repository } from 'typeorm';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { UpdateBySuperAdmin } from './dto/update-bySuperadmin-dto';
+import { StatisticsService } from 'src/statistics/statistics.service';
 
 @Injectable()
 export class UserRepository {
   constructor(
     @InjectRepository(User) private readonly userRepository: Repository<User>,
+    private readonly statisticsService: StatisticsService,
   ) {}
 
   async findAll(): Promise<Omit<User, 'password'>[]> {
@@ -46,7 +48,12 @@ export class UserRepository {
 
     // Crear el usuario
     const newUser = this.userRepository.create(user);
-    return await this.userRepository.save(newUser);
+    const savedUser = await this.userRepository.save(newUser);
+
+    // Inicializar estadísticas para el nuevo usuario
+    await this.statisticsService.initializeStatistics(savedUser.id);
+
+    return savedUser;
   }
 
   async update(id: string, updatedUser: Partial<UpdateUserDto>) {
@@ -55,5 +62,9 @@ export class UserRepository {
 
   async updateToAdmin(id: string, updatedUser: Partial<UpdateBySuperAdmin>) {
     return await this.userRepository.update(id, updatedUser);
+  }
+
+  async findOneByResetToken(token: string): Promise<User | null> {
+    return this.userRepository.findOne({ where: { resetToken: token } });
   }
 }

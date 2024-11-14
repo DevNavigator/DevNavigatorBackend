@@ -5,7 +5,6 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import * as bcrypt from 'bcryptjs';
-
 import { UpdateUserDto } from './dto/update-user.dto';
 import { UserRepository } from './user.repository';
 import { User } from './entities/user.entity';
@@ -13,6 +12,10 @@ import { UpdateBySuperAdmin } from './dto/update-bySuperadmin-dto';
 import { EmailService } from 'src/email/email.service';
 import { usersUpdate } from 'src/email/templates/userUpdate.template';
 import { UserType } from './enum/UserType.enum';
+import { v4 as uuidv4 } from 'uuid';
+import { ResetPasswordDto } from './dto/reset-password.dto';
+import { UpdatePasswordDto } from './dto/update-password.dto';
+import { resetPasswordTemplate } from 'src/email/templates/resetPasswordTemplate';
 
 @Injectable()
 export class UserService {
@@ -224,5 +227,56 @@ export class UserService {
     } else {
       console.log('El usuario SUPER_ADMIN ya existe.');
     }
+  }
+
+  async requestPasswordReset(resetPasswordDto: ResetPasswordDto) {
+    const user = await this.userRepository.findOneByEmail(
+      resetPasswordDto.email,
+    );
+    if (!user) {
+      throw new NotFoundException('Usuario no encontrado.');
+    }
+
+    const resetToken = uuidv4();
+    const resetTokenExpiration = new Date(Date.now() + 3600000); // 1 hora
+
+    await this.userRepository.update(user.id, {
+      resetToken,
+      resetTokenExpiration,
+    });
+
+    const url = 'http://localhost:3000';
+    const resetLink = `${url}/reset-password?token=${resetToken}`;
+    const emailTemplate = resetPasswordTemplate(user.name, resetLink);
+    await this.emailService.sendEmailUpdateUser(
+      user.email,
+      'Solicitud de restablecimiento de contraseña',
+      emailTemplate,
+    );
+
+    return {
+      message:
+        'Se ha enviado un enlace de restablecimiento de contraseña a tu correo electrónico.',
+    };
+  }
+
+  async resetPassword(updatePasswordDto: UpdatePasswordDto) {
+    const { token, newPassword } = updatePasswordDto;
+
+    const user = await this.userRepository.findOneByResetToken(token);
+    if (!user || user.resetTokenExpiration < new Date()) {
+      throw new BadRequestException(
+        'Token de restablecimiento inválido o expirado.',
+      );
+    }
+
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    await this.userRepository.update(user.id, {
+      password: hashedPassword,
+      resetToken: null,
+      resetTokenExpiration: null,
+    });
+
+    return { message: 'La contraseña ha sido restablecida exitosamente.' };
   }
 }

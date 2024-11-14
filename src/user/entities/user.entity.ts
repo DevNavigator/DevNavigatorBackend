@@ -4,6 +4,7 @@ import {
   JoinColumn,
   JoinTable,
   ManyToMany,
+  OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
@@ -11,6 +12,7 @@ import { UserType } from '../enum/UserType.enum';
 import { Course } from 'src/courses/entities/course.entity';
 import { Subscription } from 'src/subscriptions/entities/subscription.entity';
 import { ApiProperty } from '@nestjs/swagger';
+import { Statistics } from 'src/statistics/entities/statistic.entity';
 
 @Entity({ name: 'User' })
 export class User {
@@ -127,4 +129,15 @@ export class User {
     description: 'Suscripción asociada al usuario.',
   })
   Subscription: Subscription;
+
+  @OneToMany(() => Statistics, (statistics) => statistics.user, {
+    cascade: true,
+  })
+  statistics: Statistics[];
+
+  @Column({ nullable: true })
+  resetToken: string;
+
+  @Column({ type: 'timestamp', nullable: true })
+  resetTokenExpiration: Date;
 }

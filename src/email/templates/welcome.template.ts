@@ -35,6 +35,7 @@ export const welcome = (userName) => {
       </head>
       <body>
         <div class='container'>
+        <img src='https://res.cloudinary.com/dckxhsgw0/image/upload/v1731468561/kad5psunnn3ws28v9vwl.png' alt='DevNavigator Logo' class='logo'>
           <h1>¡Bienvenido, ${userName}!</h1>
           <p>
             Gracias por registrarte en <strong>DevNavigator</strong>, la mejor plataforma para aprender y mejorar tus habilidades de programación.

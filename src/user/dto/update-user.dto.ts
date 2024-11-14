@@ -118,4 +118,10 @@ export class UpdateUserDto {
     example: 'ADMIN',
   })
   userType?: UserType;
+
+  @IsOptional()
+  resetToken?: string;
+
+  @IsOptional()
+  resetTokenExpiration?: Date;
 }
