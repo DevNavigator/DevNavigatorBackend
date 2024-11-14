@@ -7,12 +7,14 @@ import { UserRepository } from './user.repository';
 import { EmailModule } from 'src/email/email.module';
 import { cloudinaryConfig } from 'src/config/cloudinary.config';
 import { StatisticsModule } from 'src/statistics/statistics.module';
+import { SubscriptionsModule } from 'src/subscriptions/subscriptions.module';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([User]),
     EmailModule,
     forwardRef(() => StatisticsModule),
+    SubscriptionsModule,
   ],
   controllers: [UserController],
   providers: [UserService, UserRepository, cloudinaryConfig],

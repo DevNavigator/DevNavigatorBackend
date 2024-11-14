@@ -23,7 +23,7 @@ export class UserRepository {
   async findOne(id: string): Promise<User> {
     const user = await this.userRepository.findOne({
       where: { id },
-      relations: ['Subscription', 'Courses'],
+      relations: ['Subscription', 'Courses', 'statistics'],
     });
     return user;
   }
