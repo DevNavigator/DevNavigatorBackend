@@ -16,6 +16,11 @@ export class NotificationsService {
     name: 'notifications',
     timeZone: 'UTC',
   })
+  // Cron job que se ejecuta cada de
+  //@Cron('*/30 * * * *', {
+  //name: 'notifications',
+  // timeZone: 'UTC',
+  //})
   async triggerNotifications() {
     const users = await this.userRepository.findAll();
 

@@ -245,7 +245,7 @@ export class UserService {
       resetTokenExpiration,
     });
 
-    const url = 'http://localhost:3000';
+    const url = 'https://dev-navigator.vercel.app';
     const resetLink = `${url}/reset-password?token=${resetToken}`;
     const emailTemplate = resetPasswordTemplate(user.name, resetLink);
     await this.emailService.sendEmailUpdateUser(
