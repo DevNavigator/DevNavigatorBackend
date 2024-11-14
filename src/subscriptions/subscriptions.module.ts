@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { forwardRef, Module } from '@nestjs/common';
 import { SubscriptionsService } from './subscriptions.service';
 import { SubscriptionsController } from './subscriptions.controller';
 import { Subscription } from './entities/subscription.entity';
@@ -8,8 +8,13 @@ import { UserModule } from 'src/user/user.module';
 import { EmailModule } from 'src/email/email.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Subscription]), UserModule, EmailModule],
+  imports: [
+    TypeOrmModule.forFeature([Subscription]),
+    forwardRef(() => UserModule),
+    EmailModule,
+  ],
   controllers: [SubscriptionsController],
   providers: [SubscriptionsService, SubscriptionRepository],
+  exports: [SubscriptionsService],
 })
 export class SubscriptionsModule {}

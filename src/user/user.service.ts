@@ -16,12 +16,16 @@ import { v4 as uuidv4 } from 'uuid';
 import { ResetPasswordDto } from './dto/reset-password.dto';
 import { UpdatePasswordDto } from './dto/update-password.dto';
 import { resetPasswordTemplate } from 'src/email/templates/resetPasswordTemplate';
+import { SubscriptionsService } from 'src/subscriptions/subscriptions.service';
+import { StatisticsService } from 'src/statistics/statistics.service';
 
 @Injectable()
 export class UserService {
   constructor(
     private userRepository: UserRepository,
     private readonly emailService: EmailService,
+    private readonly suscriptionService: SubscriptionsService,
+    private readonly statisticsService: StatisticsService,
   ) {}
 
   async findAll(
@@ -36,6 +40,7 @@ export class UserService {
 
   async findOne(id: string): Promise<User> {
     const user = await this.userRepository.findOne(id);
+
     if (!user) {
       throw new NotFoundException(
         `${id}. No corresponde a un usuario existente.`,
@@ -83,8 +88,13 @@ export class UserService {
     };
   }
 
-  async changeUserStatus(id: string, status: boolean, requesterId: string) {
-    const requester = await this.findOne(requesterId);
+  async changeUserStatus(id: string, status: boolean, adminId: string) {
+    const requester = await this.findOne(id);
+
+    if (requester.Subscription && status === false) {
+      await this.suscriptionService.remove(requester.Subscription.id);
+      await this.statisticsService.clearStatistics(requester);
+    }
     await this.userRepository.update(id, { statusUser: status });
     return {
       message: `El usuario ha sido ${status ? 'activado' : 'desactivado'}.`,

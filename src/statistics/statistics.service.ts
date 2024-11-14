@@ -1,6 +1,7 @@
 // src/statistics/statistics.service.ts
 import { Injectable } from '@nestjs/common';
 import { StatisticsRepository } from './statistics.repository';
+import { User } from 'src/user/entities/user.entity';
 
 @Injectable()
 export class StatisticsService {
@@ -14,6 +15,9 @@ export class StatisticsService {
     return await this.statisticsRepository.findByUserId(userId);
   }
 
+  async clearStatistics(user: User) {
+    return await this.statisticsRepository.clearStatistics(user);
+  }
   async updateUserStatistics(
     userId: string,
     points: number,

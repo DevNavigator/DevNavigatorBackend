@@ -3,6 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Statistics } from './entities/statistic.entity';
+import { User } from 'src/user/entities/user.entity';
 
 @Injectable()
 export class StatisticsRepository {
@@ -24,6 +25,19 @@ export class StatisticsRepository {
     return await this.statisticsRepository.findOne({
       where: { user: { id: userId } },
     });
+  }
+  async clearStatistics(user: User) {
+    if (user.statistics && user.statistics.length > 0) {
+      user.statistics[0].totalPoints = 0;
+      user.statistics[0].achievements = [];
+
+      await this.statisticsRepository.update(user.statistics[0].id, {
+        totalPoints: 0,
+        achievements: [],
+      });
+    } else {
+      console.log('No statistics found for the user');
+    }
   }
 
   async updateStatistics(

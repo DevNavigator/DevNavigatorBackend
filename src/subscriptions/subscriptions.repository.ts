@@ -65,11 +65,13 @@ export class SubscriptionRepository {
 
   async removeSubscription(id: string): Promise<string> {
     const subscription = await this.findOne(id);
+
     if (!subscription) {
       throw new NotFoundException(`Subscription with ID ${id} not found`);
     }
     subscription.status_sub = false;
-    await this.subscriptionRepository.save(subscription);
+    await this.subscriptionRepository.remove(subscription);
+
     return id;
   }
 
