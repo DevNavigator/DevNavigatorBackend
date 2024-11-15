@@ -67,4 +67,7 @@ export class UserRepository {
   async findOneByResetToken(token: string): Promise<User | null> {
     return this.userRepository.findOne({ where: { resetToken: token } });
   }
+  async save(user: User) {
+    await this.userRepository.save(user);
+  }
 }

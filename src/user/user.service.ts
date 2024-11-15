@@ -93,7 +93,10 @@ export class UserService {
 
     if (requester.Subscription && status === false) {
       await this.suscriptionService.remove(requester.Subscription.id);
+      requester.Subscription = null;
       await this.statisticsService.clearStatistics(requester);
+      requester.Courses = [];
+      await this.userRepository.save(requester);
     }
     await this.userRepository.update(id, { statusUser: status });
     return {

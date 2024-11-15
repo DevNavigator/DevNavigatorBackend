@@ -69,8 +69,7 @@ export class SubscriptionRepository {
     if (!subscription) {
       throw new NotFoundException(`Subscription with ID ${id} not found`);
     }
-    subscription.status_sub = false;
-    await this.subscriptionRepository.remove(subscription);
+    await this.subscriptionRepository.delete(id);
 
     return id;
   }
