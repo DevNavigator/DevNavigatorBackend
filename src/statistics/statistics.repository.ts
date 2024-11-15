@@ -1,5 +1,5 @@
 // src/statistics/statistics.repository.ts
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Statistics } from './entities/statistic.entity';
@@ -46,12 +46,24 @@ export class StatisticsRepository {
     achievements: Array<{ title: string; date: string }>,
   ) {
     const stats = await this.findByUserId(userId);
-    if (stats) {
+    if (!stats) {
+      throw new NotFoundException('Estadisticas del usuario no encontradas.');
+    }
+    const newAchievements = achievements.filter(
+      (achievement) =>
+        !stats.achievements.some(
+          (existingAchievement) =>
+            existingAchievement.title === achievement.title,
+        ),
+    );
+    if (newAchievements.length > 0) {
       stats.totalPoints += totalPoints;
-      stats.achievements.push(...achievements);
+      stats.achievements.push(...newAchievements);
       stats.lastUpdated = new Date();
       return await this.statisticsRepository.save(stats);
+    } else {
+      console.log('No puede sumar', achievements, totalPoints);
     }
-    return null;
+    return stats;
   }
 }
